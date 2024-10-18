@@ -13,4 +13,4 @@
 ## DefaultState: enabled
 ## AllowLoadGameType: mainline
 
-Memento.lua
+SkyridingRaceTimer.lua
