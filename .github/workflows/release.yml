@@ -43,5 +43,4 @@ jobs:
       - name: Package and publish for WoWInterface and Wago
         uses: BigWigsMods/packager@master
         with:
-          args: -a QKywnBN7
-          #args: -w 26848 -a QKywRlN7
+          args: -w 26863 -a QKywnBN7
