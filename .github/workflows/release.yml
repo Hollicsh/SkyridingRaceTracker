@@ -37,11 +37,11 @@ jobs:
       - name: Package and publish for CourseForge
         uses: BigWigsMods/packager@master
         with:
-          args: -p 1099991 -n "{package-name}-{project-version}{nolib}{classic}:{package-name}-{project-version}{classic}{nolib}.zip"
+          args: -p 1123985 -n "{package-name}-{project-version}{nolib}{classic}:{package-name}-{project-version}{classic}{nolib}.zip"
 
       # WoWInterface and Wago
       - name: Package and publish for WoWInterface and Wago
         uses: BigWigsMods/packager@master
         with:
-          args: -a QKywRlN7
+          args: -a QKywnBN7
           #args: -w 26848 -a QKywRlN7
