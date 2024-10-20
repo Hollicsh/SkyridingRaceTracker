@@ -13,4 +13,6 @@
 ## DefaultState: enabled
 ## AllowLoadGameType: mainline
 
+locals.xml
+
 SkyridingRaceTimer.lua

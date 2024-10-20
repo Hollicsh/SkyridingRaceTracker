@@ -1,3 +1,6 @@
+local _, SRT = ...
+
+local L = SRT.localization
 
 local raceStartTime = nil
 local isRaceActive = false
@@ -17,7 +20,7 @@ local function ShowRaceTime()
 
     raceTimer = C_Timer.NewTicker(0.05, function()
         local elapsedTime = GetTime() - raceStartTime
-        timerFrame.timerText:SetText(string.format("Time: %.1f Seconds", elapsedTime))
+        timerFrame.timerText:SetText(string.format(L["time"] .. ": %.1f " .. L["seconds"], elapsedTime))
  
         timerFrame:Show()
     end)
