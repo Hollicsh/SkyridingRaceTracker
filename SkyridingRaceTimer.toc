@@ -2,7 +2,7 @@
 ## Title: Skyriding Race Timer
 ## Author: diomsg (Diom-Antonidas EU)
 ## Version: @project-version@
-## IconTexture: Interface\AddOns\Skyriding-Race-Timer\media\icon.blp
+## IconTexture: Interface\AddOns\SkyridingRaceTimer\media\icon.blp
 ## X-Flavor: Retail
 ## X-BuildDate: @build-date@
 ## X-E-Mail: feedback@memento-addon.de
