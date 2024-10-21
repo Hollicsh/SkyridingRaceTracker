@@ -15,6 +15,29 @@ local targetQuestID = 0
 local tagetGoldTime = 0
 local tagetSilverTime = 0
 
+
+local function FallbackTime()
+    timerFrame = CreateFrame("Frame", nil, UIParent)
+    timerFrame:SetSize(200, 50)
+    timerFrame:SetPoint("CENTER", 0, 200)
+
+    local timerText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    timerText:SetPoint("CENTER", 0, 10)
+    timerFrame.timerText = timerText
+
+    local targetText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    targetText:SetPoint("CENTER", 0, -10)
+    timerFrame.targetText = targetText
+
+    raceTimer = C_Timer.NewTicker(0.05, function()
+        local elapsedTime = GetTime() - raceStartTime
+        timerFrame.timerText:SetText(string.format(L["time"] .. ": %.1f " .. L["seconds"], elapsedTime))
+        timerFrame.targetText:SetText(L["no-time"])
+    end)
+
+    timerFrame:Show()
+end
+
 local function ShowRaceTime()
     timerFrame = CreateFrame("Frame", nil, UIParent)
     timerFrame:SetSize(200, 50)
@@ -66,7 +89,7 @@ local function CheckRaceAura()
         if aura == nil then
             break
         end
-
+        --print(aura.name .. " - " .. aura.spellId)
         if aura.spellId == raceSpellId then
             return true
         end
@@ -75,8 +98,8 @@ local function CheckRaceAura()
     return false
 end
 
-local function isQuest (questID)
-	for index, value in ipairs(questList) do
+local function isQuest(questID)
+	for _, value in ipairs(questList) do
 		if value == questID then
 			return true
 		end
@@ -93,7 +116,11 @@ local function OnEvent(self, event, ...)
                 if not isRaceActive then
                     raceStartTime = GetTime()
                     isRaceActive = true
-                    StartRaceTime()
+                    if targetQuestID == 0 then
+                        FallbackTime()
+                    else
+                        StartRaceTime()
+                    end
                 end
             else
                 if isRaceActive then
