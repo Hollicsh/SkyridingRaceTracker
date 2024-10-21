@@ -1,5 +1,5 @@
 # Skyriding Race Timer
 
-Skyriding Race Timer is an addon to display the current race time during a skyriding race.
+Skyriding Race Timer is an addon to display the current race time during a skyriding race. Additionally, you can see how long you have for the gold or silver medal.
 
-Currently only the current race time is displayed and after the end of the race it fades away after 3 seconds. It is planned that in the future it will also be displayed whether you are still on the gold course.
+Only the race times for the 'The War Within' extension are currently available. More will follow soon. Further customisation options for the timer display are planned.

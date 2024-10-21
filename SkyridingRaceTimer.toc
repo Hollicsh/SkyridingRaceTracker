@@ -14,5 +14,6 @@
 ## AllowLoadGameType: mainline
 
 locals.xml
+core.xml
 
 SkyridingRaceTimer.lua
