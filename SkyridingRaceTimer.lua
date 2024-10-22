@@ -1,7 +1,6 @@
 local _, SRT = ...
 
 local L = SRT.localization
-local questList = SRT.data.questList
 local raceTimes = SRT.data.raceTimes
 
 local raceStartTime = nil
@@ -99,12 +98,13 @@ local function CheckRaceAura()
 end
 
 local function isQuest(questID)
-	for _, value in ipairs(questList) do
-		if value == questID then
-			return true
-		end
-	end
-	return false
+    local t = raceTimes[questID]
+
+    if t == nil then
+        return false
+    else
+        return true
+    end
 end
 
 local function OnEvent(self, event, ...)
