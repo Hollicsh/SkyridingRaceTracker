@@ -14,7 +14,6 @@ local targetQuestID = 0
 local tagetGoldTime = 0
 local tagetSilverTime = 0
 
-
 local function FallbackTime()
     timerFrame = CreateFrame("Frame", nil, UIParent)
     timerFrame:SetSize(200, 50)
@@ -60,7 +59,7 @@ local function StartRaceTime()
         local elapsedTime = GetTime() - raceStartTime
         timerFrame.timerText:SetText(string.format(L["time"] .. ": %.1f " .. L["seconds"], elapsedTime))
 
-        if targetQuestID == 0 then
+        if tagetGoldTime == 0 or tagetSilverTime == 0 then
             timerFrame.targetText:SetText(L["no-time"])
         else
             if elapsedTime <= tagetGoldTime then
@@ -88,7 +87,7 @@ local function CheckRaceAura()
         if aura == nil then
             break
         end
-        --print(aura.name .. " - " .. aura.spellId)
+
         if aura.spellId == raceSpellId then
             return true
         end
@@ -103,6 +102,8 @@ local function isQuest(questID)
     if t == nil then
         return false
     else
+        --SRT:PrintDebug("questID: " .. questID .. " - " .. C_QuestLog.GetTitleForQuestID(questID))
+
         return true
     end
 end
@@ -154,3 +155,23 @@ frame:RegisterEvent("UNIT_AURA")
 frame:RegisterEvent("QUEST_ACCEPTED")
 frame:RegisterEvent("QUEST_REMOVED")
 frame:SetScript("OnEvent", OnEvent)
+
+function SRT:PrintDebug(msg)
+    if true then
+        local notfound = true
+
+        for i = 1, NUM_CHAT_WINDOWS do 
+            local name, _, _, _, _, _, shown, locked, docked, uni = GetChatWindowInfo(i)
+
+            if name == "Debug" and docked ~= nil then
+                _G['ChatFrame' .. i]:AddMessage(WrapTextInColorCode("SRT: ", "ffFF8040") .. msg)
+                notfound = false
+                break
+            end
+        end
+
+        if notfound then
+            DEFAULT_CHAT_FRAME:AddMessage(WrapTextInColorCode("SRT (Debug): ", "ffFF8040")  .. msg)
+        end
+	end
+end

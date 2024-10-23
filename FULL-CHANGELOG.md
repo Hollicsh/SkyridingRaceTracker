@@ -1,3 +1,6 @@
+**1.3.1 (2024-10-23)**
+- Updated: TOC version for patch 11.0.5 (Retail)
+
 **1.3.0 (2024-10-22)**
 - Added: Race times for the expansion 'Dragonflight'
 

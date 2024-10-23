@@ -13,10 +13,10 @@ raceTimes[66692] = {52, 57}
 raceTimes[72052] = {50, 55}
 raceTimes[75776] = {54, 57}
 raceTimes[75777] = {57, 60}
-raceTimes[77777] = {65, 70} -- Storm Gryphon
+raceTimes[77777] = {65, 70} -- Storm Gryphon 22.10.2024
 -- Wild Preserve Slalom (Wildreservat-Slalom)
-raceTimes[66721] = {42, 45}
-raceTimes[66722] = {40, 45}
+raceTimes[66721] = {42, 45} -- Normal 22.10.2024
+raceTimes[66722] = {40, 45} -- Advanced 22.10.2024
 raceTimes[72705] = {41, 46}
 raceTimes[75778] = {48, 51}
 raceTimes[75779] = {49, 52}
@@ -293,9 +293,9 @@ raceTimes[78119] = {73, 76}
 -- The War Within
 -- Isle of Dorn (Insel von Dorn)
 -- Dornogal Drift (Dornogaldrift)
-raceTimes[80219] = {48, 53}
-raceTimes[80225] = {43, 46}
-raceTimes[80231] = {43, 46}
+raceTimes[80219] = {48, 53} -- Normal 22.10.2024
+raceTimes[80225] = {43, 46} -- Advanced 22.10.2024
+raceTimes[80231] = {43, 46} -- Reverse 22.10.2024
 -- Storm Watch's Survey (Sturmpostenstudie)
 raceTimes[80220] = {63, 68}
 raceTimes[80226] = {60, 63}
