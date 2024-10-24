@@ -1,3 +1,6 @@
+**1.4.0 (2024-10-24)**
+- Added: Options menu to customize some timer display settings
+
 **1.3.1 (2024-10-23)**
 - Updated: TOC version for patch 11.0.5 (Retail)
 

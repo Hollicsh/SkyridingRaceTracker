@@ -1,4 +1,7 @@
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 ..\..\FrameXML\UI.xsd">
-    <Script file="core\data.lua" />
+    <Script file="core\Data.lua" />
+    <Script file="core\RaceTimer.lua" />
+    <Script file="core\Options.lua" />
+    <Script file="core\Utils.lua" />
 </Ui>

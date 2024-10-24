@@ -12,6 +12,7 @@
 ## LoadOnDemand: 0
 ## DefaultState: enabled
 ## AllowLoadGameType: mainline
+## SavedVariables: SRT_Database_Options
 
 locals.xml
 core.xml
