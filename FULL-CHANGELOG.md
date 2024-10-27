@@ -1,3 +1,7 @@
+**1.4.1 (2024-10-27)**
+- Added: For better visibility of the race time, a background can optionally be used to display the race time
+- Updated: deDE, enUS localization
+
 **1.4.0 (2024-10-24)**
 - Added: Options menu to customize some timer display settings
 

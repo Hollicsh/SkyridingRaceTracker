@@ -301,27 +301,27 @@ raceTimeTable[80220] = {63, 68} -- Normal 24.10.2024
 raceTimeTable[80226] = {60, 63} -- Advanced 24.10.2024
 raceTimeTable[80232] = {62, 65} -- Reverse 24.10.2024
 -- Basin Bypass (Beckenbypass)
-raceTimeTable[80221] = {58, 63}
-raceTimeTable[80227] = {54, 57}
-raceTimeTable[80233] = {57, 60}
+raceTimeTable[80221] = {58, 63} -- Normal 27.10.2024
+raceTimeTable[80227] = {54, 57} -- Advanced 27.10.2024
+raceTimeTable[80233] = {57, 60} -- Reverse 27.10.2024
 -- The Wold Ways (Die Holtzwege)
-raceTimeTable[80222] = {68, 73}
-raceTimeTable[80228] = {68, 71}
-raceTimeTable[80234] = {70, 73}
+raceTimeTable[80222] = {68, 73} -- Normal 27.10.2024
+raceTimeTable[80228] = {68, 71} -- Advanced 27.10.2024
+raceTimeTable[80234] = {70, 73} -- Reverse 27.10.2024m
 -- Thunderhead Trail (Donnerkopfdreh)
-raceTimeTable[80223] = {70, 75}
-raceTimeTable[80229] = {66, 69}
-raceTimeTable[80235] = {66, 69}
+raceTimeTable[80223] = {70, 75} -- Normal 27.10.2024
+raceTimeTable[80229] = {66, 69} -- Advanced 27.10.2024
+raceTimeTable[80235] = {66, 69} -- Reverse 27.10.2024
 -- Orecreg's Doglegs (Erzgrubenecken)
-raceTimeTable[80224] = {65, 70}
-raceTimeTable[80230] = {61, 64}
-raceTimeTable[80236] = {61, 64}
+raceTimeTable[80224] = {65, 70} -- Normal 27.10.2024
+raceTimeTable[80230] = {61, 64} -- Advanced 27.10.2024
+raceTimeTable[80236] = {61, 64} -- Reverse 27.10.2024
 
 -- The Ringing Deeps (Die Schallenden Tiefen)
 -- Earthenworks Weave (Erdwerkeweberei)
 raceTimeTable[80237] = {52, 57}
 raceTimeTable[80244] = {49, 52}
-raceTimeTable[80250] = {50, 53}
+raceTimeTable[80250] = {50, 53} -- Reverse 26.10.2024
 -- Ringing Deeps Ramble (Schallende-Tiefen-Spektakel)
 raceTimeTable[80238] = {57, 62}
 raceTimeTable[80245] = {53, 56}
@@ -347,7 +347,7 @@ raceTimeTable[80255] = {72, 75}
 -- Dunelle's Detour (Dunelles gute Güte)
 raceTimeTable[80256] = {65, 70}
 raceTimeTable[80265] = {62, 65}
-raceTimeTable[80271] = {64, 67}
+raceTimeTable[80271] = {64, 67} -- Reverse 26.10.2024
 -- Tenir's Traversal (Tenirs Traversale)
 raceTimeTable[80257] = {65, 70}
 raceTimeTable[80266] = {60, 63}

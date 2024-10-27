@@ -1,25 +1,39 @@
 local _, SRT = ...
 
 local L = SRT.localization
-local options = SRT_Database_Options
 
-function SRT:LoadTimerFrame()
+local function LoadTimerFrame(self)
     local timerFrame = CreateFrame("Frame", nil, UIParent)
-    timerFrame:SetSize(200, 50)
+    timerFrame:SetSize(256, 64)
     timerFrame:SetPoint("CENTER", 0, 200)
 
-    local timerText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    timerText:SetPoint("CENTER", 0, 10)
-    timerFrame.timerText = timerText
+    if self.options["display-background"] then
+        timerFrame.background = timerFrame:CreateTexture(nil, "BACKGROUND")
+        timerFrame.background:ClearAllPoints()
+        timerFrame.background:SetAllPoints(timerFrame)
+        timerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTimerBackground_1.blp")
+    end
 
-    local targetText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    targetText:SetPoint("CENTER", 0, -10)
-    timerFrame.targetText = targetText
+    timerFrame.timerText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    timerFrame.timerText:ClearAllPoints()
+    timerFrame.timerText:SetPoint("CENTER", 0, 10)
 
-    self.timerFrame = timerFrame
+    timerFrame.targetText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    timerFrame.targetText:ClearAllPoints()
+    timerFrame.targetText:SetPoint("CENTER", 0, -10)
+
+    return timerFrame
 end
 
 function SRT:ShowRaceTimer(raceQuestId, raceGoldTime)
+    local size = 0
+    for _ in pairs(self.timerFrame) do size = size + 1 end
+
+    if size > 0 then
+        self.timerFrame:Hide()
+    end
+
+    self.timerFrame = LoadTimerFrame(self)
     local timerFrame = self.timerFrame
 
     if self.options["display-mode"] == 0 or raceQuestId == 0 then

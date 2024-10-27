@@ -1,7 +1,9 @@
-local _, SRT = ...
+local addonName, SRT = ...
 
 SRT.raceTimer = {}
 SRT.timerFrame = {}
+
+SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
 
 local L = SRT.localization
 local raceTimeTable = SRT.data.raceTimeTable
@@ -37,8 +39,6 @@ local function CheckRaceQuest(questId)
     if t == nil then
         return false
     else
-        SRT:PrintDebug("Race quest found: " .. C_QuestLog.GetTitleForQuestID(questId) .. " (" .. questId ..")")
-
         return true
     end
 end
@@ -56,8 +56,6 @@ end
 function frame:ADDON_LOADED(_, addOnName)
     if addOnName == "SkyridingRaceTimer" then
         SRT:LoadOptions()
-        SRT:LoadTimerFrame()
-
         SRT:PrintDebug("Addon fully loaded.")
     end
 end
@@ -80,6 +78,7 @@ end
 
 function frame:QUEST_ACCEPTED(_, questId)
     if CheckRaceQuest(questId) then
+        SRT:PrintDebug("Race quest found for 'QUEST_ACCEPTED': " .. C_QuestLog.GetTitleForQuestID(questId) .. " (" .. questId ..")")
         raceQuestId = questId
         raceGoldTime = raceTimeTable[raceQuestId][1]
         raceSilverTime = raceTimeTable[raceQuestId][2]
@@ -89,6 +88,7 @@ end
 
 function frame:QUEST_REMOVED(_, questId, wasReplayQuest)
     if CheckRaceQuest(questId) then
+        SRT:PrintDebug("Race quest found for 'QUEST_REMOVED': " .. C_QuestLog.GetTitleForQuestID(questId) .. " (" .. questId ..")")
         raceQuestId = 0
         raceGoldTime = 0
         raceSilverTime = 0
