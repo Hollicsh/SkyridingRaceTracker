@@ -1,3 +1,7 @@
+**1.4.2 (2024-10-27)**
+- Added: New option to display a countdown that runs against the personal best time
+- Updated: deDE, enUS localization
+
 **1.4.1 (2024-10-27)**
 - Added: For better visibility of the race time, a background can optionally be used to display the race time
 - Updated: deDE, enUS localization

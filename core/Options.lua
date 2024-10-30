@@ -20,8 +20,9 @@ function SRT:LoadOptions()
 
         local function GetOptions()
             local container = Settings.CreateControlTextContainer()
-            container:Add(0, "Timer")
-            container:Add(1, "Countdown")
+            container:Add(0, L["display-mode.value.0"])
+            container:Add(1, L["display-mode.value.1"])
+            container:Add(2, L["display-mode.value.2"])
             return container:GetData()
         end
 

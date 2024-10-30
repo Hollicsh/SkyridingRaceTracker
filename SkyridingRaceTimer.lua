@@ -8,9 +8,10 @@ SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
 local L = SRT.localization
 local raceTimeTable = SRT.data.raceTimeTable
 
-local raceQuestId = 0
-local raceGoldTime = 0
-local raceSilverTime = 0
+local raceQuestID = -1
+local raceGoldTime = -1
+local raceSilverTime = -1
+local racePersonalTime = -1
 
 local isRaceActive = false
 
@@ -33,8 +34,8 @@ local function CheckRaceAura()
     return false
 end
 
-local function CheckRaceQuest(questId)
-    local t = raceTimeTable[questId]
+local function CheckRaceQuest(questID)
+    local t = raceTimeTable[questID]
 
     if t == nil then
         return false
@@ -65,7 +66,7 @@ function frame:UNIT_AURA(_, unitTarget, updateInfo)
         if CheckRaceAura() then
             if not isRaceActive then
                 isRaceActive = true
-                SRT:StartRaceTimer(raceQuestId, GetTime(), raceGoldTime, raceSilverTime)
+                SRT:StartRaceTimer(raceQuestID, GetTime(), raceGoldTime, raceSilverTime, racePersonalTime)
             end
         else
             if isRaceActive then
@@ -76,27 +77,55 @@ function frame:UNIT_AURA(_, unitTarget, updateInfo)
     end
 end
 
-function frame:QUEST_ACCEPTED(_, questId)
-    if CheckRaceQuest(questId) then
-        SRT:PrintDebug("Race quest found for 'QUEST_ACCEPTED': " .. C_QuestLog.GetTitleForQuestID(questId) .. " (" .. questId ..")")
-        raceQuestId = questId
-        raceGoldTime = raceTimeTable[raceQuestId][1]
-        raceSilverTime = raceTimeTable[raceQuestId][2]
-        SRT:ShowRaceTimer(raceQuestId, raceGoldTime)
+function frame:QUEST_ACCEPTED(_, questID)
+    if CheckRaceQuest(questID) then
+        SRT:PrintDebug("Race quest found for 'QUEST_ACCEPTED': " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
+
+        raceQuestID = questID
+        raceGoldTime = raceTimeTable[raceQuestID][2]
+        raceSilverTime = raceTimeTable[raceQuestID][3]
+
+        if raceTimeTable[raceQuestID][1] ~= 0 then
+            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceTimeTable[raceQuestID][1]).quantity / 1000
+        end
+
+        SRT:ShowRaceTimer(raceQuestID, raceGoldTime, racePersonalTime)
     end
 end
 
-function frame:QUEST_REMOVED(_, questId, wasReplayQuest)
-    if CheckRaceQuest(questId) then
-        SRT:PrintDebug("Race quest found for 'QUEST_REMOVED': " .. C_QuestLog.GetTitleForQuestID(questId) .. " (" .. questId ..")")
-        raceQuestId = 0
-        raceGoldTime = 0
-        raceSilverTime = 0
+function frame:QUEST_REMOVED(_, questID, wasReplayQuest)
+    if CheckRaceQuest(questID) then
+        SRT:PrintDebug("Race quest found for 'QUEST_REMOVED': " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
+        raceQuestID = -1
+        raceGoldTime = -1
+        raceSilverTime = -1
+        racePersonalTime = -1
     end
 end
+
+function frame:CURRENCY_DISPLAY_UPDATE(_, currencyType, quantity, quantityChange, quantityGainSource, destroyReason)
+    --SRT:PrintDebug("Event 'CURRENCY_DISPLAY_UPDATE' fired. Payload: currencyType=" .. tostring(currencyType) .. ", quantity=" .. tostring(quantity) .. ", quantityChange=" .. tostring(quantityChange) .. ", quantityGainSource=" .. tostring(quantityGainSource) .. ", destroyReason=" .. tostring(destroyReason))
+    if currencyType == nil then return end
+
+    if currencyType == 2236 and quantity > 0 then
+        SRT:PrintDebug("aktuelle Rennzeit: " .. tostring(quantity/1000))
+    elseif currencyType >= 2042 and quantity > 0 and not (currencyType == 2124 or currencyType == 2125 or currencyType == 2131 or currencyType == 2132) then
+        SRT:PrintDebug("Renn-ID: " .. tostring(currencyType) .. " - beste Zeit: " .. tostring(quantity/1000))
+    end
+end
+
+GossipFrame:HookScript("OnShow",function()
+    if UnitExists("target") then
+        local target = tostring(UnitGUID("target"))
+		local guid, npcID = UnitGUID("target"), select(6, strsplit("-", target))
+
+        SRT:PrintDebug("npcID: " .. npcID)
+    end
+end)
 
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("UNIT_AURA")
 frame:RegisterEvent("QUEST_ACCEPTED")
 frame:RegisterEvent("QUEST_REMOVED")
+frame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 frame:SetScript("OnEvent", frame.OnEvent)
