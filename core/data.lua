@@ -65,10 +65,10 @@ raceTimeTable[72801] = {0, 45, 50}
 raceTimeTable[75793] = {0, 51, 54}
 raceTimeTable[75794] = {0, 50, 53}
 -- Fen Flythrough 02 (Moor-Durchflug) - #191121
-raceTimeTable[66877] = {0, 48, 51}
-raceTimeTable[66878] = {0, 41, 46}
-raceTimeTable[72802] = {0, 47, 52}
-raceTimeTable[75795] = {0, 50, 53}
+raceTimeTable[66877] = {2062, 48, 51} -- Normal R-11.0.5
+raceTimeTable[66878] = {2063, 41, 46} -- Advanced R-11.0.5
+raceTimeTable[72802] = {2184, 47, 52} -- Reverse R-11.0.5
+raceTimeTable[75795] = {2440, 50, 53} -- Challenge R-11.0.5
 raceTimeTable[75796] = {2441, 50, 53} -- Challenge Reverse R-11.0.5
 raceTimeTable[77785] = {2665, 82, 87} -- Storm Gryphon R-11.0.5 !!! ID passt vom Namen nicht zur Tabelle !!!
 -- Ravine River Run (Schluchtflusslauf)
@@ -83,12 +83,12 @@ raceTimeTable[66886] = {0, 55, 60}
 raceTimeTable[72805] = {0, 57, 62}
 raceTimeTable[75799] = {0, 66, 69}
 raceTimeTable[75800] = {0, 66, 69}
--- Maruukai Dash (Maruukaispurt)
-raceTimeTable[66921] = {0, 25, 28}
-raceTimeTable[75801] = {0, 24, 27}
--- Mirror of the Sky Dash (Spurt zum Spiegel des Himmels)
-raceTimeTable[66933] = {0, 26, 29}
-raceTimeTable[75802] = {0, 27, 30}
+-- Maruukai Dash 05 (Maruukaispurt) - #191422
+raceTimeTable[66921] = {2069, 25, 28} -- Normal R-11.0.5
+raceTimeTable[75801] = {2446, 24, 27} -- Challenge R-11.0.5
+-- Mirror of the Sky Dash 06 (Spurt zum Spiegel des Himmels) - #191511
+raceTimeTable[66933] = {2070, 26, 29} -- Normal R-11.0.5
+raceTimeTable[75802] = {2447, 27, 30} -- Challenge R-11.0.5
 -- River Rapids Route (Stromschnellenstrecke)
 raceTimeTable[70710] = {0, 48, 51}
 raceTimeTable[70711] = {0, 43, 48}
@@ -109,13 +109,13 @@ raceTimeTable[67003] = {0, 56, 61}
 raceTimeTable[72799] = {0, 53, 58}
 raceTimeTable[75807] = {0, 55, 58}
 raceTimeTable[75808] = {0, 55, 58}
--- Vakthros Ascent (Vakthrosaufstieg)
-raceTimeTable[67031] = {0, 58, 61}
-raceTimeTable[67032] = {0, 56, 61}
-raceTimeTable[72794] = {0, 56, 61}
-raceTimeTable[75809] = {0, 63, 66}
-raceTimeTable[75810] = {0, 64, 67}
-raceTimeTable[77786] = {0, 120, 125} -- Storm Gryphon
+-- Vakthros Ascent 03 (Vakthrosaufstieg) - #192115
+raceTimeTable[67031] = {2078, 58, 61} -- Normal R-11.0.5
+raceTimeTable[67032] = {2079, 56, 61} -- Advanced R-11.0.5
+raceTimeTable[72794] = {2190, 56, 61} -- Reverse R-11.0.5
+raceTimeTable[75809] = {2454, 63, 66} -- Challenge R-11.0.5
+raceTimeTable[75810] = {2455, 64, 67} -- Challenge Reverse R-11.0.5
+raceTimeTable[77786] = {2666, 120, 125} -- Storm Gryphon R-11.0.5 !!! ID passt vom Namen nicht zur Tabelle !!!
 -- Iskaara Tour (Iskaara-Tour)
 raceTimeTable[67296] = {0, 75, 78}
 raceTimeTable[67297] = {0, 70, 75}
@@ -142,13 +142,13 @@ raceTimeTable[67096] = {0, 40, 45}
 raceTimeTable[72793] = {0, 41, 46}
 raceTimeTable[75820] = {0, 47, 50}
 raceTimeTable[75821] = {0, 46, 49}
--- Tyrhold Trial (Tyrhold-Tournee)
-raceTimeTable[69957] = {0, 81, 84}
-raceTimeTable[69958] = {0, 75, 80}
-raceTimeTable[72792] = {0, 59, 64}
-raceTimeTable[75822] = {0, 58, 61}
-raceTimeTable[75823] = {0, 63, 66}
-raceTimeTable[77784] = {0, 80, 85} -- Storm Gryphon
+-- Tyrhold Trial 02 (Tyrhold-Tournee) - #193651
+raceTimeTable[69957] = {2092, 81, 84} -- Normal R-11.0.5
+raceTimeTable[69958] = {2093, 75, 80} -- Advanced R-11.0.5
+raceTimeTable[72792] = {2195, 59, 64} -- Reverse R-11.0.5
+raceTimeTable[75822] = {2464, 58, 61} -- Challenge R-11.0.5
+raceTimeTable[75823] = {2465, 63, 66} -- Challenge Reverse R-11.0.5
+raceTimeTable[77784] = {2667, 80, 85} -- Storm Gryphon R-11.0.5 !!! ID passt vom Namen nicht zur Tabelle !!!
 -- Cliffside Circuit (Klippenrundstrecke)
 raceTimeTable[70051] = {0, 69, 72}
 raceTimeTable[70052] = {0, 66, 71}
@@ -175,13 +175,13 @@ raceTimeTable[75829] = {0, 56, 59}
 raceTimeTable[75830] = {0, 54, 57}
 
 -- Forbidden Reach (Die Verbotene Insel)
--- Stormsunder Crater Circuit (Sturmrisskrater-Rundflug)
-raceTimeTable[73017] = {0, 43, 46}
-raceTimeTable[73018] = {0, 42, 47}
-raceTimeTable[73019] = {0, 42, 47}
-raceTimeTable[75954] = {0, 45, 48}
-raceTimeTable[75955] = {0, 44, 47}
-raceTimeTable[77787] = {0, 92, 97} -- Storm Gryphon
+-- Stormsunder Crater Circuit 01 (Sturmrisskrater-Rundflug) - #200183
+raceTimeTable[73017] = {2201, 43, 46} -- Normal R-11.0.5
+raceTimeTable[73018] = {2207, 42, 47} -- Advanced R-11.0.5
+raceTimeTable[73019] = {2213, 42, 47} -- Reverse R-11.0.5
+raceTimeTable[75954] = {2474, 45, 48} -- Challenge R-11.0.5
+raceTimeTable[75955] = {2475, 44, 47} -- Challenge Reverse R-11.0.5
+raceTimeTable[77787] = {2668, 92, 97} -- Storm Gryphon R-11.0.5 !!! ID passt vom Namen nicht zur Tabelle !!!
 -- Morqut Ascent (Morqutaufstieg)
 raceTimeTable[73020] = {0, 52, 55}
 raceTimeTable[73023] = {0, 49, 54}
@@ -273,9 +273,9 @@ raceTimeTable[77999] = {0, 73, 76}
 raceTimeTable[78000] = {0, 73, 76}
 -- Shoreline Switchback 04 (Uferumkehr) - #210497
 raceTimeTable[78016] = {2679, 73, 78} -- Normal R-11.0.5
-raceTimeTable[78017] = {0, 63, 66}
-raceTimeTable[78018] = {0, 62, 65}
-raceTimeTable[78019] = {0, 70, 73}
+raceTimeTable[78017] = {2685, 63, 66} -- Advanced R-11.0.5
+raceTimeTable[78018] = {2691, 62, 65} -- Reverse R-11.0.5
+raceTimeTable[78019] = {2700, 70, 73} -- Challenge R-11.0.5
 raceTimeTable[78020] = {2701, 70, 73} -- Challenge Reverse R-11.0.5
 -- Canopy Concours (Baumkronenbagatelle)
 raceTimeTable[78102] = {0, 105, 110}
@@ -322,22 +322,22 @@ raceTimeTable[80236] = {2940, 61, 64} -- Reverse R-11.0.5
 raceTimeTable[80237] = {2941, 52, 57} -- Normal R-11.0.5
 raceTimeTable[80244] = {2947, 49, 52} -- Advanced R-11.0.5
 raceTimeTable[80250] = {2953, 50, 53} -- Reverse R-11.0.5
--- Ringing Deeps Ramble (Schallende-Tiefen-Spektakel)
-raceTimeTable[80238] = {0, 57, 62}
-raceTimeTable[80245] = {0, 53, 56}
-raceTimeTable[80251] = {0, 53, 56}
--- Chittering Concourse (Zirpendes Zusammentreffen)
-raceTimeTable[80239] = {0, 56, 61}
-raceTimeTable[80246] = {0, 53, 56}
-raceTimeTable[80252] = {0, 54, 57}
--- Cataract River Cruise (Kataraktflussfahrt)
-raceTimeTable[80240] = {0, 60, 65}
-raceTimeTable[80247] = {0, 58, 61}
-raceTimeTable[80253] = {0, 57, 60}
--- Taelloch Twist (Taellochtrick)
-raceTimeTable[80242] = {0, 47, 52}
-raceTimeTable[80248] = {0, 43, 46}
-raceTimeTable[80254] = {0, 44, 47}
+-- Ringing Deeps Ramble R2 (Schallende-Tiefen-Spektakel) - #219552
+raceTimeTable[80238] = {2942, 57, 62} -- Normal R-11.0.5
+raceTimeTable[80245] = {2948, 53, 56} -- Advanced R-11.0.5
+raceTimeTable[80251] = {2954, 53, 56} -- Reverse R-11.0.5
+-- Chittering Concourse R3 (Zirpendes Zusammentreffen) - #219553
+raceTimeTable[80239] = {2943, 56, 61} -- Normal R-11.0.5
+raceTimeTable[80246] = {2949, 53, 56} -- Advanced R-11.0.5
+raceTimeTable[80252] = {2955, 54, 57} -- Reverse R-11.0.5
+-- Cataract River Cruise R4 (Kataraktflussfahrt) - #219554
+raceTimeTable[80240] = {2944, 60, 65} -- Normal R-11.0.5
+raceTimeTable[80247] = {2950, 58, 61} -- Advanced R-11.0.5
+raceTimeTable[80253] = {2956, 57, 60} -- Reverse R-11.0.5
+-- Taelloch Twist R5 (Taellochtrick) - #219555
+raceTimeTable[80242] = {2945, 47, 52} -- Normal R-11.0.5
+raceTimeTable[80248] = {2951, 43, 46} -- Advanced R-11.0.5
+raceTimeTable[80254] = {2957, 44, 47} -- Reverse R-11.0.5
 -- Opportunity Point Amble R6 (Chancenspitzenchance) - #219556
 raceTimeTable[80243] = {2946, 77, 82} -- Normal R-11.0.5
 raceTimeTable[80249] = {2952, 71, 74} -- Advanced R-11.0.5
@@ -348,49 +348,49 @@ raceTimeTable[80255] = {2958, 72, 75} -- Reverse R-11.0.5
 raceTimeTable[80256] = {2959, 65, 70} -- Normal R-11.0.5
 raceTimeTable[80265] = {2965, 62, 65} -- Advanced R-11.0.5
 raceTimeTable[80271] = {2971, 64, 67} -- Reverse R-11.0.5
--- Tenir's Traversal (Tenirs Traversale)
-raceTimeTable[80257] = {0, 65, 70}
-raceTimeTable[80266] = {0, 60, 63}
-raceTimeTable[80272] = {0, 63, 66}
--- Light's Redoubt Descent (Lichtschanzensturz)
-raceTimeTable[80258] = {0, 63, 68}
-raceTimeTable[80267] = {0, 62, 65}
-raceTimeTable[80273] = {0, 62, 65}
--- Stillstone Slalom (Stillsteinslalom)
-raceTimeTable[80259] = {0, 56, 61}
-raceTimeTable[80268] = {0, 54, 57}
-raceTimeTable[80274] = {0, 56, 59}
--- Mereldar Meander (Mereldarmäander)
-raceTimeTable[80260] = {0, 76, 81}
-raceTimeTable[80269] = {0, 71, 74}
-raceTimeTable[80275] = {0, 71, 74}
--- Velhan's Venture (Velhans Vorstoß)
-raceTimeTable[80261] = {0, 55, 60}
-raceTimeTable[80270] = {0, 50, 53}
-raceTimeTable[80276] = {0, 50, 53}
+-- Tenir's Traversal R2 (Tenirs Traversale) - #219558
+raceTimeTable[80257] = {2960, 65, 70} -- Normal R-11.0.5
+raceTimeTable[80266] = {2966, 60, 63} -- Advanced R-11.0.5
+raceTimeTable[80272] = {2972, 63, 66} -- Reverse R-11.0.5
+-- Light's Redoubt Descent R3 (Lichtschanzensturz) - #219559
+raceTimeTable[80258] = {2961, 63, 68} -- Normal R-11.0.5
+raceTimeTable[80267] = {2967, 62, 65} -- Advanced R-11.0.5
+raceTimeTable[80273] = {2973, 62, 65} -- Reverse R-11.0.5
+-- Stillstone Slalom R4 (Stillsteinslalom) - #219560
+raceTimeTable[80259] = {2962, 56, 61} -- Normal R-11.0.5
+raceTimeTable[80268] = {2968, 54, 57} -- Advanced R-11.0.5
+raceTimeTable[80274] = {2974, 56, 59} -- Reverse R-11.0.5
+-- Mereldar Meander R5 (Mereldarmäander) - #219561
+raceTimeTable[80260] = {2963, 76, 81} -- Normal R-11.0.5
+raceTimeTable[80269] = {2969, 71, 74} -- Advanced R-11.0.5
+raceTimeTable[80275] = {2975, 71, 74} -- Reverse R-11.0.5
+-- Velhan's Venture R6 (Velhans Vorstoß) - #219562
+raceTimeTable[80261] = {2964, 55, 60} -- Normal R-11.0.5
+raceTimeTable[80270] = {2970, 50, 53} -- Advanced R-11.0.5
+raceTimeTable[80276] = {2976, 50, 53} -- Reverse R-11.0.5
 
 -- Azj-Kahet Z5 (Azj-Kahet)
--- City of Threads Twist (Stadt-der-Fäden-Sause)
-raceTimeTable[80277] = {0, 78, 83}
-raceTimeTable[80283] = {0, 74, 77}
-raceTimeTable[80289] = {0, 74, 77}
--- Maddening Deep Dip (Tiefenrausch des Wahnsinns)
-raceTimeTable[80278] = {0, 58, 63}
-raceTimeTable[80284] = {0, 54, 57}
-raceTimeTable[80290] = {0, 56, 59}
+-- City of Threads Twist R1 (Stadt-der-Fäden-Sause) - #219564
+raceTimeTable[80277] = {2977, 78, 83} -- Normal R-11.0.5
+raceTimeTable[80283] = {2983, 74, 77} -- Advanced R-11.0.5
+raceTimeTable[80289] = {2989, 74, 77} -- Reverse R-11.0.5
+-- Maddening Deep Dip R2 (Tiefenrausch des Wahnsinns) - #219565
+raceTimeTable[80278] = {2978, 58, 63} -- Normal R-11.0.5
+raceTimeTable[80284] = {2984, 54, 57} -- Advanced R-11.0.5
+raceTimeTable[80290] = {2990, 56, 59} -- Reverse R-11.0.5
 -- The Weaver's Wing R3 (Der Wind der Weberin) - #219567
 raceTimeTable[80279] = {2979, 54, 59} -- Normal R-11.0.5
 raceTimeTable[80285] = {2985, 51, 54} -- Advanced R-11.0.5
 raceTimeTable[80291] = {2991, 50, 53} -- Reverse R-11.0.5
--- Rak-Ahat Rush (Rak-Ahat-Rausch)
-raceTimeTable[80280] = {0, 70, 75}
-raceTimeTable[80286] = {0, 66, 69}
-raceTimeTable[80292] = {0, 66, 69}
--- Pit Plunge (Grubengerangel)
-raceTimeTable[80281] = {0, 63, 68}
-raceTimeTable[80287] = {0, 61, 64}
-raceTimeTable[80293] = {0, 61, 64}
--- Siegehold Scuttle (Belagerungsfestenbestrebung)
-raceTimeTable[80282] = {0, 70, 75}
-raceTimeTable[80288] = {0, 66, 69}
-raceTimeTable[80294] = {0, 63, 66}
+-- Rak-Ahat Rush R4 (Rak-Ahat-Rausch) - #219568
+raceTimeTable[80280] = {2980, 70, 75} -- Normal R-11.0.5
+raceTimeTable[80286] = {2986, 66, 69} -- Advanced R-11.0.5
+raceTimeTable[80292] = {2992, 66, 69} -- Reverse R-11.0.5
+-- Pit Plunge R5 (Grubengerangel) - #219569
+raceTimeTable[80281] = {2981, 63, 68} -- Normal R-11.0.5
+raceTimeTable[80287] = {2987, 61, 64} -- Advanced R-11.0.5
+raceTimeTable[80293] = {2993, 61, 64} -- Reverse R-11.0.5
+-- Siegehold Scuttle R6 (Belagerungsfestenbestrebung) - #219570
+raceTimeTable[80282] = {2982, 70, 75} -- Normal R-11.0.5
+raceTimeTable[80288] = {2988, 66, 69} -- Advanced R-11.0.5
+raceTimeTable[80294] = {2994, 63, 66} -- Reverse R-11.0.5

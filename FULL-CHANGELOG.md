@@ -1,5 +1,5 @@
-**1.4.2 (2024-10-27)**
-- Added: New option to display a countdown that runs against the personal best time
+**1.4.2 (2024-11-10)**
+- Added: New option to display a countdown that runs against the personal best time (currently only available for The War Within and some old races, the rest will follow in the next update)
 - Updated: deDE, enUS localization
 
 **1.4.1 (2024-10-27)**

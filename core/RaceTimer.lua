@@ -54,7 +54,7 @@ function SRT:ShowRaceTimer(raceQuestID, raceGoldTime, racePersonalTime)
     end
 
     C_Timer.After(5, function()
-        if self.options["display-mode"] == 0 or racePersonalTime == -1 or (self.options["display-mode"] == 2 and racePersonalTime == 0) then
+        if (self.options["display-mode"] == 0 and racePersonalTime == -1) or (self.options["display-mode"] == 2 and racePersonalTime <= 0) then
             timerFrame.timerText:SetText(string.format(L["time"], 0))
         elseif self.options["display-mode"] == 1 then
             timerFrame.timerText:SetText(L["time"]:format(-raceGoldTime))
