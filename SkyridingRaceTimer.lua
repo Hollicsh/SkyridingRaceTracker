@@ -103,29 +103,8 @@ function frame:QUEST_REMOVED(_, questID, wasReplayQuest)
     end
 end
 
-function frame:CURRENCY_DISPLAY_UPDATE(_, currencyType, quantity, quantityChange, quantityGainSource, destroyReason)
-    --SRT:PrintDebug("Event 'CURRENCY_DISPLAY_UPDATE' fired. Payload: currencyType=" .. tostring(currencyType) .. ", quantity=" .. tostring(quantity) .. ", quantityChange=" .. tostring(quantityChange) .. ", quantityGainSource=" .. tostring(quantityGainSource) .. ", destroyReason=" .. tostring(destroyReason))
-    if currencyType == nil then return end
-
-    if currencyType == 2236 and quantity > 0 then
-        SRT:PrintDebug("aktuelle Rennzeit: " .. tostring(quantity/1000))
-    elseif currencyType >= 2042 and quantity > 0 and not (currencyType == 2124 or currencyType == 2125 or currencyType == 2131 or currencyType == 2132) then
-        SRT:PrintDebug("Renn-ID: " .. tostring(currencyType) .. " - beste Zeit: " .. tostring(quantity/1000))
-    end
-end
-
-GossipFrame:HookScript("OnShow",function()
-    if UnitExists("target") then
-        local target = tostring(UnitGUID("target"))
-		local guid, npcID = UnitGUID("target"), select(6, strsplit("-", target))
-
-        SRT:PrintDebug("npcID: " .. npcID)
-    end
-end)
-
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("UNIT_AURA")
 frame:RegisterEvent("QUEST_ACCEPTED")
 frame:RegisterEvent("QUEST_REMOVED")
-frame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 frame:SetScript("OnEvent", frame.OnEvent)
