@@ -5,7 +5,7 @@ local L = SRT.localization
 local function LoadTimerFrame(self)
     local timerFrame = CreateFrame("Frame", nil, UIParent)
     timerFrame:SetSize(256, 64)
-    timerFrame:SetPoint("CENTER", 0, 200)
+    timerFrame:SetPoint("CENTER", self.options["display-horizontal-shift"], self.options["display-vertical-shift"])
 
     timerFrame:Hide()
 

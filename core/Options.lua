@@ -12,6 +12,8 @@ function SRT:LoadOptions()
     local variableTable = SRT_Database_Options
     local category, layout = Settings.RegisterVerticalLayoutCategory("Skyriding Race Timer")
 
+    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["race-display"]))
+
     do
         local name = L["display-mode.name"]
         local tooltip = L["display-mode.tooltip"]
@@ -41,6 +43,40 @@ function SRT:LoadOptions()
     end
 
     do
+        local name = L["display-horizontal-shift.name"]
+        local tooltip = L["display-horizontal-shift.tooltip"]
+        local variable = "display-horizontal-shift"
+        local defaultValue = 0
+
+        local minValue = -500
+        local maxValue = 500
+        local step = 10
+
+        local setting = Settings.RegisterAddOnSetting(category, addonName .. "_" .. variable, variable, variableTable, Settings.VarType.Number, name, defaultValue)
+        local options = Settings.CreateSliderOptions(minValue, maxValue, step)
+
+        options:SetLabelFormatter(MinimalSliderWithSteppersMixin.Label.Right)
+        Settings.CreateSlider(category, setting, options, tooltip)
+    end
+
+    do
+        local name = L["display-vertical-shift.name"]
+        local tooltip = L["display-vertical-shift.tooltip"]
+        local variable = "display-vertical-shift"
+        local defaultValue = 200
+
+        local minValue = -400
+        local maxValue = 400
+        local step = 10
+
+        local setting = Settings.RegisterAddOnSetting(category, addonName .. "_" .. variable, variable, variableTable, Settings.VarType.Number, name, defaultValue)
+        local options = Settings.CreateSliderOptions(minValue, maxValue, step)
+
+        options:SetLabelFormatter(MinimalSliderWithSteppersMixin.Label.Right)
+        Settings.CreateSlider(category, setting, options, tooltip)
+    end
+
+    do
         local name = L["fadeout-delay.name"]
         local tooltip = L["fadeout-delay.tooltip"]
         local variable = "fadeout-delay"
@@ -56,6 +92,8 @@ function SRT:LoadOptions()
         options:SetLabelFormatter(MinimalSliderWithSteppersMixin.Label.Right)
         Settings.CreateSlider(category, setting, options, tooltip)
     end
+
+    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["other-options"]))
 
     do
         local name = L["debug.name"]

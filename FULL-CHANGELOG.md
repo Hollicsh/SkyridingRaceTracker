@@ -1,3 +1,7 @@
+**1.4.3 (2024-11-11)**
+- Added: The race display can now be moved and positioned according to your own preferences
+- Updated: deDE, enUS localization
+
 **1.4.2 (2024-11-10)**
 - Added: New option to display a countdown that runs against the personal best time (currently only available for The War Within and some old races, the rest will follow in the next update)
 - Updated: deDE, enUS localization
