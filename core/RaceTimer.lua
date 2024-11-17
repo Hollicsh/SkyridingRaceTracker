@@ -13,7 +13,7 @@ local function LoadRaceDisplayFrame(self)
         frame.background = frame:CreateTexture(nil, "BACKGROUND")
         frame.background:ClearAllPoints()
         frame.background:SetAllPoints(frame)
-        frame.background:SetTexture(SRT.MEDIA_PATH .. "raceTimerBackground.blp")
+        frame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground.blp")
     end
 
     frame.timerText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
