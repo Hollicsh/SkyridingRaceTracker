@@ -1,12 +1,12 @@
 ## Interface: 110005
-## Title: Skyriding Race Tracker
+## Title: Skyriding Race Timer
 ## Author: diomsg (Diom-Antonidas EU)
 ## Version: @project-version@
-## IconTexture: Interface\AddOns\SkyridingRaceTracker\media\icon.blp
+## IconTexture: Interface\AddOns\SkyridingRaceTimer\media\icon.blp
 ## X-Flavor: Retail
 ## X-BuildDate: @build-date@
 ## X-E-Mail: feedback@memento-addon.de
-## X-Github: https://github.com/diomsg-code/SkyridingRaceTracker
+## X-Github: https://github.com/diomsg-code/SkyridingRaceTimer
 ## Notes: A World of Warcraft addon to display the current race time during a skyriding race.
 ## Notes-deDE: Ein World of Warcraft Addon zur Anzeige der aktuellen Rennzeit während eines Himmelsreiterrennen.
 ## LoadOnDemand: 0
@@ -17,4 +17,4 @@
 locals.xml
 core.xml
 
-SkyridingRaceTracker.lua
+SkyridingRaceTimer.lua
