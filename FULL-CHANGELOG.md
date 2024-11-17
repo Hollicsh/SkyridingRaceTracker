@@ -1,8 +1,3 @@
-**2.0.0-1-alpha (2024-11-17)**
-- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
-- Changed: Name of the addon
-- Updated: deDE, enUS localization
-
 **1.4.3 (2024-11-11)**
 - Added: The race display can now be moved and positioned according to your own preferences
 - Updated: deDE, enUS localization

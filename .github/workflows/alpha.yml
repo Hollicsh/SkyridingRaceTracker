@@ -1,4 +1,4 @@
-name: Package and release Skyriding Race Tracker (Alpha)
+name: Package and release Skyriding Race Timer (Alpha)
 
 on:
   push:

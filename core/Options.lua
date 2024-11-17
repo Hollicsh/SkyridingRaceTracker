@@ -12,17 +12,7 @@ function SRT:LoadOptions()
     local variableTable = SRT_Database_Options
     local category, layout = Settings.RegisterVerticalLayoutCategory("Skyriding Race Timer")
 
-    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["display"]))
-
-    do
-        local name = L["display.name"]
-        local tooltip = L["display.tooltip"]
-        local variable = "display"
-        local defaultValue = true
-
-        local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
-        Settings.CreateCheckbox(category, setting, tooltip)
-    end
+    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["race-display"]))
 
     do
         local name = L["display-mode.name"]
@@ -87,9 +77,9 @@ function SRT:LoadOptions()
     end
 
     do
-        local name = L["display-fadeout-delay.name"]
-        local tooltip = L["display-fadeout-delay.tooltip"]
-        local variable = "display-fadeout-delay"
+        local name = L["fadeout-delay.name"]
+        local tooltip = L["fadeout-delay.tooltip"]
+        local variable = "fadeout-delay"
         local defaultValue = 3
 
         local minValue = 1
@@ -101,18 +91,6 @@ function SRT:LoadOptions()
 
         options:SetLabelFormatter(MinimalSliderWithSteppersMixin.Label.Right)
         Settings.CreateSlider(category, setting, options, tooltip)
-    end
-
-    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["overview"]))
-
-    do
-        local name = L["overview.name"]
-        local tooltip = L["overview.tooltip"]
-        local variable = "overview"
-        local defaultValue = true
-
-        local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
-        Settings.CreateCheckbox(category, setting, tooltip)
     end
 
     layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["other-options"]))

@@ -1,4 +1,4 @@
-name: Package and release Skyriding Race Tracker (Release)
+name: Package and release Skyriding Race Timer (Release)
 
 on:
   push:
