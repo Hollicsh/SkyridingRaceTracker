@@ -1,6 +1,9 @@
-## Skyriding Race Timer
-### [1.4.3](https://github.com/diomsg-code/SkyridingRaceTimer/tree/1.4.3) (2024-11-11)
-[Full Changelog](https://github.com/diomsg-code/SkyridingRaceTimer/compare/1.4.2...1.4.3) - [Previous Releases](https://github.com/diomsg-code/SkyridingRaceTimer/releases)
+## Skyriding Race Tracker
+### [2.0.0-1-alpha](https://github.com/diomsg-code/SkyridingRaceTracker/tree/2.0.0-1-alpha) (2024-11-17)
+[Full Changelog](https://github.com/diomsg-code/SkyridingRaceTracker/compare/1.4.3...2.0.0-1-alpha) - [Previous Releases](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
 
-- Added: The race display can now be moved and positioned according to your own preferences
+With this version, the addon will be called Skyriding Race Tracker.
+
+- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
+- Changed: Name of the addon
 - Updated: deDE, enUS localization

@@ -2,94 +2,94 @@ local _, SRT = ...
 
 local L = SRT.localization
 
-local function LoadTimerFrame(self)
-    local timerFrame = CreateFrame("Frame", nil, UIParent)
-    timerFrame:SetSize(256, 64)
-    timerFrame:SetPoint("CENTER", self.options["display-horizontal-shift"], self.options["display-vertical-shift"])
+local function LoadRaceDisplayFrame(self)
+    local frame = CreateFrame("Frame", "RaceDisplay", UIParent)
+    frame:SetSize(256, 64)
+    frame:SetPoint("CENTER", self.options["display-horizontal-shift"], self.options["display-vertical-shift"])
 
-    timerFrame:Hide()
+    frame:Hide()
 
     if self.options["display-background"] then
-        timerFrame.background = timerFrame:CreateTexture(nil, "BACKGROUND")
-        timerFrame.background:ClearAllPoints()
-        timerFrame.background:SetAllPoints(timerFrame)
-        timerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTimerBackground.blp")
+        frame.background = frame:CreateTexture(nil, "BACKGROUND")
+        frame.background:ClearAllPoints()
+        frame.background:SetAllPoints(frame)
+        frame.background:SetTexture(SRT.MEDIA_PATH .. "raceTimerBackground.blp")
     end
 
-    timerFrame.timerText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    timerFrame.timerText:ClearAllPoints()
-    timerFrame.timerText:SetPoint("CENTER", 0, 10)
+    frame.timerText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    frame.timerText:ClearAllPoints()
+    frame.timerText:SetPoint("CENTER", 0, 10)
 
-    timerFrame.targetText = timerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    timerFrame.targetText:ClearAllPoints()
-    timerFrame.targetText:SetPoint("CENTER", 0, -10)
+    frame.targetText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    frame.targetText:ClearAllPoints()
+    frame.targetText:SetPoint("CENTER", 0, -10)
 
-    return timerFrame
+    return frame
 end
 
 function SRT:ShowRaceTimer(raceQuestID, raceGoldTime, racePersonalTime)
     local size = 0
-    for _ in pairs(self.timerFrame) do size = size + 1 end
+    for _ in pairs(self.raceDisplayFrame) do size = size + 1 end
 
     if size > 0 then
-        self.timerFrame:Hide()
+        self.raceDisplayFrame:Hide()
     end
 
-    self.timerFrame = LoadTimerFrame(self)
-    local timerFrame = self.timerFrame
-    timerFrame.timerText:SetText(C_QuestLog.GetTitleForQuestID(raceQuestID))
+    self.raceDisplayFrame = LoadRaceDisplayFrame(self)
+    local frame = self.raceDisplayFrame
+    frame.timerText:SetText(C_QuestLog.GetTitleForQuestID(raceQuestID))
 
     if self.options["display-mode"] == 0 then
-        timerFrame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
+        frame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
     elseif self.options["display-mode"] == 1 then
-        timerFrame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
+        frame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
     elseif self.options["display-mode"] == 2 then
         if racePersonalTime == -1 then
-            timerFrame.targetText:SetText(L["personal-best-time-not-available"])
+            frame.targetText:SetText(L["personal-best-time-not-available"])
         elseif racePersonalTime == 0 then
-            timerFrame.targetText:SetText(L["personal-best-time-no-race"])
+            frame.targetText:SetText(L["personal-best-time-no-race"])
         else
-            timerFrame.targetText:SetText(L["personal-best-time"]:format(racePersonalTime))
+            frame.targetText:SetText(L["personal-best-time"]:format(racePersonalTime))
         end
     end
 
     C_Timer.After(5, function()
         if (self.options["display-mode"] == 0 and racePersonalTime == -1) or (self.options["display-mode"] == 2 and racePersonalTime <= 0) then
-            timerFrame.timerText:SetText(string.format(L["time"], 0))
+            frame.timerText:SetText(string.format(L["time"], 0))
         elseif self.options["display-mode"] == 1 then
-            timerFrame.timerText:SetText(L["time"]:format(-raceGoldTime))
+            frame.timerText:SetText(L["time"]:format(-raceGoldTime))
         elseif self.options["display-mode"] == 2 then
-            timerFrame.timerText:SetText(L["time"]:format(-racePersonalTime))
+            frame.timerText:SetText(L["time"]:format(-racePersonalTime))
         end
     end)
 
-    timerFrame:Show()
+    frame:Show()
 end
 
 function SRT:StartRaceTimer(raceQuestID, raceStartTime, raceGoldTime, raceSilverTime, racePersonalTime)
     if raceQuestID == -1 then
-        self.timerFrame = LoadTimerFrame(self)
+        self.raceDisplayFrame = LoadRaceDisplayFrame(self)
     end
 
-    local timerFrame = self.timerFrame
+    local frame = self.raceDisplayFrame
 
     if raceQuestID == -1 then
         SRT.raceTimer = C_Timer.NewTicker(0.05, function()
             local elapsedTime = GetTime() - raceStartTime
-            timerFrame.timerText:SetText(L["time"]:format(elapsedTime))
-            timerFrame.targetText:SetText(L["no-time"])
+            frame.timerText:SetText(L["time"]:format(elapsedTime))
+            frame.targetText:SetText(L["no-time"])
         end)
     elseif self.options["display-mode"] == 0 then
         SRT.raceTimer = C_Timer.NewTicker(0.05, function()
             local elapsedTime = GetTime() - raceStartTime
-            timerFrame.timerText:SetText(L["time"]:format(elapsedTime))
+            frame.timerText:SetText(L["time"]:format(elapsedTime))
 
             if elapsedTime <= raceGoldTime then
-                timerFrame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
+                frame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
             elseif elapsedTime <= raceSilverTime then
-                timerFrame.targetText:SetText(L["silver-time"]:format(raceSilverTime))
+                frame.targetText:SetText(L["silver-time"]:format(raceSilverTime))
             else
-                timerFrame.targetText:SetText(L["bronze-time"])
+                frame.targetText:SetText(L["bronze-time"])
             end
         end)
     elseif self.options["display-mode"] == 1 then
@@ -98,29 +98,29 @@ function SRT:StartRaceTimer(raceQuestID, raceStartTime, raceGoldTime, raceSilver
 
             if elapsedTime <= raceGoldTime then
                 local remainingTime = -(raceGoldTime - elapsedTime)
-                timerFrame.timerText:SetText(L["time"]:format(remainingTime))
-                timerFrame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
+                frame.timerText:SetText(L["time"]:format(remainingTime))
+                frame.targetText:SetText(L["gold-time"]:format(raceGoldTime))
             elseif elapsedTime <= raceSilverTime then
                 local remainingTime = -(raceSilverTime - elapsedTime)
-                timerFrame.timerText:SetText(L["time"]:format(remainingTime))
-                timerFrame.targetText:SetText(L["silver-time"]:format(raceSilverTime))
+                frame.timerText:SetText(L["time"]:format(remainingTime))
+                frame.targetText:SetText(L["silver-time"]:format(raceSilverTime))
             else
-                timerFrame.timerText:SetText(L["time"]:format(0))
-                timerFrame.targetText:SetText(L["bronze-time"])
+                frame.timerText:SetText(L["time"]:format(0))
+                frame.targetText:SetText(L["bronze-time"])
             end
         end)
     elseif self.options["display-mode"] == 2 then
         if racePersonalTime == -1 then
             SRT.raceTimer = C_Timer.NewTicker(0.05, function()
                 local elapsedTime = GetTime() - raceStartTime
-                timerFrame.timerText:SetText(L["time"]:format(elapsedTime))
-                timerFrame.targetText:SetText(L["personal-best-time-not-available"])
+                frame.timerText:SetText(L["time"]:format(elapsedTime))
+                frame.targetText:SetText(L["personal-best-time-not-available"])
             end)
         elseif racePersonalTime == 0 then
             SRT.raceTimer = C_Timer.NewTicker(0.05, function()
                 local elapsedTime = GetTime() - raceStartTime
-                timerFrame.timerText:SetText(L["time"]:format(elapsedTime))
-                timerFrame.targetText:SetText(L["personal-best-time-no-race"])
+                frame.timerText:SetText(L["time"]:format(elapsedTime))
+                frame.targetText:SetText(L["personal-best-time-no-race"])
             end)
         else
             SRT.raceTimer = C_Timer.NewTicker(0.05, function()
@@ -128,22 +128,22 @@ function SRT:StartRaceTimer(raceQuestID, raceStartTime, raceGoldTime, raceSilver
 
                 if elapsedTime <= racePersonalTime then
                     local remainingTime = -(racePersonalTime - elapsedTime)
-                    timerFrame.timerText:SetText(L["time"]:format(remainingTime))
-                    timerFrame.targetText:SetText(L["personal-best-time"]:format(racePersonalTime))
+                    frame.timerText:SetText(L["time"]:format(remainingTime))
+                    frame.targetText:SetText(L["personal-best-time"]:format(racePersonalTime))
                 else
-                    timerFrame.timerText:SetText(L["time"]:format(0))
-                    timerFrame.targetText:SetText(L["personal-best-time-faild"])
+                    frame.timerText:SetText(L["time"]:format(0))
+                    frame.targetText:SetText(L["personal-best-time-faild"])
                 end
             end)
         end
     end
 
-    timerFrame:Show()
+    frame:Show()
 end
 
 function SRT:HideRaceTimer()
-    local timerFrame = self.timerFrame
+    local frame = self.raceDisplayFrame
 
-    SRT.raceTimer:Cancel()
-    C_Timer.After(self.options["fadeout-delay"], function() timerFrame:Hide() end)
+    self.raceTimer:Cancel()
+    C_Timer.After(self.options["fadeout-delay"], function() frame:Hide() end)
 end

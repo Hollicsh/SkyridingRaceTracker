@@ -1,3 +1,7 @@
+**2.0.0-1-alpha (2024-11-17)**
+- Added: ???
+- Updated: deDE, enUS localization
+
 **1.4.3 (2024-11-11)**
 - Added: The race display can now be moved and positioned according to your own preferences
 - Updated: deDE, enUS localization
