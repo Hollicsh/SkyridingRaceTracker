@@ -1,4 +1,4 @@
-package-as: SkyridingRaceTimer
+package-as: SkyridingRaceTracker
 
 ignore:
   - LICENSE
