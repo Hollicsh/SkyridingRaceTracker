@@ -76,7 +76,7 @@ end
 --- Frames ---
 --------------
 
-local skyridingRaceTimerFrame = CreateFrame("Frame", "SkyridingRaceTimer")
+local skyridingRaceTrackerFrame = CreateFrame("Frame", "SkyridingRaceTimer")
 
 local raceTimeOverviewFrame = CreateFrame("Frame", "TimeDisplay", GossipFrame, "BasicFrameTemplate")
 raceTimeOverviewFrame:SetPoint("TOPLEFT", GossipFrame, "TOPRIGHT", 15, 0)
@@ -133,12 +133,12 @@ raceTimeOverviewFrame.goldSilverTimeStormGryphon:ClearAllPoints()
 --- Main funtions ---
 ---------------------
 
-function skyridingRaceTimerFrame:OnEvent(event, ...)
+function skyridingRaceTrackerFrame:OnEvent(event, ...)
 	self[event](self, event, ...)
 end
 
-function skyridingRaceTimerFrame:ADDON_LOADED(_, addOnName)
-    if addOnName == "SkyridingRaceTimer" then
+function skyridingRaceTrackerFrame:ADDON_LOADED(_, addOnName)
+    if addOnName == "SkyridingRaceTracker" then
         raceTimeOverviewFrame:Hide()
 
         SRT:LoadOptions()
@@ -146,7 +146,7 @@ function skyridingRaceTimerFrame:ADDON_LOADED(_, addOnName)
     end
 end
 
-function skyridingRaceTimerFrame:UNIT_AURA(_, unitTarget, updateInfo)
+function skyridingRaceTrackerFrame:UNIT_AURA(_, unitTarget, updateInfo)
     if unitTarget == "player" then
         if SRT.options["display"] and CheckRaceAura() then
             if not isRaceActive then
@@ -162,7 +162,7 @@ function skyridingRaceTimerFrame:UNIT_AURA(_, unitTarget, updateInfo)
     end
 end
 
-function skyridingRaceTimerFrame:QUEST_ACCEPTED(_, questID)
+function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
     local result = GetRaceData(questID)
 
     if result ~= nil then
@@ -184,7 +184,7 @@ function skyridingRaceTimerFrame:QUEST_ACCEPTED(_, questID)
     end
 end
 
-function skyridingRaceTimerFrame:QUEST_REMOVED(_, questID, wasReplayQuest)
+function skyridingRaceTrackerFrame:QUEST_REMOVED(_, questID, wasReplayQuest)
     if CheckRaceQuest(questID) then
         SRT:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
         raceQuestID = -1
@@ -447,8 +447,8 @@ GossipFrame:HookScript("OnHide",function()
 	raceTimeOverviewFrame:Hide()
 end)
 
-skyridingRaceTimerFrame:RegisterEvent("ADDON_LOADED")
-skyridingRaceTimerFrame:RegisterEvent("UNIT_AURA")
-skyridingRaceTimerFrame:RegisterEvent("QUEST_ACCEPTED")
-skyridingRaceTimerFrame:RegisterEvent("QUEST_REMOVED")
-skyridingRaceTimerFrame:SetScript("OnEvent", skyridingRaceTimerFrame.OnEvent)
+skyridingRaceTrackerFrame:RegisterEvent("ADDON_LOADED")
+skyridingRaceTrackerFrame:RegisterEvent("UNIT_AURA")
+skyridingRaceTrackerFrame:RegisterEvent("QUEST_ACCEPTED")
+skyridingRaceTrackerFrame:RegisterEvent("QUEST_REMOVED")
+skyridingRaceTrackerFrame:SetScript("OnEvent", skyridingRaceTrackerFrame.OnEvent)

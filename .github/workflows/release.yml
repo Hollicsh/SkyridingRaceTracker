@@ -1,4 +1,4 @@
-name: Package and release Skyriding Race Timer (Release)
+name: Package and release Skyriding Race Tracker (Release)
 
 on:
   push:
@@ -40,7 +40,7 @@ jobs:
           args: -p 1123985 -n "{package-name}-{project-version}{nolib}{classic}:{package-name}-{project-version}{classic}{nolib}.zip"
 
       # WoWInterface and Wago
-      #- name: Package and publish for WoWInterface and Wago
-      #  uses: BigWigsMods/packager@master
-      #  with:
-      #    args: -w 26863 -a QKywnBN7
+      - name: Package and publish for WoWInterface and Wago
+        uses: BigWigsMods/packager@master
+        with:
+          args: -w 26863 -a QKywnBN7
