@@ -10,14 +10,14 @@ function SRT:LoadOptions()
     self.options = SRT_Database_Options
 
     local variableTable = SRT_Database_Options
-    local category, layout = Settings.RegisterVerticalLayoutCategory("Skyriding Race Timer")
+    local category, layout = Settings.RegisterVerticalLayoutCategory("Skyriding Race Tracker")
 
-    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["display"]))
+    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["race-tracker"]))
 
     do
-        local name = L["display.name"]
-        local tooltip = L["display.tooltip"]
-        local variable = "display"
+        local name = L["race-tracker.name"]
+        local tooltip = L["race-tracker.tooltip"]
+        local variable = "race-tracker"
         local defaultValue = true
 
         local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
@@ -25,16 +25,16 @@ function SRT:LoadOptions()
     end
 
     do
-        local name = L["display-mode.name"]
-        local tooltip = L["display-mode.tooltip"]
-        local variable = "display-mode"
+        local name = L["race-tracker-mode.name"]
+        local tooltip = L["race-tracker-mode.tooltip"]
+        local variable = "race-tracker-mode"
         local defaultValue = 0
 
         local function GetOptions()
             local container = Settings.CreateControlTextContainer()
-            container:Add(0, L["display-mode.value.0"])
-            container:Add(1, L["display-mode.value.1"])
-            container:Add(2, L["display-mode.value.2"])
+            container:Add(0, L["race-tracker-mode.value.0"])
+            container:Add(1, L["race-tracker-mode.value.1"])
+            container:Add(2, L["race-tracker-mode.value.2"])
             return container:GetData()
         end
 
@@ -43,9 +43,9 @@ function SRT:LoadOptions()
     end
 
     do
-        local name = L["display-background.name"]
-        local tooltip = L["display-background.tooltip"]
-        local variable = "display-background"
+        local name = L["race-tracker-background.name"]
+        local tooltip = L["race-tracker-background.tooltip"]
+        local variable = "race-tracker-background"
         local defaultValue = true
 
         local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
@@ -53,9 +53,9 @@ function SRT:LoadOptions()
     end
 
     do
-        local name = L["display-horizontal-shift.name"]
-        local tooltip = L["display-horizontal-shift.tooltip"]
-        local variable = "display-horizontal-shift"
+        local name = L["race-tracker-horizontal-shift.name"]
+        local tooltip = L["race-tracker-horizontal-shift.tooltip"]
+        local variable = "race-tracker-horizontal-shift"
         local defaultValue = 0
 
         local minValue = -500
@@ -70,9 +70,9 @@ function SRT:LoadOptions()
     end
 
     do
-        local name = L["display-vertical-shift.name"]
-        local tooltip = L["display-vertical-shift.tooltip"]
-        local variable = "display-vertical-shift"
+        local name = L["race-tracker-vertical-shift.name"]
+        local tooltip = L["race-tracker-vertical-shift.tooltip"]
+        local variable = "race-tracker-vertical-shift"
         local defaultValue = 200
 
         local minValue = -400
@@ -87,9 +87,9 @@ function SRT:LoadOptions()
     end
 
     do
-        local name = L["display-fadeout-delay.name"]
-        local tooltip = L["display-fadeout-delay.tooltip"]
-        local variable = "display-fadeout-delay"
+        local name = L["race-tracker-fadeout-delay.name"]
+        local tooltip = L["race-tracker-fadeout-delay.tooltip"]
+        local variable = "race-tracker-fadeout-delay"
         local defaultValue = 3
 
         local minValue = 1
@@ -103,12 +103,12 @@ function SRT:LoadOptions()
         Settings.CreateSlider(category, setting, options, tooltip)
     end
 
-    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["overview"]))
+    layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["race-time-overview"]))
 
     do
-        local name = L["overview.name"]
-        local tooltip = L["overview.tooltip"]
-        local variable = "overview"
+        local name = L["race-time-overview.name"]
+        local tooltip = L["race-time-overview.tooltip"]
+        local variable = "race-time-overview"
         local defaultValue = true
 
         local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)

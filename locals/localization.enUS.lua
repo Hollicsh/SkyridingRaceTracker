@@ -1,11 +1,13 @@
 local addonName, SRT = ...
 
 SRT.localization = setmetatable({},{__index=function(self,key)
-        geterrorhandler()("Skyriding Race Timer: Missing entry for '" .. tostring(key) .. "'")
+        geterrorhandler()("Skyriding Race Tracker: Missing entry for '" .. tostring(key) .. "'")
         return key
     end})
 
 local L = SRT.localization
+
+local keyFeatureColor = "ffF2E699"
 
 L["time"] = "Time: %.1f Seconds"
 L["gold-time"] = "|T616373:0|t Gold Time: %s sec"
@@ -25,27 +27,27 @@ L["personal-best-time-no-race"] = "no race completed so far"
 L["personal-best-time-not-available"] = "personal best time not available"
 L["personal-best-time-faild"] = "new personal best time failed"
 
-L["display"] = "Race Display"
-L["display.name"] = "Enable 'Race Display'"
-L["display.tooltip"] = "Activates or deactivates the 'Race Display' during the skyriding race."
-L["display-mode.name"] = "Display Mode"
-L["display-mode.tooltip"] = "Defines whether the time should be displayed as a timer or countdown during the race."
-L["display-mode.value.0"] = "Timer"
-L["display-mode.value.1"] = "Countdown - Medal Time"
-L["display-mode.value.2"] = "Countdown - Personal Best Time"
-L["display-background.name"] = "Display Background"
-L["display-background.tooltip"] = "Defines whether a background should be used for the race time."
-L["display-horizontal-shift.name"] = "Horizontal Shift of the Display"
-L["display-horizontal-shift.tooltip"] = "Defines the relative horizontal position of the race display to the centre of the screen."
-L["display-vertical-shift.name"] = "Vertical Shift of the Display"
-L["display-vertical-shift.tooltip"] = "Defines the relative vertical position of the race display to the centre of the screen."
-L["display-fadeout-delay.name"] = "Fade-out Delay"
-L["display-fadeout-delay.tooltip"] = "Defines the time after a race until the display fades out."
+L["race-tracker"] = "Race Tracker"
+L["race-tracker.name"] = "Enable Race Tracker"
+L["race-tracker.tooltip"] = "Activates or deactivates the Race Tracker during the skyriding race."
+L["race-tracker-mode.name"] = "Mode"
+L["race-tracker-mode.tooltip"] = "Defines whether the time should be displayed as a timer or countdown during the race."
+L["race-tracker-mode.value.0"] = "Timer"
+L["race-tracker-mode.value.1"] = "Countdown - Medal Time"
+L["race-tracker-mode.value.2"] = "Countdown - Personal Best Time"
+L["race-tracker-background.name"] = "Background"
+L["race-tracker-background.tooltip"] = "Defines whether a background should be used for the Race Tracker."
+L["race-tracker-horizontal-shift.name"] = "Horizontal Shift"
+L["race-tracker-horizontal-shift.tooltip"] = "Defines the relative horizontal position of the Race Tracker to the centre of the screen."
+L["race-tracker-vertical-shift.name"] = "Vertical Shift"
+L["race-tracker-vertical-shift.tooltip"] = "Defines the relative vertical position of the Race Tracker to the centre of the screen."
+L["race-tracker-fadeout-delay.name"] = "Fade-out Delay"
+L["race-tracker-fadeout-delay.tooltip"] = "Defines the time after a race until the Race Tracker fades out."
 
-L["overview"] = "Race Time Overview"
-L["overview.name"] = "Enable 'Race Time Overview'"
-L["overview.tooltip"] = "Activates or deactivates the 'Race Time Overview' next to the quest window."
+L["race-time-overview"] = "Race Time Overview"
+L["race-time-overview.name"] = "Enable Race Time Overview"
+L["race-time-overview.tooltip"] = "Activates or deactivates the Race Time Overview next to the quest window."
 
 L["other-options"] = "Other Options"
-L["debug.name"] = "Enable 'Debug Mode'"
-L["debug.tooltip"] = "Activates or deactivates the 'Debug Mode'."
+L["debug.name"] = "Enable Debug Mode"
+L["debug.tooltip"] = "Activates or deactivates the Debug Mode."
