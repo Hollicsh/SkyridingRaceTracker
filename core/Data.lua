@@ -20,72 +20,67 @@ raceDataTable[190123] = {
 raceDataTable[190473] = {
     NORMAL            = {66721, 2048, 42, 45},
     ADVANCED          = {66722, 2049, 40, 45},
-    REVERSE           = {72705, 0, 41, 46},
-    CHALLENGE         = {75778, 0, 48, 51},
-    CHALLENGE_REVERSE = {75779, 0, 49, 52}
+    REVERSE           = {72705, 2176, 41, 46},
+    CHALLENGE         = {75778, 2423, 48, 51},
+    CHALLENGE_REVERSE = {75779, 2424, 49, 52}
 }
--- Emberflow Flight (Glutstrom-Flug)
-raceDataTable[000000] = {
-    NORMAL            = {66727, 0, 50, 53},
-    ADVANCED          = {66728, 0, 44, 49},
-    REVERSE           = {72707, 0, 45, 50},
-    CHALLENGE         = {75780, 0, 50, 53},
-    CHALLENGE_REVERSE = {75781, 0, 51, 54}
+-- Emberflow Flight 03 (Glutstrom-Flug) - R-11.0.5
+raceDataTable[190519] = {
+    NORMAL            = {66727, 2052, 50, 53},
+    ADVANCED          = {66728, 2053, 44, 49},
+    REVERSE           = {72707, 2177, 45, 50},
+    CHALLENGE         = {75780, 2425, 50, 53},
+    CHALLENGE_REVERSE = {75781, 2426, 51, 54}
 }
-
--- Apex Canopy River Run (Flusslauf des Hohen Blätterdachs)
-raceDataTable[000000] = {
-    NORMAL            = {66732, 0, 52, 55},
-    ADVANCED          = {66733, 0, 45, 50},
-    REVERSE           = {72734, 0, 48, 53},
-    CHALLENGE         = {75782, 0, 53, 56},
-    CHALLENGE_REVERSE = {75783, 0, 53, 56}
+-- Apex Canopy River Run 04 (Flusslauf des Hohen Blätterdachs)
+raceDataTable[190551] = {
+    NORMAL            = {66732, 2054, 52, 55},
+    ADVANCED          = {66733, 2055, 45, 50},
+    REVERSE           = {72734, 2178, 48, 53},
+    CHALLENGE         = {75782, 2427, 53, 56},
+    CHALLENGE_REVERSE = {75783, 2428, 53, 56}
 }
-
--- Uktulut Coaster (Uktuluter Küstenachter)
-raceDataTable[000000] = {
-    NORMAL            = {66777, 0, 45, 48},
-    ADVANCED          = {66778, 0, 40, 45},
-    REVERSE           = {72739, 0, 43, 48},
-    CHALLENGE         = {75785, 0, 46, 49},
-    CHALLENGE_REVERSE = {75786, 0, 48, 51}
+-- Uktulut Coaster 05 (Uktuluter Küstenachter)
+raceDataTable[190667] = {
+    NORMAL            = {66777, 2056, 45, 48}, -- xx
+    ADVANCED          = {66778, 2057, 40, 45},
+    REVERSE           = {72739, 2179, 43, 48},
+    CHALLENGE         = {75785, 2429, 46, 49},
+    CHALLENGE_REVERSE = {75786, 2430, 48, 51}
 }
-
--- Wingrest Roundabout (Schwingenrastkreisel)
-raceDataTable[000000] = {
-    NORMAL            = {66786, 0, 53, 56},
-    ADVANCED          = {66787, 0, 53, 58},
-    REVERSE           = {72740, 0, 56, 61},
-    CHALLENGE         = {75787, 0, 60, 63},
-    CHALLENGE_REVERSE = {75788, 0, 60, 63}
+-- Wingrest Roundabout 06 (Schwingenrastkreisel) - R-11.0.5
+raceDataTable[190753] = {
+    NORMAL            = {66786, 2058, 53, 56},
+    ADVANCED          = {66787, 2059, 53, 58},
+    REVERSE           = {72740, 2180, 56, 61},
+    CHALLENGE         = {75787, 2431, 60, 63},
+    CHALLENGE_REVERSE = {75788, 2432, 60, 63}
 }
-
--- Flashfrost Flyover (Blitzfrost-Überflug)
+-- Flashfrost Flyover 07 (Blitzfrost-Überflug) - R-11.0.5
 raceDataTable[190326] = {
-    NORMAL            = {66710, 0, 63, 66},
-    ADVANCED          = {66712, 0, 61, 66},
-    REVERSE           = {72700, 0, 60, 65},
-    CHALLENGE         = {75789, 0, 64, 67},
-    CHALLENGE_REVERSE = {75790, 0, 69, 74}
+    NORMAL            = {66710, 2046, 63, 66},
+    ADVANCED          = {66712, 2047, 61, 66},
+    REVERSE           = {72700, 2181, 60, 65},
+    CHALLENGE         = {75789, 2433, 64, 67},
+    CHALLENGE_REVERSE = {75790, 2434, 69, 74}
 }
-
--- Wild Preserve Circuit (Wildreservat-Parcours)
-raceDataTable[000000] = {
-    NORMAL            = {66725, 0, 40, 43},
-    ADVANCED          = {66726, 0, 38, 43},
-    REVERSE           = {72706, 0, 41, 46},
-    CHALLENGE         = {75791, 0, 43, 46},
-    CHALLENGE_REVERSE = {75792, 0, 44, 47}
+-- Wild Preserve Circuit 08 (Wildreservat-Parcours)
+raceDataTable[190503] = {
+    NORMAL            = {66725, 2050, 40, 43},
+    ADVANCED          = {66726, 2051, 38, 43},
+    REVERSE           = {72706, 2182, 41, 46},
+    CHALLENGE         = {75791, 2435, 43, 46},
+    CHALLENGE_REVERSE = {75792, 2436, 44, 47}
 }
 
 -- Ohn'ahran Plains (Ebenen von Ohn'ahra)
--- Sundapple Copse Circuit (Sonnentüpfelhainstrecke)
-raceDataTable[000000] = {
-    NORMAL            = {66835, 0, 49, 52},
-    ADVANCED          = {66836, 0, 41, 46},
-    REVERSE           = {72801, 0, 45, 50},
-    CHALLENGE         = {75793, 0, 51, 54},
-    CHALLENGE_REVERSE = {75794, 0, 50, 53}
+-- Sundapple Copse Circuit 01 (Sonnentüpfelhainstrecke)
+raceDataTable[190928] = {
+    NORMAL            = {66835, 2060, 49, 52},
+    ADVANCED          = {66836, 2061, 41, 46},
+    REVERSE           = {72801, 2183, 45, 50},
+    CHALLENGE         = {75793, 2437, 51, 54},
+    CHALLENGE_REVERSE = {75794, 2439, 50, 53}
 }
 -- Fen Flythrough 02 (Moor-Durchflug) - R-11.0.5
 raceDataTable[191121] = {
@@ -96,21 +91,21 @@ raceDataTable[191121] = {
     CHALLENGE_REVERSE = {75796, 2441, 50, 53},
     STORM_GRYPHON     = {77785, 2665, 82, 87} -- !!! ID passt vom Namen nicht zur Tabelle !!!
 }
--- Ravine River Run (Schluchtflusslauf)
-raceDataTable[000000] = {
-    NORMAL            = {66880, 0, 49, 52},
-    ADVANCED          = {66681, 0, 47, 52},
-    REVERSE           = {72803, 0, 46, 51},
-    CHALLENGE         = {75797, 0, 50, 53},
-    CHALLENGE_REVERSE = {75798, 0, 51, 54}
+-- Ravine River Run 03 (Schluchtflusslauf)
+raceDataTable[191165] = {
+    NORMAL            = {66880, 2064, 49, 52},
+    ADVANCED          = {66681, 2065, 47, 52},
+    REVERSE           = {72803, 2185, 46, 51},
+    CHALLENGE         = {75797, 2442, 50, 53},
+    CHALLENGE_REVERSE = {75798, 2443, 51, 54}
 }
--- Emerald Garden Ascent (Smaragdgärtenaufstieg)
+-- Emerald Garden Ascent 04 (Smaragdgärtenaufstieg)
 raceDataTable[191247] = {
-    NORMAL            = {66885, 0, 63, 66},
-    ADVANCED          = {66886, 0, 55, 60},
-    REVERSE           = {72805, 0, 57, 62},
-    CHALLENGE         = {75799, 0, 66, 69},
-    CHALLENGE_REVERSE = {75800, 0, 66, 69}
+    NORMAL            = {66885, 2066, 63, 66},
+    ADVANCED          = {66886, 2067, 55, 60},
+    REVERSE           = {72805, 2186, 57, 62},
+    CHALLENGE         = {75799, 2444, 66, 69},
+    CHALLENGE_REVERSE = {75800, 2445, 66, 69}
 }
 -- Maruukai Dash 05 (Maruukaispurt) - R-11.0.5
 raceDataTable[191422] = {
@@ -122,13 +117,13 @@ raceDataTable[191511] = {
     NORMAL            = {66933, 2070, 26, 29},
     CHALLENGE         = {75802, 2447, 27, 30}
 }
--- River Rapids Route (Stromschnellenstrecke)
+-- River Rapids Route 07 (Stromschnellenstrecke)
 raceDataTable[196092] = {
-    NORMAL            = {70710, 0, 48, 51},
-    ADVANCED          = {70711, 0, 43, 48},
-    REVERSE           = {72807, 0, 44, 49},
-    CHALLENGE         = {75803, 0, 52, 55},
-    CHALLENGE_REVERSE = {75804, 0, 52, 55}
+    NORMAL            = {70710, 2119, 48, 51},
+    ADVANCED          = {70711, 2120, 43, 48},
+    REVERSE           = {72807, 2187, 44, 49},
+    CHALLENGE         = {75803, 2448, 52, 55},
+    CHALLENGE_REVERSE = {75804, 2449, 52, 55}
 }
 
 -- Azure Span (Das Azurblaue Gebirge)
@@ -200,13 +195,13 @@ raceDataTable[193651] = {
     CHALLENGE_REVERSE = {75823, 2465, 63, 66},
     STORM_GRYPHON     = {77784, 2667, 80, 85} -- !!! ID passt vom Namen nicht zur Tabelle !!!
 }
--- Cliffside Circuit (Klippenrundstrecke)
-raceDataTable[000000] = {
-    NORMAL            = {70051, 0, 69, 72},
-    ADVANCED          = {70052, 0, 66, 71},
-    REVERSE           = {72760, 0, 69, 74},
-    CHALLENGE         = {75824, 0, 81, 84},
-    CHALLENGE_REVERSE = {75825, 0, 80, 83}
+-- Cliffside Circuit (Klippenrundstrecke) - R-11.0.5
+raceDataTable[193911] = {
+    NORMAL            = {70051, 2096, 69, 72},
+    ADVANCED          = {70052, 2097, 66, 71},
+    REVERSE           = {72760, 2196, 69, 74},
+    CHALLENGE         = {75824, 2466, 81, 84},
+    CHALLENGE_REVERSE = {75825, 2467, 80, 83}
 }
 -- Academy Ascent (Akademieaufstieg)
 raceDataTable[000000] = {
@@ -243,45 +238,45 @@ raceDataTable[200183] = {
     CHALLENGE_REVERSE = {75955, 2475, 44, 47},
     STORM_GRYPHON     = {77787, 2668, 92, 97} -- !!! ID passt vom Namen nicht zur Tabelle !!!
 }
--- Morqut Ascent (Morqutaufstieg)
-raceDataTable[000000] = {
-    NORMAL            = {73020, 0, 52, 55},
-    ADVANCED          = {73023, 0, 49, 54},
-    REVERSE           = {73024, 0, 52, 57},
-    CHALLENGE         = {75956, 0, 50, 53},
-    CHALLENGE_REVERSE = {75957, 0, 50, 53}
+-- Morqut Ascent 02 (Morqutaufstieg)
+raceDataTable[200212] = {
+    NORMAL            = {73020, 2202, 52, 55},
+    ADVANCED          = {73023, 2208, 49, 54},
+    REVERSE           = {73024, 2214, 52, 57},
+    CHALLENGE         = {75956, 2476, 50, 53},
+    CHALLENGE_REVERSE = {75957, 2477, 50, 53}
 }
--- Aerie Chasm Cruise (Nistklufttour)
-raceDataTable[000000] = {
-    NORMAL            = {73025, 0, 53, 56},
-    ADVANCED          = {73027, 0, 50, 55},
-    REVERSE           = {73028, 0, 50, 55},
-    CHALLENGE         = {75958, 0, 53, 56},
-    CHALLENGE_REVERSE = {75959, 0, 52, 55}
+-- Aerie Chasm Cruise 03 (Nistklufttour)
+raceDataTable[200236] = {
+    NORMAL            = {73025, 2203, 53, 56},
+    ADVANCED          = {73027, 2209, 50, 55},
+    REVERSE           = {73028, 2215, 50, 55},
+    CHALLENGE         = {75958, 2478, 53, 56},
+    CHALLENGE_REVERSE = {75959, 2479, 52, 55}
 }
--- Southern Reach Route (Südinselroute)
-raceDataTable[000000] = {
-    NORMAL            = {73029, 0, 70, 73},
-    ADVANCED          = {73030, 0, 68, 73},
-    REVERSE           = {73032, 0, 63, 68},
-    CHALLENGE         = {75960, 0, 70, 63},
-    CHALLENGE_REVERSE = {75961, 0, 68, 71}
+-- Southern Reach Route 04 (Südinselroute)
+raceDataTable[200247] = {
+    NORMAL            = {73029, 2204, 70, 73},
+    ADVANCED          = {73030, 2210, 68, 73},
+    REVERSE           = {73032, 2216, 63, 68},
+    CHALLENGE         = {75960, 2480, 70, 63},
+    CHALLENGE_REVERSE = {75961, 2481, 68, 71}
 }
--- Caldera Coaster (Kalderakurven)
-raceDataTable[000000] = {
-    NORMAL            = {73033, 0, 58, 61},
-    ADVANCED          = {73034, 0, 52, 57},
-    REVERSE           = {73052, 0, 49, 54},
-    CHALLENGE         = {75962, 0, 55, 58},
-    CHALLENGE_REVERSE = {75963, 0, 53, 56}
+-- Caldera Coaster 05 (Kalderakurven)
+raceDataTable[200316] = {
+    NORMAL            = {73033, 2205, 58, 61},
+    ADVANCED          = {73034, 2211, 52, 57},
+    REVERSE           = {73052, 2217, 49, 54},
+    CHALLENGE         = {75962, 2482, 55, 58},
+    CHALLENGE_REVERSE = {75963, 2483, 53, 56}
 }
--- Forbidden Reach Rush (Verbotene-Insel-Eile)
-raceDataTable[000000] = {
-    NORMAL            = {73061, 0, 59, 62},
-    ADVANCED          = {73062, 0, 56, 61},
-    REVERSE           = {73065, 0, 57, 62},
-    CHALLENGE         = {75964, 0, 60, 63},
-    CHALLENGE_REVERSE = {75965, 0, 60, 63}
+-- Forbidden Reach Rush 06 (Verbotene-Insel-Eile)
+raceDataTable[200417] = {
+    NORMAL            = {73061, 2206, 59, 62},
+    ADVANCED          = {73062, 2212, 56, 61},
+    REVERSE           = {73065, 2218, 57, 62}, -- xx
+    CHALLENGE         = {75964, 2484, 60, 63},
+    CHALLENGE_REVERSE = {75965, 2485, 60, 63}
 }
 
 -- Zaralek Cavern (Zaralekhöhle)
@@ -389,39 +384,39 @@ raceDataTable[000000] = {
 -- Isle of Dorn Z1 (Insel von Dorn)
 -- Dornogal Drift R1 (Dornogaldrift) - R-11.0.5
 raceDataTable[219542] = {
-    NORMAL    = {80219, 2923, 48, 53},
-    ADVANCED  = {80225, 2929, 43, 46},
-    REVERSE   = {80231, 2935, 43, 46}
+    NORMAL   = {80219, 2923, 48, 53},
+    ADVANCED = {80225, 2929, 43, 46},
+    REVERSE  = {80231, 2935, 43, 46}
 }
 -- Storm Watch's Survey R2 (Sturmpostenstudie) - R-11.0.5
 raceDataTable[219544] = {
-    NORMAL    = {80220, 2924, 63, 68},
-    ADVANCED  = {80226, 2930, 60, 63},
-    REVERSE   = {80232, 2936, 62, 65}
+    NORMAL   = {80220, 2924, 63, 68},
+    ADVANCED = {80226, 2930, 60, 63},
+    REVERSE  = {80232, 2936, 62, 65}
 }
 -- Basin Bypass R3 (Beckenbypass) - R-11.0.5
 raceDataTable[219547] = {
-    NORMAL    = {80221, 2925, 58, 63},
-    ADVANCED  = {80227, 2931, 54, 57},
-    REVERSE   = {80233, 2937, 57, 60}
+    NORMAL   = {80221, 2925, 58, 63},
+    ADVANCED = {80227, 2931, 54, 57},
+    REVERSE  = {80233, 2937, 57, 60}
 }
 -- The Wold Ways R4 (Die Holtzwege) - R-11.0.5
 raceDataTable[219548] = {
-    NORMAL    = {80222, 2926, 68, 73},
-    ADVANCED  = {80228, 2932, 68, 71},
-    REVERSE   = {80234, 2938, 70, 73}
+    NORMAL   = {80222, 2926, 68, 73},
+    ADVANCED = {80228, 2932, 68, 71},
+    REVERSE  = {80234, 2938, 70, 73}
 }
 -- Thunderhead Trail R5 (Donnerkopfdreh) - R-11.0.5
 raceDataTable[219549] = {
-    NORMAL    = {80223, 2927, 70, 75},
-    ADVANCED  = {80229, 2933, 66, 69},
-    REVERSE   = {80235, 2939, 66, 69}
+    NORMAL   = {80223, 2927, 70, 75},
+    ADVANCED = {80229, 2933, 66, 69},
+    REVERSE  = {80235, 2939, 66, 69}
 }
 -- Orecreg's Doglegs R6 (Erzgrubenecken) - R-11.0.5
 raceDataTable[219550] = {
-    NORMAL    = {80224, 2928, 65, 70},
-    ADVANCED  = {80230, 2934, 61, 64},
-    REVERSE   = {80236, 2940, 61, 64}
+    NORMAL   = {80224, 2928, 65, 70},
+    ADVANCED = {80230, 2934, 61, 64},
+    REVERSE  = {80236, 2940, 61, 64}
 }
 
 -- The Ringing Deeps Z2 (Die Schallenden Tiefen)

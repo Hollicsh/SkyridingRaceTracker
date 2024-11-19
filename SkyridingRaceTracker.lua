@@ -1,4 +1,4 @@
-local _, SRT = ...
+local addonName, SRT = ...
 
 local L = SRT.localization
 local raceDataTable = SRT.raceDataTable
@@ -74,7 +74,7 @@ function skyridingRaceTrackerFrame:OnEvent(event, ...)
 end
 
 function skyridingRaceTrackerFrame:ADDON_LOADED(_, addOnName)
-    if addOnName == "SkyridingRaceTracker" then
+    if addOnName == addonName then
         SRT:LoadOptions()
         SRT:PrintDebug("Addon fully loaded.")
     end

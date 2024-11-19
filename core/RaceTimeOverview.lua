@@ -7,13 +7,13 @@ local raceDataTable = SRT.raceDataTable
 --- Frames ---
 --------------
 
-local raceTimeOverviewFrame = CreateFrame("Frame", "RaceTimeOverview", GossipFrame, "BasicFrameTemplate")
+local raceTimeOverviewFrame = CreateFrame("Frame", "RaceTimeOverview", GossipFrame, "ButtonFrameTemplate")
 raceTimeOverviewFrame:SetPoint("TOPLEFT", GossipFrame, "TOPRIGHT", 15, 0)
+raceTimeOverviewFrame:SetTitle("Skyriding Race Tracker")
 
-raceTimeOverviewFrame.title = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.title:ClearAllPoints()
-raceTimeOverviewFrame.title:SetPoint("TOP", 0, -5)
-raceTimeOverviewFrame.title:SetText("Skyriding Race Tracker")
+raceTimeOverviewFrame.portrait = raceTimeOverviewFrame:GetPortrait()
+raceTimeOverviewFrame.portrait:SetPoint('TOPLEFT', -5, 8)
+raceTimeOverviewFrame.portrait:SetTexture(SRT.MEDIA_PATH .. "iconRound.blp")
 
 raceTimeOverviewFrame.name = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
 raceTimeOverviewFrame.name:ClearAllPoints()
@@ -65,7 +65,8 @@ raceTimeOverviewFrame:Hide()
 ---------------------
 
 function SRT:ShowRaceTimeOverview(npcID)
-    local hight = -25
+    local left = 20
+    local hight = -35
     local count = 0
 
     local name = C_QuestLog.GetTitleForQuestID(raceDataTable[npcID].NORMAL[1])
@@ -83,11 +84,11 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 40
-        raceTimeOverviewFrame.modeNormal:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.modeNormal:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.modeNormal:SetText(L["race-normal"])
 
         hight = hight - 20
-        raceTimeOverviewFrame.bestTimeNormal:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.bestTimeNormal:SetPoint("TOPLEFT", left, hight)
 
         if racePersonalTime == -1 then
             raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time-not-available"])
@@ -98,7 +99,7 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeNormal:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.goldSilverTimeNormal:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.goldSilverTimeNormal:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
     end
 
@@ -114,11 +115,11 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 40
-        raceTimeOverviewFrame.modeAdvanced:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.modeAdvanced:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.modeAdvanced:SetText(L["race-advanced"])
 
         hight = hight - 20
-        raceTimeOverviewFrame.bestTimeAdvanced:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.bestTimeAdvanced:SetPoint("TOPLEFT", left, hight)
 
         if racePersonalTime == -1 then
             raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time-not-available"])
@@ -129,7 +130,7 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeAdvanced:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.goldSilverTimeAdvanced:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.goldSilverTimeAdvanced:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
 
         raceTimeOverviewFrame.modeAdvanced:Show()
@@ -153,11 +154,11 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 40
-        raceTimeOverviewFrame.modeReverse:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.modeReverse:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.modeReverse:SetText(L["race-reverse"])
 
         hight = hight - 20
-        raceTimeOverviewFrame.bestTimeReverse:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.bestTimeReverse:SetPoint("TOPLEFT", left, hight)
 
         if racePersonalTime == -1 then
             raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time-not-available"])
@@ -168,7 +169,7 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeReverse:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.goldSilverTimeReverse:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.goldSilverTimeReverse:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
 
         raceTimeOverviewFrame.modeReverse:Show()
@@ -192,11 +193,11 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 40
-        raceTimeOverviewFrame.modeChallenge:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.modeChallenge:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.modeChallenge:SetText(L["race-challenge"])
 
         hight = hight - 20
-        raceTimeOverviewFrame.bestTimeChallenge:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.bestTimeChallenge:SetPoint("TOPLEFT", left, hight)
 
         if racePersonalTime == -1 then
             raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time-not-available"])
@@ -207,7 +208,7 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeChallenge:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.goldSilverTimeChallenge:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.goldSilverTimeChallenge:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
 
         raceTimeOverviewFrame.modeChallenge:Show()
@@ -231,11 +232,11 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 40
-        raceTimeOverviewFrame.modeChallengeReverse:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.modeChallengeReverse:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.modeChallengeReverse:SetText(L["race-challenge-reverse"])
 
         hight = hight - 20
-        raceTimeOverviewFrame.bestTimeChallengeReverse:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.bestTimeChallengeReverse:SetPoint("TOPLEFT", left, hight)
 
         if racePersonalTime == -1 then
             raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time-not-available"])
@@ -246,7 +247,7 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeChallengeReverse:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.goldSilverTimeChallengeReverse:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.goldSilverTimeChallengeReverse:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
 
         raceTimeOverviewFrame.modeChallengeReverse:Show()
@@ -270,11 +271,11 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 40
-        raceTimeOverviewFrame.modeStormGryphon:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.modeStormGryphon:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.modeStormGryphon:SetText(L["race-storm-gryphon"])
 
         hight = hight - 20
-        raceTimeOverviewFrame.bestTimeStormGryphon:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.bestTimeStormGryphon:SetPoint("TOPLEFT", left, hight)
 
         if racePersonalTime == -1 then
             raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time-not-available"])
@@ -285,7 +286,7 @@ function SRT:ShowRaceTimeOverview(npcID)
         end
 
         hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeStormGryphon:SetPoint("TOPLEFT", 10, hight)
+        raceTimeOverviewFrame.goldSilverTimeStormGryphon:SetPoint("TOPLEFT", left, hight)
         raceTimeOverviewFrame.goldSilverTimeStormGryphon:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
 
         raceTimeOverviewFrame.modeStormGryphon:Show()
@@ -297,7 +298,7 @@ function SRT:ShowRaceTimeOverview(npcID)
         raceTimeOverviewFrame.goldSilverTimeStormGryphon:Hide()
     end
 
-    local frameHight = 220 + ((count - 2) * 80)
+    local frameHight = 250 + ((count - 2) * 80)
 
     raceTimeOverviewFrame:SetSize(325, frameHight)
     raceTimeOverviewFrame:Show()
