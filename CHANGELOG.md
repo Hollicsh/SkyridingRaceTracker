@@ -4,7 +4,7 @@
 
 **Important note: With this version, the addon will be renamed to Skyriding Race Tracker. This release resets the settings to the default values.**
 
-- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
+- Added: New key feature 'Race Time Overview': All times for the current race are displayed next to the quest window of each Bronze Timekeeper
 - Changed: New addon name
 - Changed: Small logo / icon modifications
 - Updated: deDE, enUS localization
