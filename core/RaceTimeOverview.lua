@@ -69,8 +69,12 @@ function SRT:ShowRaceTimeOverview(npcID)
     local hight = -35
     local count = 0
 
-    local name = C_QuestLog.GetTitleForQuestID(raceDataTable[npcID].NORMAL[1])
-    raceTimeOverviewFrame.name:SetText(name)
+    local questID = raceDataTable[npcID].NORMAL[1]
+
+    QuestEventListener:AddCallback(questID, function()
+        local name = C_QuestLog.GetTitleForQuestID(questID)
+        raceTimeOverviewFrame.name:SetText(name)
+    end)
 
     if raceDataTable[npcID].NORMAL ~= nil then
         count = count + 1
@@ -262,7 +266,7 @@ function SRT:ShowRaceTimeOverview(npcID)
     if raceDataTable[npcID].STORM_GRYPHON ~= nil then
         count = count + 1
 
-        local racePersonalTime = -1
+		local racePersonalTime = -1
         local raceGoldTime = raceDataTable[npcID].STORM_GRYPHON[3]
         local raceSilverTime = raceDataTable[npcID].STORM_GRYPHON[4]
 

@@ -14,7 +14,7 @@ raceDataTable[190123] = {
     REVERSE           = {72052, 2154, 50, 55},
     CHALLENGE         = {75776, 2421, 54, 57},
     CHALLENGE_REVERSE = {75777, 2422, 57, 60},
-    STORM_GRYPHON     = {77777, 2664, 65, 70} -- !!! ID passt vom Namen nicht zur Tabelle !!!
+    STORM_GRYPHON     = {77777, 2664, 65, 70} -- !!!
 }
 -- Wild Preserve Slalom 02 (Wildreservat-Slalom) - R-11.0.5
 raceDataTable[190473] = {
@@ -42,7 +42,7 @@ raceDataTable[190551] = {
 }
 -- Uktulut Coaster 05 (Uktuluter Küstenachter)
 raceDataTable[190667] = {
-    NORMAL            = {66777, 2056, 45, 48}, -- xx
+    NORMAL            = {66777, 2056, 45, 48}, -- xxx
     ADVANCED          = {66778, 2057, 40, 45},
     REVERSE           = {72739, 2179, 43, 48},
     CHALLENGE         = {75785, 2429, 46, 49},
@@ -89,7 +89,7 @@ raceDataTable[191121] = {
     REVERSE           = {72802, 2184, 47, 52},
     CHALLENGE         = {75795, 2440, 50, 53},
     CHALLENGE_REVERSE = {75796, 2441, 50, 53},
-    STORM_GRYPHON     = {77785, 2665, 82, 87} -- !!! ID passt vom Namen nicht zur Tabelle !!!
+    STORM_GRYPHON     = {77785, 2665, 82, 87} -- !!!
 }
 -- Ravine River Run 03 (Schluchtflusslauf)
 raceDataTable[191165] = {
@@ -127,21 +127,21 @@ raceDataTable[196092] = {
 }
 
 -- Azure Span (Das Azurblaue Gebirge)
--- Azure Span Sprint (Sprint des Azurblauen Gebirges)
-raceDataTable[000000] = {
-    NORMAL            = {66946, 0, 63, 66},
-    ADVANCED          = {66947, 0, 58, 63},
-    REVERSE           = {72796, 0, 60, 65},
-    CHALLENGE         = {75805, 0, 67, 70},
-    CHALLENGE_REVERSE = {75806, 0, 69, 72}
+-- Azure Span Sprint 01 (Sprint des Azurblauen Gebirges)
+raceDataTable[191572] = {
+    NORMAL            = {66946, 2074, 63, 66},
+    ADVANCED          = {66947, 2075, 58, 63},
+    REVERSE           = {72796, 2188, 60, 65},
+    CHALLENGE         = {75805, 2450, 67, 70},
+    CHALLENGE_REVERSE = {75806, 2451, 69, 72}
 }
--- Azure Span Slalom (Slalom des Azurblauen Gebirges)
-raceDataTable[000000] = {
-    NORMAL            = {67002, 0, 58, 61},
-    ADVANCED          = {67003, 0, 56, 61},
-    REVERSE           = {72799, 0, 53, 58},
-    CHALLENGE         = {75807, 0, 55, 58},
-    CHALLENGE_REVERSE = {75808, 0, 55, 58}
+-- Azure Span Slalom 02 (Slalom des Azurblauen Gebirges)
+raceDataTable[191947] = {
+    NORMAL            = {67002, 2076, 58, 61},
+    ADVANCED          = {67003, 2077, 56, 61},
+    REVERSE           = {72799, 2189, 53, 58},
+    CHALLENGE         = {75807, 2452, 55, 58},
+    CHALLENGE_REVERSE = {75808, 2453, 55, 58}
 }
 -- Vakthros Ascent 03 (Vakthrosaufstieg) - R-11.0.5
 raceDataTable[192115] = {
@@ -150,41 +150,41 @@ raceDataTable[192115] = {
     REVERSE           = {72794, 2190, 56, 61},
     CHALLENGE         = {75809, 2454, 63, 66},
     CHALLENGE_REVERSE = {75810, 2455, 64, 67},
-    STORM_GRYPHON     = {77786, 2666, 120, 125} -- !!! ID passt vom Namen nicht zur Tabelle !!!
+    STORM_GRYPHON     = {77786, 2666, 120, 125} -- !!!
 }
--- Iskaara Tour (Iskaara-Tour)
-raceDataTable[000000] = {
-    NORMAL            = {67296, 0, 75, 78},
-    ADVANCED          = {67297, 0, 70, 75},
-    REVERSE           = {72800, 0, 67, 72},
-    CHALLENGE         = {75811, 0, 78, 81},
-    CHALLENGE_REVERSE = {75812, 0, 79, 82}
+-- Iskaara Tour 04 (Iskaara-Tour)
+raceDataTable[192886] = {
+    NORMAL            = {67296, 2083, 75, 78},
+    ADVANCED          = {67297, 2084, 70, 75},
+    REVERSE           = {72800, 2191, 67, 72},
+    CHALLENGE         = {75811, 2456, 78, 81},
+    CHALLENGE_REVERSE = {75812, 2457, 79, 82}
 }
--- Frostland Flyover (Frostland-Überflug)
-raceDataTable[000000] = {
-    NORMAL            = {67565, 0, 76, 79},
-    ADVANCED          = {67566, 0, 72, 77},
-    REVERSE           = {72795, 0, 69, 74},
-    CHALLENGE         = {75813, 0, 85, 88},
-    CHALLENGE_REVERSE = {75815, 0, 83, 86}
+-- Frostland Flyover 05 (Frostland-Überflug)
+raceDataTable[192945] = {
+    NORMAL            = {67565, 2085, 76, 79},
+    ADVANCED          = {67566, 2086, 72, 77},
+    REVERSE           = {72795, 2192, 69, 74},
+    CHALLENGE         = {75813, 2458, 85, 88},
+    CHALLENGE_REVERSE = {75815, 2459, 83, 86}
 }
--- Archive Ambit (Archivring)
-raceDataTable[000000] = {
-    NORMAL            = {67741, 0, 91, 94},
-    ADVANCED          = {67742, 0, 81, 86},
-    REVERSE           = {72797, 0, 76, 81},
-    CHALLENGE         = {75816, 0, 90, 93},
-    CHALLENGE_REVERSE = {75817, 0, 92, 95}
+-- Archive Ambit 06 (Archivring)
+raceDataTable[193027] = {
+    NORMAL            = {67741, 2089, 91, 94},
+    ADVANCED          = {67742, 2090, 81, 86},
+    REVERSE           = {72797, 2193, 76, 81},
+    CHALLENGE         = {75816, 2460, 90, 93},
+    CHALLENGE_REVERSE = {75817, 2461, 92, 95}
 }
 
 -- Thaldraszus (Thaldraszus)
--- Flowing Forest Flight (Flug des Wallenden Walds)
-raceDataTable[000000] = {
-    NORMAL            = {67095, 0, 49, 52},
-    ADVANCED          = {67096, 0, 40, 45},
-    REVERSE           = {72793, 0, 41, 46},
-    CHALLENGE         = {75820, 0, 47, 50},
-    CHALLENGE_REVERSE = {75821, 0, 46, 49}
+-- Flowing Forest Flight 01 (Flug des Wallenden Walds)
+raceDataTable[192555] = {
+    NORMAL            = {67095, 2080, 49, 52},
+    ADVANCED          = {67096, 2081, 40, 45},
+    REVERSE           = {72793, 2194, 41, 46},
+    CHALLENGE         = {75820, 2462, 47, 50},
+    CHALLENGE_REVERSE = {75821, 2463, 46, 49}
 }
 -- Tyrhold Trial 02 (Tyrhold-Tournee) - R-11.0.5
 raceDataTable[193651] = {
@@ -193,9 +193,9 @@ raceDataTable[193651] = {
     REVERSE           = {72792, 2195, 59, 64},
     CHALLENGE         = {75822, 2464, 58, 61},
     CHALLENGE_REVERSE = {75823, 2465, 63, 66},
-    STORM_GRYPHON     = {77784, 2667, 80, 85} -- !!! ID passt vom Namen nicht zur Tabelle !!!
+    STORM_GRYPHON     = {77784, 2667, 80, 85} -- !!!
 }
--- Cliffside Circuit (Klippenrundstrecke) - R-11.0.5
+-- Cliffside Circuit 03 (Klippenrundstrecke) - R-11.0.5
 raceDataTable[193911] = {
     NORMAL            = {70051, 2096, 69, 72},
     ADVANCED          = {70052, 2097, 66, 71},
@@ -203,29 +203,29 @@ raceDataTable[193911] = {
     CHALLENGE         = {75824, 2466, 81, 84},
     CHALLENGE_REVERSE = {75825, 2467, 80, 83}
 }
--- Academy Ascent (Akademieaufstieg)
-raceDataTable[000000] = {
-    NORMAL            = {70059, 0, 54, 57},
-    ADVANCED          = {70060, 0, 52, 57},
-    REVERSE           = {72754, 0, 53, 58},
-    CHALLENGE         = {75826, 0, 65, 68},
-    CHALLENGE_REVERSE = {75827, 0, 65, 68}
+-- Academy Ascent 04 (Akademieaufstieg)
+raceDataTable[193951] = {
+    NORMAL            = {70059, 2098, 54, 57},
+    ADVANCED          = {70060, 2099, 52, 57},
+    REVERSE           = {72754, 2197, 53, 58},
+    CHALLENGE         = {75826, 2468, 65, 68},
+    CHALLENGE_REVERSE = {75827, 2469, 65, 68}
 }
--- Garden Gallivant (Gartenpromenade)
-raceDataTable[000000] = {
-    NORMAL            = {70157, 0, 61, 64},
-    ADVANCED          = {70158, 0, 54, 59},
-    REVERSE           = {72769, 0, 57, 62},
-    CHALLENGE         = {75784, 0, 60, 63},
-    CHALLENGE_REVERSE = {75828, 0, 64, 67}
+-- Garden Gallivant 05 (Gartenpromenade)
+raceDataTable[194348] = {
+    NORMAL            = {70157, 2101, 61, 64},
+    ADVANCED          = {70158, 2102, 54, 59},
+    REVERSE           = {72769, 2198, 57, 62},
+    CHALLENGE         = {75784, 2470, 60, 63},
+    CHALLENGE_REVERSE = {75828, 2471, 64, 67}
 }
--- Caverns Criss-Cross (Kreuz und quer durch die Höhlen)
-raceDataTable[000000] = {
-    NORMAL            = {70161, 0, 50, 53},
-    ADVANCED          = {70163, 0, 45, 50},
-    REVERSE           = {72750, 0, 47, 52},
-    CHALLENGE         = {75829, 0, 56, 59},
-    CHALLENGE_REVERSE = {75830, 0, 54, 57}
+-- Caverns Criss-Cross 06 (Kreuz und quer durch die Höhlen)
+raceDataTable[194372] = {
+    NORMAL            = {70161, 2103, 50, 53},
+    ADVANCED          = {70163, 2104, 45, 50},
+    REVERSE           = {72750, 2199, 47, 52},
+    CHALLENGE         = {75829, 2472, 56, 59},
+    CHALLENGE_REVERSE = {75830, 2473, 54, 57}
 }
 
 -- Forbidden Reach (Die Verbotene Insel)
@@ -236,7 +236,7 @@ raceDataTable[200183] = {
     REVERSE           = {73019, 2213, 42, 47},
     CHALLENGE         = {75954, 2474, 45, 48},
     CHALLENGE_REVERSE = {75955, 2475, 44, 47},
-    STORM_GRYPHON     = {77787, 2668, 92, 97} -- !!! ID passt vom Namen nicht zur Tabelle !!!
+    STORM_GRYPHON     = {77787, 2668, 92, 97} -- !!!
 }
 -- Morqut Ascent 02 (Morqutaufstieg)
 raceDataTable[200212] = {
@@ -274,7 +274,7 @@ raceDataTable[200316] = {
 raceDataTable[200417] = {
     NORMAL            = {73061, 2206, 59, 62},
     ADVANCED          = {73062, 2212, 56, 61},
-    REVERSE           = {73065, 2218, 57, 62}, -- xx
+    REVERSE           = {73065, 2218, 57, 62}, -- xxx
     CHALLENGE         = {75964, 2484, 60, 63},
     CHALLENGE_REVERSE = {75965, 2485, 60, 63}
 }
@@ -287,73 +287,73 @@ raceDataTable[202524] = {
     REVERSE           = {74882, 2258, 53, 58},
     CHALLENGE         = {75972, 2486, 57, 60},
     CHALLENGE_REVERSE = {75973, 2487, 58, 61},
-    STORM_GRYPHON     = {77793, 2669, 95, 100} -- !!! ID passt vom Namen nicht zur Tabelle !!!
+    STORM_GRYPHON     = {77793, 2669, 95, 100} -- !!!
 }
--- Caldera Cruise (Kalderarundflug)
-raceDataTable[000000] = {
-    NORMAL            = {74889, 0, 75, 80},
-    ADVANCED          = {74899, 0, 68, 73},
-    REVERSE           = {74925, 0, 68, 73},
-    CHALLENGE         = {75974, 0, 72, 75},
-    CHALLENGE_REVERSE = {75975, 0, 72, 75}
+-- Caldera Cruise 02 (Kalderarundflug)
+raceDataTable[202676] = {
+    NORMAL            = {74889, 2247, 75, 80},
+    ADVANCED          = {74899, 2253, 68, 73},
+    REVERSE           = {74925, 2259, 68, 73},
+    CHALLENGE         = {75974, 2488, 72, 75},
+    CHALLENGE_REVERSE = {75975, 2489, 72, 75}
 }
--- Brimstone Scramble (Schwefelhast)
-raceDataTable[000000] = {
-    NORMAL            = {74939, 0, 69, 72},
-    ADVANCED          = {74943, 0, 64, 69},
-    REVERSE           = {74944, 0, 64, 69},
-    CHALLENGE         = {75976, 0, 69, 72},
-    CHALLENGE_REVERSE = {75977, 0, 71, 74}
+-- Brimstone Scramble 03 (Schwefelhast)
+raceDataTable[202749] = {
+    NORMAL            = {74939, 2248, 69, 72},
+    ADVANCED          = {74943, 2254, 64, 69},
+    REVERSE           = {74944, 2260, 64, 69},
+    CHALLENGE         = {75976, 2490, 69, 72},
+    CHALLENGE_REVERSE = {75977, 2491, 71, 74}
 }
--- Shimmering Slalom (Schimmerslalom)
-raceDataTable[000000] = {
-    NORMAL            = {74951, 0, 75, 80},
-    ADVANCED          = {74954, 0, 70, 75},
-    REVERSE           = {74956, 0, 70, 75},
-    CHALLENGE         = {75978, 0, 79, 82},
-    CHALLENGE_REVERSE = {75979, 0, 75, 78}
+-- Shimmering Slalom 04 (Schimmerslalom)
+raceDataTable[202772] = {
+    NORMAL            = {74951, 2249, 75, 80},
+    ADVANCED          = {74954, 2255, 70, 75},
+    REVERSE           = {74956, 2261, 70, 75},
+    CHALLENGE         = {75978, 2492, 79, 82},
+    CHALLENGE_REVERSE = {75979, 2493, 75, 78}
 }
--- Loamm Roamm (Loamm-Jagd)
-raceDataTable[000000] = {
-    NORMAL            = {74972, 0, 55, 60},
-    ADVANCED          = {74975, 0, 50, 55},
-    REVERSE           = {74977, 0, 48, 53},
-    CHALLENGE         = {75980, 0, 53, 56},
-    CHALLENGE_REVERSE = {75981, 0, 52, 55}
+-- Loamm Roamm 05 (Loamm-Jagd)
+raceDataTable[202795] = {
+    NORMAL            = {74972, 2250, 55, 60},
+    ADVANCED          = {74975, 2256, 50, 55},
+    REVERSE           = {74977, 2262, 48, 53},
+    CHALLENGE         = {75980, 2494, 53, 56},
+    CHALLENGE_REVERSE = {75981, 2495, 52, 55}
 }
--- Sulfur Sprint (Schwefelsprint)
-raceDataTable[000000] = {
-    NORMAL            = {75035, 0, 64, 67},
-    ADVANCED          = {75042, 0, 58, 63},
-    REVERSE           = {75043, 0, 57, 62},
-    CHALLENGE         = {75982, 0, 67, 70},
-    CHALLENGE_REVERSE = {75983, 0, 65, 68}
+-- Sulfur Sprint 06 (Schwefelsprint)
+raceDataTable[202973] = {
+    NORMAL            = {75035, 2251, 64, 67},
+    ADVANCED          = {75042, 2257, 58, 63},
+    REVERSE           = {75043, 2263, 57, 62},
+    CHALLENGE         = {75982, 2496, 67, 70},
+    CHALLENGE_REVERSE = {75983, 2497, 65, 68}
 }
 
 -- Emerald Dream (Der Smaragdgrüne Traum)
--- Ysera Invitational (Ysera-Einladungsturnier)
-raceDataTable[000000] = {
-    NORMAL            = {77841, 0, 98, 103},
-    ADVANCED          = {77842, 0, 87, 90},
-    REVERSE           = {77843, 0, 87, 90},
-    CHALLENGE         = {77844, 0, 95, 98},
-    CHALLENGE_REVERSE = {77845, 0, 97, 100}
+-- Ysera Invitational 01 (Ysera-Einladungsturnier)
+raceDataTable[210023] = {
+    NORMAL            = {77841, 2676, 98, 103},
+    ADVANCED          = {77842, 2682, 87, 90},
+    REVERSE           = {77843, 2688, 87, 90},
+    CHALLENGE         = {77844, 2694, 95, 98},
+    CHALLENGE_REVERSE = {77845, 2695, 97, 100}
 }
--- Smoldering Sprint (Qualmende Querele)
-raceDataTable[000000] = {
-    NORMAL            = {77983, 0, 80, 85},
-    ADVANCED          = {77984, 0, 73, 76},
-    REVERSE           = {77985, 0, 73, 76},
-    CHALLENGE         = {77986, 0, 79, 82},
-    CHALLENGE_REVERSE = {77987, 0, 80, 83}
+-- Smoldering Sprint 02 (Qualmende Querele)
+raceDataTable[210310] = {
+    NORMAL            = {77983, 2677, 80, 85},
+    ADVANCED          = {77984, 2683, 73, 76},
+    REVERSE           = {77985, 2689, 73, 76}, -- xxx
+    CHALLENGE         = {77986, 2696, 79, 82},
+    CHALLENGE_REVERSE = {77987, 2697, 80, 83}
 }
--- Viridescent Venture (Grünliche Gaudi)
-raceDataTable[000000] = {
-    NORMAL            = {77996, 0, 78, 83},
-    ADVANCED          = {77997, 0, 64, 67},
-    REVERSE           = {77998, 0, 64, 67},
-    CHALLENGE         = {77999, 0, 73, 76},
-    CHALLENGE_REVERSE = {78000, 0, 73, 76}
+-- Viridescent Venture 03 (Grünliche Gaudi)
+raceDataTable[210412] = {
+    NORMAL            = {77996, 2678, 78, 83},
+    ADVANCED          = {77997, 2684, 64, 67},
+    REVERSE           = {77998, 2690, 64, 67},
+    CHALLENGE         = {77999, 2698, 73, 76},
+    CHALLENGE_REVERSE = {78000, 2699, 73, 76}
 }
 -- Shoreline Switchback 04 (Uferumkehr) - R-11.0.5
 raceDataTable[210497] = {
@@ -363,21 +363,21 @@ raceDataTable[210497] = {
     CHALLENGE         = {78019, 2700, 70, 73},
     CHALLENGE_REVERSE = {78020, 2701, 70, 73}
 }
--- Canopy Concours (Baumkronenbagatelle)
-raceDataTable[000000] = {
-    NORMAL            = {78102, 0, 105, 110},
-    ADVANCED          = {78103, 0, 93, 96},
-    REVERSE           = {78104, 0, 96, 99},
-    CHALLENGE         = {78105, 0, 105, 108},
-    CHALLENGE_REVERSE = {78106, 0, 105, 108}
+-- Canopy Concours 05 (Baumkronenbagatelle)
+raceDataTable[210784] = {
+    NORMAL            = {78102, 2680, 105, 110},
+    ADVANCED          = {78103, 2686, 93, 96},
+    REVERSE           = {78104, 2692, 96, 99},
+    CHALLENGE         = {78105, 2702, 105, 108},
+    CHALLENGE_REVERSE = {78106, 2703, 105, 108}
 }
--- Emerald Amble (Smaragdspaziergang)
-raceDataTable[000000] = {
-    NORMAL            = {78115, 0, 84, 89},
-    ADVANCED          = {78116, 0, 70, 73},
-    REVERSE           = {78117, 0, 70, 73},
-    CHALLENGE         = {78118, 0, 73, 76},
-    CHALLENGE_REVERSE = {78119, 0, 73, 76}
+-- Emerald Amble 06 (Smaragdspaziergang)
+raceDataTable[210861] = {
+    NORMAL            = {78115, 2681, 84, 89},
+    ADVANCED          = {78116, 2687, 70, 73},
+    REVERSE           = {78117, 2693, 70, 73},
+    CHALLENGE         = {78118, 2704, 73, 76},
+    CHALLENGE_REVERSE = {78119, 2705, 73, 76}
 }
 
 -- The War Withina

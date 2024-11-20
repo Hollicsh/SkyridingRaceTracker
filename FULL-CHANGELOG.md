@@ -1,3 +1,10 @@
+**2.0.0 (2024-11-20)**
+- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
+- Changed: New addon name
+- Changed: Small logo / icon modifications
+- Updated: deDE, enUS localization
+- Minor code adjustments
+
 **2.0.0-4-alpha (2024-11-19)**
 - Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
 - Changed: Name of the addon
