@@ -133,7 +133,7 @@ GossipFrame:HookScript("OnShow",function()
 		local npcID = select(6, strsplit("-", tostring(UnitGUID("target"))))
         npcID = tonumber(npcID)
 
-        SRT:PrintDebug("npcID: " .. npcID)
+        --SRT:PrintDebug("npcID: " .. npcID)
 
         if raceDataTable[npcID] ~= nil then
             SRT:ShowRaceTimeOverview(npcID)

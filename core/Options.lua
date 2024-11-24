@@ -12,6 +12,8 @@ function SRT:LoadOptions()
     local variableTable = SRT_Database_Options
     local category, layout = Settings.RegisterVerticalLayoutCategory("Skyriding Race Tracker")
 
+    local parentSettingBackground
+
     layout:AddInitializer(CreateSettingsListSectionHeaderInitializer(L["race-tracker"]))
 
     do
@@ -49,7 +51,26 @@ function SRT:LoadOptions()
         local defaultValue = true
 
         local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
-        Settings.CreateCheckbox(category, setting, tooltip)
+        parentSettingBackground = Settings.CreateCheckbox(category, setting, tooltip)
+    end
+
+    do
+        local name = L["race-tracker-background-type.name"]
+        local tooltip = L["race-tracker-background-type.tooltip"]
+        local variable = "race-tracker-background-type"
+        local defaultValue = 0
+
+        local function GetOptions()
+            local container = Settings.CreateControlTextContainer()
+            container:Add(0, L["race-tracker-background-type.value.0"], "|T"..SRT.MEDIA_PATH .. "raceTrackerBackground-01.blp:16:64|t")
+            container:Add(1, L["race-tracker-background-type.value.1"], "|T"..SRT.MEDIA_PATH .. "raceTrackerBackground-02.blp:16:64|t")
+            return container:GetData()
+        end
+
+        local setting = Settings.RegisterAddOnSetting(category, addonName .. "_" .. variable, variable, variableTable, Settings.VarType.Number, name, defaultValue)
+        local subSetting = Settings.CreateDropdown(category, setting, GetOptions, tooltip)
+
+        subSetting:SetParentInitializer(parentSettingBackground, function() return self.options["race-tracker-background"] end)
     end
 
     do

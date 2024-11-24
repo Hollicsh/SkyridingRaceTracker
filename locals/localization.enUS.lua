@@ -7,8 +7,6 @@ SRT.localization = setmetatable({},{__index=function(self,key)
 
 local L = SRT.localization
 
-local keyFeatureColor = "ffF2E699"
-
 L["time"] = "Time: %.1f Seconds"
 L["gold-time"] = "|T616373:0|t Gold Time: %s sec"
 L["silver-time"] = "|T616375:0|t Silver Time: %s sec"
@@ -37,6 +35,10 @@ L["race-tracker-mode.value.1"] = "Countdown - Medal Time"
 L["race-tracker-mode.value.2"] = "Countdown - Personal Best Time"
 L["race-tracker-background.name"] = "Background"
 L["race-tracker-background.tooltip"] = "Defines whether a background should be used for the Race Tracker."
+L["race-tracker-background-type.name"] = "Background Type"
+L["race-tracker-background-type.tooltip"] = "Defines which background type is to be used for the Reace Tracker."
+L["race-tracker-background-type.value.0"] = "Background Type 1"
+L["race-tracker-background-type.value.1"] = "Background Type 2"
 L["race-tracker-horizontal-shift.name"] = "Horizontal Shift"
 L["race-tracker-horizontal-shift.tooltip"] = "Defines the relative horizontal position of the Race Tracker to the centre of the screen."
 L["race-tracker-vertical-shift.name"] = "Vertical Shift"

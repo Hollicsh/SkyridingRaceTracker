@@ -3,6 +3,10 @@ local addonName, SRT = ...
 SRT.raceDataTable = {}
 local raceDataTable = SRT.raceDataTable
 
+SRT.COLOR_GOLD_FONT = "ffF2E699"
+SRT.COLOR_SILVER_FONT = "ffC0C0C0"
+SRT.COLOR_BRONZE_FONT = "ffCD7F32"
+
 SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
 
 -- Dragonflight

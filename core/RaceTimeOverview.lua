@@ -99,7 +99,17 @@ function SRT:ShowRaceTimeOverview(npcID)
         elseif racePersonalTime == 0 then
             raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time-no-race"])
         else
-            raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time"]:format(racePersonalTime))
+            local time
+
+            if racePersonalTime <= raceGoldTime then
+                time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+            elseif racePersonalTime <= raceSilverTime then
+                time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+            else
+                time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+            end
+
+            raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time"]:format(time))
         end
 
         hight = hight - 20
@@ -130,7 +140,17 @@ function SRT:ShowRaceTimeOverview(npcID)
         elseif racePersonalTime == 0 then
             raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time-no-race"])
         else
-            raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time"]:format(racePersonalTime))
+            local time
+
+            if racePersonalTime <= raceGoldTime then
+                time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+            elseif racePersonalTime <= raceSilverTime then
+                time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+            else
+                time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+            end
+
+            raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time"]:format(time))
         end
 
         hight = hight - 20
@@ -169,7 +189,17 @@ function SRT:ShowRaceTimeOverview(npcID)
         elseif racePersonalTime == 0 then
             raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time-no-race"])
         else
-            raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time"]:format(racePersonalTime))
+            local time
+
+            if racePersonalTime <= raceGoldTime then
+                time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+            elseif racePersonalTime <= raceSilverTime then
+                time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+            else
+                time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+            end
+
+            raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time"]:format(time))
         end
 
         hight = hight - 20
@@ -208,7 +238,17 @@ function SRT:ShowRaceTimeOverview(npcID)
         elseif racePersonalTime == 0 then
             raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time-no-race"])
         else
-            raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time"]:format(racePersonalTime))
+            local time
+
+            if racePersonalTime <= raceGoldTime then
+                time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+            elseif racePersonalTime <= raceSilverTime then
+                time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+            else
+                time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+            end
+
+            raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time"]:format(time))
         end
 
         hight = hight - 20
@@ -247,7 +287,17 @@ function SRT:ShowRaceTimeOverview(npcID)
         elseif racePersonalTime == 0 then
             raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time-no-race"])
         else
-            raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time"]:format(racePersonalTime))
+            local time
+
+            if racePersonalTime <= raceGoldTime then
+                time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+            elseif racePersonalTime <= raceSilverTime then
+                time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+            else
+                time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+            end
+
+            raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time"]:format(time))
         end
 
         hight = hight - 20
@@ -286,7 +336,17 @@ function SRT:ShowRaceTimeOverview(npcID)
         elseif racePersonalTime == 0 then
             raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time-no-race"])
         else
-            raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time"]:format(racePersonalTime))
+            local time
+
+            if racePersonalTime <= raceGoldTime then
+                time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+            elseif racePersonalTime <= raceSilverTime then
+                time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+            else
+                time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+            end
+
+            raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time"]:format(time))
         end
 
         hight = hight - 20

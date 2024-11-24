@@ -7,7 +7,7 @@ Skyriding Race Tracker is an addon with the following two key features:
 ### Features
 
 *   Three modes for the 'Race Tracker' are currently available: current race time, countdown to medal time (gold or silver) and countdown to personal best time
-*   Optional background for the 'Race Tracker'
+*   Different backgrounds can be selected for the 'Race Tracker' (optional)
 *   The position of the 'Race Tracker' can be moved and positioned according to your own preferences
 *   Both key features can be activated or deactivated separately
 

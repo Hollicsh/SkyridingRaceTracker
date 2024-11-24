@@ -17,7 +17,7 @@ raceTrackerFrame:SetSize(256, 64)
 raceTrackerFrame.background = raceTrackerFrame:CreateTexture(nil, "BACKGROUND")
 raceTrackerFrame.background:ClearAllPoints()
 raceTrackerFrame.background:SetAllPoints(raceTrackerFrame)
-raceTrackerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground.blp")
+raceTrackerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground-01.blp")
 
 raceTrackerFrame.timer = raceTrackerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 raceTrackerFrame.timer:ClearAllPoints()
@@ -48,8 +48,15 @@ end
 
 local function LoadRaceTrackerFrame(self)
     raceTrackerFrame:SetPoint("CENTER", self.options["race-tracker-horizontal-shift"], self.options["race-tracker-vertical-shift"])
+    raceTrackerFrame:SetSize(256, 64)
 
     if self.options["race-tracker-background"] then
+        if self.options["race-tracker-background-type"] == 0 then
+            raceTrackerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground-01.blp")
+        elseif self.options["race-tracker-background-type"] == 1 then
+            raceTrackerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground-02.blp")
+        end
+
         raceTrackerFrame.background:Show()
     else
         raceTrackerFrame.background:Hide()
@@ -67,6 +74,14 @@ function SRT:ShowRaceTracker(raceQuestID, raceGoldTime, racePersonalTime)
 
     raceTrackerFrame.timer:SetText(C_QuestLog.GetTitleForQuestID(raceQuestID))
 
+    if self.options["race-tracker-background-type"] == 1 then
+        local width = raceTrackerFrame.timer:GetWidth()
+
+        if width > 240 then
+            raceTrackerFrame:SetSize(width + 26, 64)
+        end
+    end
+
     if self.options["race-tracker-mode"] == 0 then
         raceTrackerFrame.info:SetText(L["gold-time"]:format(raceGoldTime))
     elseif self.options["race-tracker-mode"] == 1 then
@@ -82,13 +97,15 @@ function SRT:ShowRaceTracker(raceQuestID, raceGoldTime, racePersonalTime)
     end
 
     C_Timer.After(5, function()
-        if (self.options["race-tracker-mode"] == 0 and racePersonalTime == -1) or (self.options["race-tracker-mode"] == 2 and racePersonalTime <= 0) then
+        if self.options["race-tracker-mode"] == 0 or (self.options["race-tracker-mode"] == 2 and racePersonalTime <= 0) then
             raceTrackerFrame.timer:SetText(string.format(L["time"], 0))
         elseif self.options["race-tracker-mode"] == 1 then
             raceTrackerFrame.timer:SetText(L["time"]:format(-raceGoldTime))
         elseif self.options["race-tracker-mode"] == 2 then
             raceTrackerFrame.timer:SetText(L["time"]:format(-racePersonalTime))
         end
+
+        raceTrackerFrame:SetSize(256, 64)
     end)
 
     raceTrackerFrame:Show()

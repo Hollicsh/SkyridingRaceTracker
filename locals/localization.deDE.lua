@@ -4,8 +4,6 @@ if GetLocale() ~= "deDE" then return end
 
 local L = SRT.localization
 
-local keyFeatureColor = "ffF2E699"
-
 L["time"] = "Zeit: %.1f Sekunden"
 L["seconds"] = "Sekunden"
 L["gold-time"] = "|T616373:0|t Goldzeit: %s Sek."
@@ -35,6 +33,10 @@ L["race-tracker-mode.value.1"] = "Countdown - Medaillenzeit"
 L["race-tracker-mode.value.2"] = "Countdown - persönliche Bestzeit"
 L["race-tracker-background.name"] = "Hintergrund"
 L["race-tracker-background.tooltip"] = "Legt fest, ob ein Hintergrund für den Race-Tracker verwendet werden soll."
+L["race-tracker-background-type.name"] = "Hintergrundvariante"
+L["race-tracker-background-type.tooltip"] = "Legt fest, welche Hintergrundvariante für den Race-Tracker verwendet werden soll."
+L["race-tracker-background-type.value.0"] = "Hintergrundvariante 1"
+L["race-tracker-background-type.value.1"] = "Hintergrundvariante 2"
 L["race-tracker-horizontal-shift.name"] = "Horizontale Verschiebung"
 L["race-tracker-horizontal-shift.tooltip"] = "Gibt die relative horizontale Position des Race-Tracker zur Bildschirmmitte an."
 L["race-tracker-vertical-shift.name"] = "Vertikale Verschiebung"
