@@ -13,6 +13,12 @@ L["silver-time"] = "|T616375:0|t Silver Time: %s sec"
 L["bronze-time"] = "|T616372:0|t Bronze Time"
 L["no-time"] = "no medal time available"
 
+L["seconds-long"] = "Seconds"
+L["seconds-short"] = "sec"
+
+L["button-close"] = "Close"
+L["button-zone-overview"] = "Zone Overview"
+
 L["race-normal"] = "Normal"
 L["race-advanced"] = "Advanced"
 L["race-reverse"] = "Reverse"

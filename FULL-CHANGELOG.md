@@ -1,9 +1,12 @@
+**2.2.0 (2024-12-05)**
+- Added: All race times of the current zone can now be viewed in the 'Race Time Overview' (optional)
+
 **2.1.0 (2024-11-24)**
-- Added: Different backgrounds can now be selected for the Race Tracker (more will follow)
-- Changed: The personal best time in the Race Time Overview is now highlighted in colour according to gold, silver or bronze time
+- Added: Different backgrounds can now be selected for the 'Race Tracker' (more will follow)
+- Changed: The personal best time in the 'Race Time Overview' is now highlighted in colour according to gold, silver or bronze time
 
 **2.0.0 (2024-11-20)**
-- Added: New key feature 'Race Time Overview': All times for the current race are displayed next to the quest window of each Bronze Timekeeper
+- Added: New key feature 'Race Time Overview' - All times for the current race are displayed next to the quest window of each Bronze Timekeeper
 - Changed: New addon name
 - Changed: Small logo / icon modifications
 - Updated: deDE, enUS localization
