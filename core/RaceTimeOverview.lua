@@ -2,6 +2,9 @@ local _, SRT = ...
 
 local L = SRT.localization
 local raceDataTable = SRT.raceDataTable
+local sortedRaceDataTable = SRT.sortedRaceDataTable
+
+local difficultyOrder = SRT.difficultyOrder
 
 --------------
 --- Frames ---
@@ -98,6 +101,102 @@ raceTimeOverviewFrame.openButton:SetScript("OnClick", function()
     zoneOverviewFrame:Show()
 end)
 
+----------------------
+--- Local funtions ---
+----------------------
+
+local function ShowZoneRaceTimeOverview(zoneID)
+    zoneOverviewFrame.header:SetText(C_Map.GetMapInfo(zoneID).name)
+
+    if zoneOverviewFrame.scrollFrame:GetScrollChild() ~= nil then
+        local oldContent = zoneOverviewFrame.scrollFrame:GetScrollChild()
+        oldContent:Hide()
+    end
+
+    local content = CreateFrame("Frame", nil, zoneOverviewFrame.scrollFrame)
+    content:SetSize(270, 250)
+    zoneOverviewFrame.scrollFrame:SetScrollChild(content)
+
+    local hight = -10
+    local count = 1
+
+    for _, raceData in ipairs(sortedRaceDataTable) do
+        if raceData.zoneID == zoneID then
+            local modes = raceData.modes
+
+            local questID = modes.NORMAL[1]
+            local header = content:CreateFontString(nil, "ARTWORK", "GameFontNormal")
+            header:SetPoint("TOPLEFT", 10, hight)
+            header:SetWidth(270)
+            header:SetJustifyH("LEFT")
+
+            QuestEventListener:AddCallback(questID, function()
+                local name = C_QuestLog.GetTitleForQuestID(questID)
+                header:SetText(count .. ". " .. name)
+                count = count + 1
+            end)
+
+            hight = hight - 20
+
+            for _, mode in ipairs(difficultyOrder) do
+                local data = modes[mode]
+
+                if data then
+                    local time = "-"
+                    local difficulty
+                    local racePersonalTime = -1
+                    local raceGoldTime = data[3]
+                    local raceSilverTime = data[4]
+
+                    if data[2] ~= 0 then
+                        racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(data[2]).quantity / 1000
+                    end
+
+                    if mode == "NORMAL" then
+                        difficulty = L["race-normal"]
+                    elseif mode == "ADVANCED" then
+                        difficulty = L["race-advanced"]
+                    elseif mode == "REVERSE" then
+                        difficulty = L["race-reverse"]
+                    elseif mode == "CHALLENGE" then
+                        difficulty = L["race-challenge"]
+                    elseif mode == "CHALLENGE_REVERSE" then
+                        difficulty = L["race-challenge-reverse"]
+                    elseif mode == "STORM_GRYPHON" then
+                        difficulty = L["race-storm-gryphon"]
+                    end
+
+                    local text = content:CreateFontString(nil, "ARTWORK", "GameFontWhite")
+                    text:SetPoint("TOPLEFT", 10, hight)
+                    text:SetWidth(270)
+                    text:SetJustifyH("LEFT")
+
+                    if racePersonalTime > 0 then
+                        if racePersonalTime <= raceGoldTime then
+                            time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                        elseif racePersonalTime <= raceSilverTime then
+                            time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                        else
+                            time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                        end
+
+                        text:SetText(difficulty .. ": " .. time .. " " .. L['seconds-short'])
+                    else
+                        text:SetText(difficulty .. ": " .. time)
+                    end
+
+                    hight = hight - 15
+                end
+            end
+
+            hight = hight - 15
+        end
+    end
+
+    content:SetSize(270, (hight * -1) - 10)
+    content:Show()
+end
+
 ---------------------
 --- Main funtions ---
 ---------------------
@@ -108,22 +207,22 @@ function SRT:ShowRaceTimeOverview(npcID)
     local count = 0
 
     local zoneID = raceDataTable[npcID][1]
-    local questID = raceDataTable[npcID][2].NORMAL[1]
+    local questID = raceDataTable[npcID][3].NORMAL[1]
 
     QuestEventListener:AddCallback(questID, function()
         local name = C_QuestLog.GetTitleForQuestID(questID)
         raceTimeOverviewFrame.name:SetText(name)
     end)
 
-    if raceDataTable[npcID][2].NORMAL ~= nil then
+    if raceDataTable[npcID][3].NORMAL ~= nil then
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][2].NORMAL[3]
-        local raceSilverTime = raceDataTable[npcID][2].NORMAL[4]
+        local raceGoldTime = raceDataTable[npcID][3].NORMAL[3]
+        local raceSilverTime = raceDataTable[npcID][3].NORMAL[4]
 
-        if raceDataTable[npcID][2].NORMAL[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][2].NORMAL[2]).quantity / 1000
+        if raceDataTable[npcID][3].NORMAL[2] ~= 0 then
+            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].NORMAL[2]).quantity / 1000
         end
 
         hight = hight - 40
@@ -156,15 +255,15 @@ function SRT:ShowRaceTimeOverview(npcID)
         raceTimeOverviewFrame.goldSilverTimeNormal:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
     end
 
-    if raceDataTable[npcID][2].ADVANCED ~= nil then
+    if raceDataTable[npcID][3].ADVANCED ~= nil then
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][2].ADVANCED[3]
-        local raceSilverTime = raceDataTable[npcID][2].ADVANCED[4]
+        local raceGoldTime = raceDataTable[npcID][3].ADVANCED[3]
+        local raceSilverTime = raceDataTable[npcID][3].ADVANCED[4]
 
-        if raceDataTable[npcID][2].ADVANCED[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][2].ADVANCED[2]).quantity / 1000
+        if raceDataTable[npcID][3].ADVANCED[2] ~= 0 then
+            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].ADVANCED[2]).quantity / 1000
         end
 
         hight = hight - 40
@@ -205,15 +304,15 @@ function SRT:ShowRaceTimeOverview(npcID)
         raceTimeOverviewFrame.goldSilverTimeAdvanced:Hide()
     end
 
-    if raceDataTable[npcID][2].REVERSE ~= nil then
+    if raceDataTable[npcID][3].REVERSE ~= nil then
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][2].REVERSE[3]
-        local raceSilverTime = raceDataTable[npcID][2].REVERSE[4]
+        local raceGoldTime = raceDataTable[npcID][3].REVERSE[3]
+        local raceSilverTime = raceDataTable[npcID][3].REVERSE[4]
 
-        if raceDataTable[npcID][2].REVERSE[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][2].REVERSE[2]).quantity / 1000
+        if raceDataTable[npcID][3].REVERSE[2] ~= 0 then
+            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].REVERSE[2]).quantity / 1000
         end
 
         hight = hight - 40
@@ -254,15 +353,15 @@ function SRT:ShowRaceTimeOverview(npcID)
         raceTimeOverviewFrame.goldSilverTimeReverse:Hide()
     end
 
-    if raceDataTable[npcID][2].CHALLENGE ~= nil then
+    if raceDataTable[npcID][3].CHALLENGE ~= nil then
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][2].CHALLENGE[3]
-        local raceSilverTime = raceDataTable[npcID][2].CHALLENGE[4]
+        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE[3]
+        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE[4]
 
-        if raceDataTable[npcID][2].CHALLENGE[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][2].CHALLENGE[2]).quantity / 1000
+        if raceDataTable[npcID][3].CHALLENGE[2] ~= 0 then
+            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].CHALLENGE[2]).quantity / 1000
         end
 
         hight = hight - 40
@@ -303,15 +402,15 @@ function SRT:ShowRaceTimeOverview(npcID)
         raceTimeOverviewFrame.goldSilverTimeChallenge:Hide()
     end
 
-    if raceDataTable[npcID][2].CHALLENGE_REVERSE ~= nil then
+    if raceDataTable[npcID][3].CHALLENGE_REVERSE ~= nil then
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][2].CHALLENGE_REVERSE[3]
-        local raceSilverTime = raceDataTable[npcID][2].CHALLENGE_REVERSE[4]
+        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[3]
+        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[4]
 
-        if raceDataTable[npcID][2].CHALLENGE_REVERSE[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][2].CHALLENGE_REVERSE[2]).quantity / 1000
+        if raceDataTable[npcID][3].CHALLENGE_REVERSE[2] ~= 0 then
+            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].CHALLENGE_REVERSE[2]).quantity / 1000
         end
 
         hight = hight - 40
@@ -352,15 +451,15 @@ function SRT:ShowRaceTimeOverview(npcID)
         raceTimeOverviewFrame.goldSilverTimeChallengeReverse:Hide()
     end
 
-    if raceDataTable[npcID][2].STORM_GRYPHON ~= nil then
+    if raceDataTable[npcID][3].STORM_GRYPHON ~= nil then
         count = count + 1
 
 		local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][2].STORM_GRYPHON[3]
-        local raceSilverTime = raceDataTable[npcID][2].STORM_GRYPHON[4]
+        local raceGoldTime = raceDataTable[npcID][3].STORM_GRYPHON[3]
+        local raceSilverTime = raceDataTable[npcID][3].STORM_GRYPHON[4]
 
-        if raceDataTable[npcID][2].STORM_GRYPHON[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][2].STORM_GRYPHON[2]).quantity / 1000
+        if raceDataTable[npcID][3].STORM_GRYPHON[2] ~= 0 then
+            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].STORM_GRYPHON[2]).quantity / 1000
         end
 
         hight = hight - 40
@@ -406,108 +505,10 @@ function SRT:ShowRaceTimeOverview(npcID)
     raceTimeOverviewFrame:SetSize(325, frameHight)
     raceTimeOverviewFrame:Show()
 
-    SRT:ShowZoneRaceTimeOverview(zoneID)
+    ShowZoneRaceTimeOverview(zoneID)
 end
 
 function SRT:HideRaceTimeOverview()
     zoneOverviewFrame:Hide()
 	raceTimeOverviewFrame:Hide()
-end
-
-function SRT:ShowZoneRaceTimeOverview(zoneID)
-    zoneOverviewFrame.header:SetText(C_Map.GetMapInfo(zoneID).name)
-
-    if zoneOverviewFrame.scrollFrame:GetScrollChild() ~= nil then
-        local oldContent = zoneOverviewFrame.scrollFrame:GetScrollChild()
-        oldContent:Hide()
-    end
-
-    local content = CreateFrame("Frame", nil, zoneOverviewFrame.scrollFrame)
-    content:SetSize(270, 250)
-    zoneOverviewFrame.scrollFrame:SetScrollChild(content)
-
-    local hight = -10
-
-    for _, dataWrapper in pairs(raceDataTable) do
-        local id, modes = unpack(dataWrapper)
-        if id == zoneID then
-            local modeOrder = {
-                "NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"
-            }
-
-            local sortedModes = {}
-            for _, mode in ipairs(modeOrder) do
-                if modes[mode] then
-                    table.insert(sortedModes, mode)
-                end
-            end
-
-            local questID = modes.NORMAL[1]
-            local header = content:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-            header:SetPoint("TOPLEFT", 10, hight)
-            header:SetWidth(270)
-            header:SetJustifyH("LEFT")
-
-            QuestEventListener:AddCallback(questID, function()
-                local name = C_QuestLog.GetTitleForQuestID(questID)
-                header:SetText(name)
-            end)
-
-            hight = hight - 20
-
-            for _, mode in ipairs(sortedModes) do
-                local data = modes[mode]
-
-                local time = "-"
-                local difficulty
-                local racePersonalTime = -1
-                local raceGoldTime = data[3]
-                local raceSilverTime = data[4]
-
-                if data[2] ~= 0 then
-                    racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(data[2]).quantity / 1000
-                end
-
-                if mode == "NORMAL" then
-                    difficulty = L["race-normal"]
-                elseif mode == "ADVANCED" then
-                    difficulty = L["race-advanced"]
-                elseif mode == "REVERSE" then
-                    difficulty = L["race-reverse"]
-                elseif mode == "CHALLENGE" then
-                    difficulty = L["race-challenge"]
-                elseif mode == "CHALLENGE_REVERSE" then
-                    difficulty = L["race-challenge-reverse"]
-                elseif mode == "STORM_GRYPHON" then
-                    difficulty = L["race-storm-gryphon"]
-                end
-
-                local text = content:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-                text:SetPoint("TOPLEFT", 10, hight)
-                text:SetWidth(270)
-                text:SetJustifyH("LEFT")
-
-                if racePersonalTime > 0 then
-                    if racePersonalTime <= raceGoldTime then
-                        time = "|T616373:0|t |c" .. SRT.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
-                    elseif racePersonalTime <= raceSilverTime then
-                        time = "|T616375:0|t |c" .. SRT.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
-                    else
-                        time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
-                    end
-
-                    text:SetText(difficulty .. ": " .. time .. " " .. L['seconds-short'])
-                else
-                    text:SetText(difficulty .. ": " .. time)
-                end
-
-                hight = hight - 15
-            end
-
-            hight = hight - 15
-        end
-    end
-
-    content:SetSize(270, (hight * -1) - 10)
-    content:Show()
 end

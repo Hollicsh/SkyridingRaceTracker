@@ -1,3 +1,6 @@
+**2.2.1 (2024-12-10)**
+- Changed: The race times of the current zone are now shown in a fixed order
+
 **2.2.0 (2024-12-05)**
 - Added: All race times of the current zone can now be viewed in the 'Race Time Overview' (optional)
 
