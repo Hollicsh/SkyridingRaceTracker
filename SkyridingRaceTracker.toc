@@ -1,4 +1,4 @@
-## Interface: 110005
+## Interface: 110007
 ## Title: Skyriding Race Tracker
 ## Author: diomsg (Diom-Antonidas EU)
 ## Version: @project-version@
