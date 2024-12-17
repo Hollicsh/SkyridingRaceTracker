@@ -1,3 +1,6 @@
+**2.2.2 (2024-12-17)**
+- Updated: TOC version for patch 11.0.7 (Retail)
+
 **2.2.1 (2024-12-10)**
 - Changed: The race times of the current zone are now shown in a fixed order
 
