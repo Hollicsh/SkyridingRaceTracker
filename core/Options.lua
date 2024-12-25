@@ -11,6 +11,7 @@ function SRT:LoadOptions()
 
     local variableTable = SRT_Database_Options
     local category, layout = Settings.RegisterVerticalLayoutCategory("Skyriding Race Tracker")
+    category.ID = "Skyriding Race Tracker"
 
     local parentSettingBackground
 

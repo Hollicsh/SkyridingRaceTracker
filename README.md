@@ -13,3 +13,7 @@ Skyriding Race Tracker is an addon with the following two key features:
 *   Both key features can be activated or deactivated separately
 
 Further customisation options for the 'Race Tracker' are planned.
+
+### Quick Start
+
+To open the addon option window, type `/srt` or `/SkyridingRaceTracker` into your chat and hit enter.

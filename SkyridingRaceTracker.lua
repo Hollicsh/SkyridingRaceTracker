@@ -61,6 +61,14 @@ local function GetRaceData(questID)
     return nil
 end
 
+local function SlashCommand(msg, editbox)
+    if not msg or msg:trim() == "" then
+        Settings.OpenToCategory("Skyriding Race Tracker")
+	else
+        SRT:PrintDebug("No arguments will be accepted.")
+	end
+end
+
 --------------
 --- Frames ---
 --------------
@@ -79,7 +87,6 @@ function skyridingRaceTrackerFrame:ADDON_LOADED(_, addOnName)
     if addOnName == addonName then
         SRT:LoadOptions()
         SRT:PrintDebug("Addon fully loaded.")
-
     end
 end
 
@@ -153,3 +160,7 @@ skyridingRaceTrackerFrame:RegisterEvent("UNIT_AURA")
 skyridingRaceTrackerFrame:RegisterEvent("QUEST_ACCEPTED")
 skyridingRaceTrackerFrame:RegisterEvent("QUEST_REMOVED")
 skyridingRaceTrackerFrame:SetScript("OnEvent", skyridingRaceTrackerFrame.OnEvent)
+
+SLASH_SkyridingRaceTracker1, SLASH_SkyridingRaceTracker2 = '/srt', '/SkyridingRaceTracker'
+
+SlashCmdList["SkyridingRaceTracker"] = SlashCommand

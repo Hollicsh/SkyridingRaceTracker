@@ -1,3 +1,6 @@
+**2.2.3 (2024-12-26)**
+- Added: Slash command to open the addon option window
+
 **2.2.2 (2024-12-17)**
 - Updated: TOC version for patch 11.0.7 (Retail)
 

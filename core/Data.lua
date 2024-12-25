@@ -14,6 +14,8 @@ SRT.COLOR_BRONZE_FONT = "ffCD7F32"
 
 SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
 
+SRT.addonVersion = C_AddOns.GetAddOnMetadata(addonName, "Version")
+
 -- Dragonflight
 -- The Waking Shores (Die Küste des Erwachens)
 -- Ruby Lifeshrine Loop 01 (Rubinlebensschrein-Schleife) - R-11.0.5
