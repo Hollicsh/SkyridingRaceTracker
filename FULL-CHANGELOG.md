@@ -1,3 +1,8 @@
+**3.0.0 (2025-01-12)**
+- Added: Skyriding races for the new area 'Undermine' (PTR race times)
+- Fixed: If the race was reset with the 'Bronze Pocket Watch', this was not detected and the timer continued to run (the detection does not yet work for all races from the 'Dragonfligt' expansion, this will be fixed with the upcoming releases)
+- Refactoring of the addon structure and source codes
+
 **2.2.3 (2024-12-26)**
 - Added: Slash command to open the addon option window
 
@@ -22,22 +27,22 @@
 - Minor code adjustments
 
 **2.0.0-4-alpha (2024-11-19)**
-- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
+- Added: For each skyriding race there is now a race time overview next to the corresponding quest window
 - Changed: Name of the addon
 - Updated: deDE, enUS localization
 
 **2.0.0-3-alpha (2024-11-18)**
-- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
+- Added: For each skyriding race there is now a race time overview next to the corresponding quest window
 - Changed: Name of the addon
 - Updated: deDE, enUS localization
 
 **2.0.0-2-alpha (2024-11-18)**
-- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
+- Added: For each skyriding race there is now a race time overview next to the corresponding quest window
 - Changed: Name of the addon
 - Updated: deDE, enUS localization
 
 **2.0.0-1-alpha (2024-11-18)**
-- Added: For each Skyriding race there is now a race time overview next to the corresponding quest window
+- Added: For each skyriding race there is now a race time overview next to the corresponding quest window
 - Changed: Name of the addon
 - Updated: deDE, enUS localization
 

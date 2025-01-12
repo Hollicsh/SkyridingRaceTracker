@@ -206,7 +206,7 @@ function SRT:ShowRaceTimeOverview(npcID)
     local hight = -35
     local count = 0
 
-    local zoneID = raceDataTable[npcID][1]
+    local zoneID = raceDataTable[npcID][2]
     local questID = raceDataTable[npcID][3].NORMAL[1]
 
     QuestEventListener:AddCallback(questID, function()
@@ -218,8 +218,8 @@ function SRT:ShowRaceTimeOverview(npcID)
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].NORMAL[3]
-        local raceSilverTime = raceDataTable[npcID][3].NORMAL[4]
+        local raceGoldTime = raceDataTable[npcID][3].NORMAL[4]
+        local raceSilverTime = raceDataTable[npcID][3].NORMAL[5]
 
         if raceDataTable[npcID][3].NORMAL[2] ~= 0 then
             racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].NORMAL[2]).quantity / 1000
@@ -259,8 +259,8 @@ function SRT:ShowRaceTimeOverview(npcID)
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].ADVANCED[3]
-        local raceSilverTime = raceDataTable[npcID][3].ADVANCED[4]
+        local raceGoldTime = raceDataTable[npcID][3].ADVANCED[4]
+        local raceSilverTime = raceDataTable[npcID][3].ADVANCED[5]
 
         if raceDataTable[npcID][3].ADVANCED[2] ~= 0 then
             racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].ADVANCED[2]).quantity / 1000
@@ -308,8 +308,8 @@ function SRT:ShowRaceTimeOverview(npcID)
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].REVERSE[3]
-        local raceSilverTime = raceDataTable[npcID][3].REVERSE[4]
+        local raceGoldTime = raceDataTable[npcID][3].REVERSE[4]
+        local raceSilverTime = raceDataTable[npcID][3].REVERSE[5]
 
         if raceDataTable[npcID][3].REVERSE[2] ~= 0 then
             racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].REVERSE[2]).quantity / 1000
@@ -357,8 +357,8 @@ function SRT:ShowRaceTimeOverview(npcID)
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE[3]
-        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE[4]
+        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE[4]
+        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE[5]
 
         if raceDataTable[npcID][3].CHALLENGE[2] ~= 0 then
             racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].CHALLENGE[2]).quantity / 1000
@@ -406,8 +406,8 @@ function SRT:ShowRaceTimeOverview(npcID)
         count = count + 1
 
         local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[3]
-        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[4]
+        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[4]
+        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[5]
 
         if raceDataTable[npcID][3].CHALLENGE_REVERSE[2] ~= 0 then
             racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].CHALLENGE_REVERSE[2]).quantity / 1000
@@ -455,8 +455,8 @@ function SRT:ShowRaceTimeOverview(npcID)
         count = count + 1
 
 		local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].STORM_GRYPHON[3]
-        local raceSilverTime = raceDataTable[npcID][3].STORM_GRYPHON[4]
+        local raceGoldTime = raceDataTable[npcID][3].STORM_GRYPHON[4]
+        local raceSilverTime = raceDataTable[npcID][3].STORM_GRYPHON[5]
 
         if raceDataTable[npcID][3].STORM_GRYPHON[2] ~= 0 then
             racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].STORM_GRYPHON[2]).quantity / 1000

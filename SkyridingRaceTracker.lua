@@ -4,30 +4,14 @@ local L = SRT.localization
 local raceDataTable = SRT.raceDataTable
 
 local raceQuestID = -1
+local raceSpellID = -1
 local raceGoldTime = -1
 local raceSilverTime = -1
 local racePersonalTime = -1
 
-local isRaceActive = false
-
 ----------------------
 --- Local funtions ---
 ----------------------
-
-local function CheckRaceAura()
-	for i = 1, 40 do
-        local aura = C_UnitAuras.GetAuraDataByIndex("player", i)
-        if aura == nil then
-            break
-        end
-
-        if aura.spellId == 369968 then
-            return true
-        end
-    end
-
-    return false
-end
 
 local function CheckRaceQuest(questID)
     for _, dataWrapper in pairs(raceDataTable) do
@@ -51,8 +35,9 @@ local function GetRaceData(questID)
                     mode = mode,
                     questID = data[1],
                     raceTime = data[2],
-                    goldTime = data[3],
-                    silverTime = data[4]
+                    spellID = data[3],
+                    goldTime = data[4],
+                    silverTime = data[5]
                 }
             end
         end
@@ -90,30 +75,17 @@ function skyridingRaceTrackerFrame:ADDON_LOADED(_, addOnName)
     end
 end
 
-function skyridingRaceTrackerFrame:UNIT_AURA(_, unitTarget, updateInfo)
-    if unitTarget == "player" then
-        if SRT.options["race-tracker"] and CheckRaceAura() then
-            if not isRaceActive then
-                isRaceActive = true
-                SRT:StartRaceTracker(raceQuestID, GetTime(), raceGoldTime, raceSilverTime, racePersonalTime)
-            end
-        else
-            if isRaceActive then
-                isRaceActive = false
-                SRT:HideRaceTracker()
-            end
-        end
-    end
-end
-
 function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
     local result = GetRaceData(questID)
+
+    --SRT:PrintDebug("questID: " .. questID)
 
     if result ~= nil then
         SRT:PrintDebug("Event 'QUEST_ACCEPTED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
 
         if SRT.options["race-tracker"] then
             raceQuestID = result.questID
+            raceSpellID = result.spellID
             raceGoldTime = result.goldTime
             raceSilverTime = result.silverTime
 
@@ -121,7 +93,7 @@ function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
                 racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(result.raceTime).quantity / 1000
             end
 
-            SRT:ShowRaceTracker(raceQuestID, raceGoldTime, racePersonalTime)
+            SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
         else
             SRT:PrintDebug("No race tracker requested.")
         end
@@ -130,11 +102,15 @@ end
 
 function skyridingRaceTrackerFrame:QUEST_REMOVED(_, questID, wasReplayQuest)
     if CheckRaceQuest(questID) then
-        SRT:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
         raceQuestID = -1
+        raceSpellID = -1
         raceGoldTime = -1
         raceSilverTime = -1
         racePersonalTime = -1
+
+        SRT:StopRaceTracker()
+
+        SRT:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
     end
 end
 
@@ -155,8 +131,29 @@ GossipFrame:HookScript("OnHide",function()
     SRT:HideRaceTimeOverview()
 end)
 
-skyridingRaceTrackerFrame:RegisterEvent("ADDON_LOADED")
+local function CheckRaceAura()
+	for i = 1, 40 do
+        local aura = C_UnitAuras.GetAuraDataByIndex("player", i)
+        if aura == nil then
+            break
+        end
+
+        if aura.name == "Rennstart" then
+            SRT:PrintDebug(aura.name .. " - " .. aura.spellId)
+        end
+    end
+
+    return false
+end
+
+function skyridingRaceTrackerFrame:UNIT_AURA(_, unitTarget, updateInfo)
+    if unitTarget == "player" then
+        CheckRaceAura()
+    end
+end
+
 skyridingRaceTrackerFrame:RegisterEvent("UNIT_AURA")
+skyridingRaceTrackerFrame:RegisterEvent("ADDON_LOADED")
 skyridingRaceTrackerFrame:RegisterEvent("QUEST_ACCEPTED")
 skyridingRaceTrackerFrame:RegisterEvent("QUEST_REMOVED")
 skyridingRaceTrackerFrame:SetScript("OnEvent", skyridingRaceTrackerFrame.OnEvent)
