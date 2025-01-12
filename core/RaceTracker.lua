@@ -129,7 +129,7 @@ function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilver
         end
     end
 
-    raceTracker = C_Timer.NewTicker(0.05, function()
+    raceTracker = C_Timer.NewTicker(0.03, function()
         isCountdown = false
         isRace = false
 
