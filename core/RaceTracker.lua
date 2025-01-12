@@ -112,7 +112,8 @@ end
 ---------------------
 
 function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
-    local firstTry = true
+    local isFirstTry = true
+    local isInit = false
     local raceStartTime = -1
 
     local isCountdown = false
@@ -134,7 +135,8 @@ function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilver
 
         AuraUtil.ForEachAura("player", "HELPFUL", nil, foo)
 
-        if isCountdown and not firstTry then
+        if isCountdown and not isFirstTry and not isInit then
+            isInit = true
             raceStartTime = -1
 
             if self.options["race-tracker-mode"] == 0 or (self.options["race-tracker-mode"] == 2 and racePersonalTime <= 0) then
@@ -144,10 +146,18 @@ function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilver
             elseif self.options["race-tracker-mode"] == 2 then
                 raceTrackerFrame.timer:SetText(L["time"]:format(-racePersonalTime))
             end
-        elseif isRace then
+
+            SRT:PrintDebug("The race was interrupted.")
+        elseif isRace and not isCountdown then
             if raceStartTime == -1 then
-                firstTry = false
+                isInit = false
                 raceStartTime = GetTime()
+
+                if isFirstTry then
+                    isFirstTry = false
+                else
+                    SRT:PrintDebug("The race was restarted.")
+                end
             end
 
             local elapsedTime = GetTime() - raceStartTime
@@ -193,8 +203,6 @@ function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilver
                     end
                 end
             end
-
-
         end
     end)
 end
