@@ -1,6 +1,9 @@
+**3.0.1 (2025-01-15)**
+- Updated: Skyriding race times for 'Dragonflight'
+
 **3.0.0 (2025-01-12)**
 - Added: Skyriding races for the new area 'Undermine' (PTR race times)
-- Fixed: If the race was reset with the 'Bronze Pocket Watch', this was not detected and the timer continued to run (the detection does not yet work for all races from the 'Dragonfligt' expansion, this will be fixed with the upcoming releases)
+- Fixed: If the race was reset with the 'Bronze Pocket Watch', this was not detected and the timer continued to run (the detection does not yet work for all races from the 'Dragonflight' expansion, this will be fixed with the upcoming releases)
 - Refactoring of the addon structure and source codes
 
 **2.2.3 (2024-12-26)**

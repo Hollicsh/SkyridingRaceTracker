@@ -32,51 +32,51 @@ raceDataTable[190123] = {
 -- Wild Preserve Slalom R2 (Wildreservat-Slalom) - R-11.0.5
 raceDataTable[190473] = {
     100102, 2022, {
-        NORMAL            = {66721, 2048, 000000, 42, 45},
-        ADVANCED          = {66722, 2049, 000000, 40, 45},
-        REVERSE           = {72705, 2176, 000000, 41, 46},
-        CHALLENGE         = {75778, 2423, 000000, 48, 51},
-        CHALLENGE_REVERSE = {75779, 2424, 000000, 49, 52}
+        NORMAL            = {66721, 2048, 374088, 42, 45},
+        ADVANCED          = {66722, 2049, 374091, 40, 45},
+        REVERSE           = {72705, 2176, 396710, 41, 46},
+        CHALLENGE         = {75778, 2423, 409758, 48, 51},
+        CHALLENGE_REVERSE = {75779, 2424, 409759, 49, 52}
     }
 }
 -- Emberflow Flight R3 (Glutstrom-Flug) - R-11.0.5
 raceDataTable[190519] = {
     100103, 2022, {
-        NORMAL            = {66727, 2052, 000000, 50, 53},
-        ADVANCED          = {66728, 2053, 000000, 44, 49},
-        REVERSE           = {72707, 2177, 000000, 45, 50},
-        CHALLENGE         = {75780, 2425, 000000, 50, 53},
-        CHALLENGE_REVERSE = {75781, 2426, 000000, 51, 54}
+        NORMAL            = {66727, 2052, 374182, 50, 53},
+        ADVANCED          = {66728, 2053, 374183, 44, 49},
+        REVERSE           = {72707, 2177, 396714, 45, 50},
+        CHALLENGE         = {75780, 2425, 409760, 50, 53},
+        CHALLENGE_REVERSE = {75781, 2426, 409761, 51, 54}
     }
 }
--- Apex Canopy River Run R4 (Flusslauf des Hohen Blätterdachs)
+-- Apex Canopy River Run R4 (Flusslauf des Hohen Blätterdachs) - R-11.0.7
 raceDataTable[190551] = {
     100104, 2022, {
-        NORMAL            = {66732, 2054, 000000, 52, 55},
-        ADVANCED          = {66733, 2055, 000000, 45, 50},
-        REVERSE           = {72734, 2178, 000000, 48, 53},
-        CHALLENGE         = {75782, 2427, 000000, 53, 56},
-        CHALLENGE_REVERSE = {75783, 2428, 000000, 53, 56}
+        NORMAL            = {66732, 2054, 374244, 52, 55},
+        ADVANCED          = {66733, 2055, 374246, 45, 50},
+        REVERSE           = {72734, 2178, 396934, 48, 53},
+        CHALLENGE         = {75782, 2427, 409762, 53, 56},
+        CHALLENGE_REVERSE = {75783, 2428, 409763, 53, 56}
     }
 }
--- Uktulut Coaster R5 (Uktuluter Küstenachter)
+-- Uktulut Coaster R5 (Uktuluter Küstenachter) - R-11.0.7
 raceDataTable[190667] = {
     100105, 2022, {
-        NORMAL            = {66777, 2056, 000000, 45, 48}, -- xxx
-        ADVANCED          = {66778, 2057, 000000, 40, 45},
-        REVERSE           = {72739, 2179, 000000, 43, 48},
-        CHALLENGE         = {75785, 2429, 000000, 46, 49},
-        CHALLENGE_REVERSE = {75786, 2430, 000000, 48, 51}
+        NORMAL            = {66777, 2056, 374412, 45, 48},
+        ADVANCED          = {66778, 2057, 374414, 40, 45},
+        REVERSE           = {72739, 2179, 396943, 43, 48},
+        CHALLENGE         = {75785, 2429, 409766, 46, 49},
+        CHALLENGE_REVERSE = {75786, 2430, 409768, 48, 51}
     }
 }
 -- Wingrest Roundabout R6 (Schwingenrastkreisel) - R-11.0.5
 raceDataTable[190753] = {
     100106, 2022, {
-        NORMAL            = {66786, 2058, 000000, 53, 56},
-        ADVANCED          = {66787, 2059, 000000, 53, 58},
-        REVERSE           = {72740, 2180, 000000, 56, 61},
-        CHALLENGE         = {75787, 2431, 000000, 60, 63},
-        CHALLENGE_REVERSE = {75788, 2432, 000000, 60, 63}
+        NORMAL            = {66786, 2058, 374592, 53, 56},
+        ADVANCED          = {66787, 2059, 374593, 53, 58},
+        REVERSE           = {72740, 2180, 396960, 56, 61},
+        CHALLENGE         = {75787, 2431, 409774, 60, 63},
+        CHALLENGE_REVERSE = {75788, 2432, 409775, 60, 63}
     }
 }
 -- Flashfrost Flyover R7 (Blitzfrost-Überflug) - R-11.0.5
@@ -89,14 +89,14 @@ raceDataTable[190326] = {
         CHALLENGE_REVERSE = {75790, 2434, 409780, 69, 74}
     }
 }
--- Wild Preserve Circuit R8 (Wildreservat-Parcours)
+-- Wild Preserve Circuit R8 (Wildreservat-Parcours) - R-11.0.7
 raceDataTable[190503] = {
     100108, 2022, {
-        NORMAL            = {66725, 2050, 000000, 40, 43},
-        ADVANCED          = {66726, 2051, 000000, 38, 43},
-        REVERSE           = {72706, 2182, 000000, 41, 46},
-        CHALLENGE         = {75791, 2435, 000000, 43, 46},
-        CHALLENGE_REVERSE = {75792, 2436, 000000, 44, 47}
+        NORMAL            = {66725, 2050, 374143, 40, 43},
+        ADVANCED          = {66726, 2051, 374144, 38, 43},
+        REVERSE           = {72706, 2182, 396712, 41, 46},
+        CHALLENGE         = {75791, 2435, 409782, 43, 46},
+        CHALLENGE_REVERSE = {75792, 2436, 409783, 44, 47}
     }
 }
 
@@ -255,11 +255,11 @@ raceDataTable[193651] = {
 -- Cliffside Circuit R3 (Klippenrundstrecke) - R-11.0.5
 raceDataTable[193911] = {
     100403, 2025, {
-        NORMAL            = {70051, 2096, 000000, 69, 72},
-        ADVANCED          = {70052, 2097, 000000, 66, 71},
-        REVERSE           = {72760, 2196, 000000, 69, 74},
-        CHALLENGE         = {75824, 2466, 000000, 81, 84},
-        CHALLENGE_REVERSE = {75825, 2467, 000000, 80, 83}
+        NORMAL            = {70051, 2096, 382632, 69, 72},
+        ADVANCED          = {70052, 2097, 382652, 66, 71},
+        REVERSE           = {72760, 2196, 396997, 69, 74},
+        CHALLENGE         = {75824, 2466, 409861, 81, 84},
+        CHALLENGE_REVERSE = {75825, 2467, 409862, 80, 83}
     }
 }
 -- Academy Ascent R4 (Akademieaufstieg)
