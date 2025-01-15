@@ -131,32 +131,6 @@ GossipFrame:HookScript("OnHide",function()
     SRT:HideRaceTimeOverview()
 end)
 
-
-local function CheckRaceAura()
-	for i = 1, 40 do
-        local aura = C_UnitAuras.GetAuraDataByIndex("player", i)
-        if aura == nil then
-            break
-        end
-
-        if aura.name == "Rennstart" then
-            SRT:PrintDebug(aura.name .. " - " .. aura.spellId)
-        end
-    end
-
-    return false
-end
-
-function skyridingRaceTrackerFrame:UNIT_AURA(_, unitTarget, updateInfo)
-    if unitTarget == "player" then
-        CheckRaceAura()
-    end
-end
-
-skyridingRaceTrackerFrame:RegisterEvent("UNIT_AURA")
-
-
-
 skyridingRaceTrackerFrame:RegisterEvent("ADDON_LOADED")
 skyridingRaceTrackerFrame:RegisterEvent("QUEST_ACCEPTED")
 skyridingRaceTrackerFrame:RegisterEvent("QUEST_REMOVED")
