@@ -3,13 +3,13 @@ local addonName, skyridingRaceTracker = ...
 local L = skyridingRaceTracker.localization
 
 function skyridingRaceTracker:LoadOptions()
-    if (not SRT_Database_Options) then
-        SRT_Database_Options = {}
+    if (not SkyridingRaceTracker_Options_v2) then
+        SkyridingRaceTracker_Options_v2 = {}
     end
 
-    self.options = SRT_Database_Options
+    self.options = SkyridingRaceTracker_Options_v2
 
-    local variableTable = SRT_Database_Options
+    local variableTable = self.options
     local category, layout = Settings.RegisterVerticalLayoutCategory("Skyriding Race Tracker")
     category.ID = "Skyriding Race Tracker"
 
