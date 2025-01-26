@@ -3,7 +3,6 @@ package-as: SkyridingRaceTracker
 ignore:
   - LICENSE
   - README.md
-  - FULL-CHANGELOG.md
 
 manual-changelog:
   filename: CHANGELOG.md
