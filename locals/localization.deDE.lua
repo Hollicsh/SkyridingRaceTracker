@@ -1,8 +1,8 @@
-local _, SRT = ...
+local _, SkyridingRaceTracker = ...
 
 if GetLocale() ~= "deDE" then return end
 
-local L = SRT.localization
+local L = SkyridingRaceTracker.localization
 
 L["time"] = "Zeit: %.1f Sekunden"
 L["gold-time"] = "|T616373:0|t Goldzeit: %s Sek."

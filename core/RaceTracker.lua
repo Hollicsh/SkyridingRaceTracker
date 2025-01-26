@@ -1,6 +1,6 @@
-local _, SRT = ...
+local _, skyridingRaceTracker = ...
 
-local L = SRT.localization
+local L = skyridingRaceTracker.localization
 
 local raceTracker
 
@@ -17,7 +17,7 @@ raceTrackerFrame:SetSize(256, 64)
 raceTrackerFrame.background = raceTrackerFrame:CreateTexture(nil, "BACKGROUND")
 raceTrackerFrame.background:ClearAllPoints()
 raceTrackerFrame.background:SetAllPoints(raceTrackerFrame)
-raceTrackerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground-01.blp")
+raceTrackerFrame.background:SetTexture(skyridingRaceTracker.MEDIA_PATH .. "raceTrackerBackground-01.blp")
 
 raceTrackerFrame.timer = raceTrackerFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
 raceTrackerFrame.timer:ClearAllPoints()
@@ -42,7 +42,7 @@ local function StopFinalTicker()
     end)
 
     if not status then
-        SRT:PrintDebug("Method StopFinalTicker() aborted with exception: " .. err)
+        skyridingRaceTracker:PrintDebug("Method StopFinalTicker() aborted with exception: " .. err)
     end
 end
 
@@ -52,9 +52,9 @@ local function LoadRaceTrackerFrame(self)
 
     if self.options["race-tracker-background"] then
         if self.options["race-tracker-background-type"] == 0 then
-            raceTrackerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground-01.blp")
+            raceTrackerFrame.background:SetTexture(skyridingRaceTracker.MEDIA_PATH .. "raceTrackerBackground-01.blp")
         elseif self.options["race-tracker-background-type"] == 1 then
-            raceTrackerFrame.background:SetTexture(SRT.MEDIA_PATH .. "raceTrackerBackground-02.blp")
+            raceTrackerFrame.background:SetTexture(skyridingRaceTracker.MEDIA_PATH .. "raceTrackerBackground-02.blp")
         end
 
         raceTrackerFrame.background:Show()
@@ -111,7 +111,7 @@ end
 --- Main funtions ---
 ---------------------
 
-function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
+function skyridingRaceTracker:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
     local isFirstTry = true
     local isInit = false
     local raceStartTime = -1
@@ -147,7 +147,7 @@ function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilver
                 raceTrackerFrame.timer:SetText(L["time"]:format(-racePersonalTime))
             end
 
-            SRT:PrintDebug("The race was interrupted.")
+            skyridingRaceTracker:PrintDebug("The race was interrupted.")
         elseif isRace and not isCountdown then
             if raceStartTime == -1 then
                 isInit = false
@@ -156,7 +156,7 @@ function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilver
                 if isFirstTry then
                     isFirstTry = false
                 else
-                    SRT:PrintDebug("The race was restarted.")
+                    skyridingRaceTracker:PrintDebug("The race was restarted.")
                 end
             end
 
@@ -207,7 +207,7 @@ function SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilver
     end)
 end
 
-function SRT:StopRaceTracker()
+function skyridingRaceTracker:StopRaceTracker()
     count = 1
     raceTracker:Cancel()
 

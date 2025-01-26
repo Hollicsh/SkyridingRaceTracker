@@ -1,8 +1,8 @@
-local addonName, SRT = ...
+local addonName, skyridingRaceTracker = ...
 
-local L = SRT.localization
+local L = skyridingRaceTracker.localization
 
-function SRT:LoadOptions()
+function skyridingRaceTracker:LoadOptions()
     if (not SRT_Database_Options) then
         SRT_Database_Options = {}
     end
@@ -63,8 +63,8 @@ function SRT:LoadOptions()
 
         local function GetOptions()
             local container = Settings.CreateControlTextContainer()
-            container:Add(0, L["race-tracker-background-type.value.0"], "|T"..SRT.MEDIA_PATH .. "raceTrackerBackground-01.blp:16:64|t")
-            container:Add(1, L["race-tracker-background-type.value.1"], "|T"..SRT.MEDIA_PATH .. "raceTrackerBackground-02.blp:16:64|t")
+            container:Add(0, L["race-tracker-background-type.value.0"], "|T" .. skyridingRaceTracker.MEDIA_PATH .. "raceTrackerBackground-01.blp:16:64|t")
+            container:Add(1, L["race-tracker-background-type.value.1"], "|T" .. skyridingRaceTracker.MEDIA_PATH .. "raceTrackerBackground-02.blp:16:64|t")
             return container:GetData()
         end
 

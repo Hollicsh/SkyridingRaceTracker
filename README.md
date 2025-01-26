@@ -1,5 +1,7 @@
 # Skyriding Race Tracker
 
+This addon is compatible with all race types such as dragonriding, skyriding, skyrocketing and breakneck.
+
 Skyriding Race Tracker is an addon with the following two key features:
 *   Race Tracker: During the skyriding race, an overlay is shown that allows you to track your current race time
 *   Race Time Overview: Next to the quest window of each Bronze Timekeeper, your current race times, as well as the gold and silver medal times are shown

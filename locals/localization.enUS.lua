@@ -1,11 +1,11 @@
-local addonName, SRT = ...
+local addonName, SkyridingRaceTracker = ...
 
-SRT.localization = setmetatable({},{__index=function(self,key)
+SkyridingRaceTracker.localization = setmetatable({},{__index=function(self,key)
         geterrorhandler()("Skyriding Race Tracker: Missing entry for '" .. tostring(key) .. "'")
         return key
     end})
 
-local L = SRT.localization
+local L = SkyridingRaceTracker.localization
 
 L["time"] = "Time: %.1f Seconds"
 L["gold-time"] = "|T616373:0|t Gold Time: %s sec"

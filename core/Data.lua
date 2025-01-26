@@ -1,20 +1,18 @@
-local addonName, SRT = ...
+local addonName, skyridingRaceTracker = ...
 
-SRT.raceDataTable = {}
-local raceDataTable = SRT.raceDataTable
+skyridingRaceTracker.COLOR_GOLD_FONT = "ffF2E699"
+skyridingRaceTracker.COLOR_SILVER_FONT = "ffC0C0C0"
+skyridingRaceTracker.COLOR_BRONZE_FONT = "ffCD7F32"
+skyridingRaceTracker.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
 
-SRT.sortedRaceDataTable = {}
-local sortedRaceDataTable = SRT.sortedRaceDataTable
+skyridingRaceTracker.addonVersion = C_AddOns.GetAddOnMetadata(addonName, "Version")
+skyridingRaceTracker.difficultyOrder = {"NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"}
 
-SRT.difficultyOrder = {"NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"}
+skyridingRaceTracker.raceDataTable = {}
+local raceDataTable = skyridingRaceTracker.raceDataTable
 
-SRT.COLOR_GOLD_FONT = "ffF2E699"
-SRT.COLOR_SILVER_FONT = "ffC0C0C0"
-SRT.COLOR_BRONZE_FONT = "ffCD7F32"
-
-SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
-
-SRT.addonVersion = C_AddOns.GetAddOnMetadata(addonName, "Version")
+skyridingRaceTracker.sortedRaceDataTable = {}
+local sortedRaceDataTable = skyridingRaceTracker.sortedRaceDataTable
 
 -- Dragonflight
 -- The Waking Shores Z1 (Die Küste des Erwachens)

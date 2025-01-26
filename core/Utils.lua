@@ -1,8 +1,8 @@
-local _, SRT = ...
+local _, skyridingRaceTracker = ...
 
-local L = SRT.localization
+local L = skyridingRaceTracker.localization
 
-function SRT:PrintDebug(msg)
+function skyridingRaceTracker:PrintDebug(msg)
     if self.options["debug"] then
         local notfound = true
 

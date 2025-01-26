@@ -1,4 +1,4 @@
-## Interface: 110007
+## Interface: 110007, 110100
 ## Title: Skyriding Race Tracker
 ## Author: diomsg (Diom-Antonidas EU)
 ## Version: @project-version@
@@ -12,7 +12,7 @@
 ## LoadOnDemand: 0
 ## DefaultState: enabled
 ## AllowLoadGameType: mainline
-## SavedVariables: SRT_Database_Options
+## SavedVariables: SkyridingRaceTracker_Options_v2
 
 locals.xml
 core.xml

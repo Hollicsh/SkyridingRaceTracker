@@ -1,3 +1,8 @@
+**3.0.2 (2025-01-26)**
+- Added: TOC version for patch 11.1.0 (Retail)
+- Updated: License
+- Minor code adjustments
+
 **3.0.1 (2025-01-15)**
 - Updated: Skyriding race times for 'Dragonflight'
 
