@@ -1,5 +1,8 @@
-**3.0.3 (@build-date@)**
-- Fixed: The settings are not saved.
+**3.0.4 (@build-date@)**
+- Minor code adjustments
+
+**3.0.3 (2025-01-26)**
+- Fixed: The settings were not saved
 
 **3.0.2 (2025-01-26)**
 - Added: TOC version for patch 11.1.0 (Retail)
