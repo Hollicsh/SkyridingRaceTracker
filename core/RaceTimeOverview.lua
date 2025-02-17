@@ -145,8 +145,8 @@ local function ShowZoneRaceTimeOverview(zoneID)
                     local time = "-"
                     local difficulty
                     local racePersonalTime = -1
-                    local raceGoldTime = data[3]
-                    local raceSilverTime = data[4]
+                    local raceGoldTime = data[4]
+                    local raceSilverTime = data[5]
 
                     if data[2] ~= 0 then
                         racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(data[2]).quantity / 1000

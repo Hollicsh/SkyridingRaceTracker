@@ -1,4 +1,8 @@
-**3.0.4 (@build-date@)**
+**3.0.5 (@build-date@)**
+- Updated: Skyriding race times for 'Undermine'
+- Fixed: The color coding of the best race time in the zone overview was not correct
+
+**3.0.4 (2025-01-28)**
 - Minor code adjustments
 
 **3.0.3 (2025-01-26)**

@@ -684,57 +684,57 @@ raceDataTable[219570] = {
 -- Skyrocketing Sprint R1 (Raktenrennen) - PTR-11.1.0
 raceDataTable[231793] = {
     110601, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85071, 3119, 466395, 32, 42},
+        REVERSE   = {85096, 3121, 466619, 32, 42}
     }
 }
 -- The Heaps Leap R2 (Haldenhpüfer) - PTR-11.1.0
 raceDataTable[231879] = {
     110602, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85097, 3122, 466624, 33, 43},
+        REVERSE   = {85098, 3123, 466626, 33, 43}
     }
 }
 -- Scrapshop Shot R3 (Schrottladenchance) - PTR-11.1.0
 raceDataTable[231893] = {
     110603, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85099, 3124, 466629, 36, 46},
+        REVERSE   = {85100, 3125, 466631, 36, 46}
     }
 }
 -- Rags to Riches Rush R4 (Tellerwäschertriumph) - PTR-11.1.0
 raceDataTable[231900] = {
     110604, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85101, 3126, 466632, 40, 50},
+        REVERSE   = {85102, 3127, 466634, 40, 50}
     }
 }
 -- Breakneck Bolt R5 (Halsbrecherblitz) - PTR-11.1.0
 raceDataTable[233917] = {
     110605, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85900, 3181, 471625, 35, 40},
+        REVERSE   = {85901, 3182, 471626, 35, 40}
     }
 }
 -- Junkyard Jaunt R6 (Schrottplatzspurt) - PTR-11.1.0
 raceDataTable[233918] = {
     110606, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85902, 3183, 471627, 35, 40},
+        REVERSE   = {85903, 3184, 471628, 35, 40}
     }
 }
 -- Casino Cruise R7 (Casinokurs) - PTR-11.1.0
 raceDataTable[233919] = {
     110607, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85904, 3185, 471629, 30, 35},
+        REVERSE   = {85905, 3186, 471630, 30, 35}
     }
 }
 -- Sandy Scuttle R8 (Grundgekrabbel) - PTR-11.1.0
 raceDataTable[233920] = {
     110608, 2346, {
-        NORMAL    = {84933, 2040, 000000, 10, 20},
-        REVERSE   = {84933, 2040, 000000, 10, 20}
+        NORMAL    = {85906, 3187, 471631, 33, 38},
+        REVERSE   = {85907, 3188, 471632, 33, 38}
     }
 }
 
