@@ -1,4 +1,5 @@
-**3.1.1 (@build-date@)**
+**3.2.0 (@build-date@)**
+- Added: ruRu localization (#1 - Thanks to Hollicsh)
 - Minor code adjustments
 
 **3.1.0 (2025-02-25)**
