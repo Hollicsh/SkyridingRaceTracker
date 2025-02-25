@@ -1,5 +1,8 @@
-**3.1.0 (@build-date@)**
-- Added: Skyriding race times for the event 'Kalimdore Cup'
+**3.1.1 (@build-date@)**
+- Minor code adjustments
+
+**3.1.0 (2025-02-25)**
+- Added: Skyriding race times for the event 'Kalimdor Cup'
 
 **3.0.5 (2025-02-19)**
 - Updated: Skyriding race times for the area 'Undermine' (PTR race times)
@@ -89,8 +92,8 @@
 - Added: Skyriding race times for the expansion 'Dragonflight'
 
 **1.2.0 (2024-10-21)**
-- Added: If available, the gold and silver times for the current race are displayed
 - Added: Skyriding race times for the expansion 'The War Within'
+- Added: If available, the gold and silver times for the current race are displayed
 
 **1.1.0 (2024-10-20)**
 - Added: Language support

@@ -15,6 +15,7 @@
 ## SavedVariables: SkyridingRaceTracker_Options_v2
 
 locals.xml
+data.xml
 core.xml
 
 SkyridingRaceTracker.lua
