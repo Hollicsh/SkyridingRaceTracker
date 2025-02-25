@@ -1,5 +1,8 @@
-**3.0.5 (@build-date@)**
-- Updated: Skyriding race times for 'Undermine'
+**3.1.0 (@build-date@)**
+- Added: Skyriding race times for the event 'Kalimdore Cup'
+
+**3.0.5 (2025-02-19)**
+- Updated: Skyriding race times for the area 'Undermine' (PTR race times)
 - Fixed: The color coding of the best race time in the zone overview was not correct
 
 **3.0.4 (2025-01-28)**
@@ -14,10 +17,10 @@
 - Minor code adjustments
 
 **3.0.1 (2025-01-15)**
-- Updated: Skyriding race times for 'Dragonflight'
+- Updated: Skyriding race times for the expansion 'Dragonflight'
 
 **3.0.0 (2025-01-12)**
-- Added: Skyriding races for the new area 'Undermine' (PTR race times)
+- Added: Skyriding race times for the area 'Undermine' (PTR race times)
 - Fixed: If the race was reset with the 'Bronze Pocket Watch', this was not detected and the timer continued to run (the detection does not yet work for all races from the 'Dragonflight' expansion, this will be fixed with the upcoming releases)
 - Refactoring of the addon structure and source codes
 
@@ -83,11 +86,11 @@
 - Updated: TOC version for patch 11.0.5 (Retail)
 
 **1.3.0 (2024-10-22)**
-- Added: Race times for the expansion 'Dragonflight'
+- Added: Skyriding race times for the expansion 'Dragonflight'
 
 **1.2.0 (2024-10-21)**
 - Added: If available, the gold and silver times for the current race are displayed
-- Added: Race times for the expansion 'The War Within'
+- Added: Skyriding race times for the expansion 'The War Within'
 
 **1.1.0 (2024-10-20)**
 - Added: Language support

@@ -119,7 +119,7 @@ GossipFrame:HookScript("OnShow",function()
 		local npcID = select(6, strsplit("-", tostring(UnitGUID("target"))))
         npcID = tonumber(npcID)
 
-        --SRT:PrintDebug("npcID: " .. npcID)
+        --skyridingRaceTracker:PrintDebug("npcID: " .. npcID)
 
         if raceDataTable[npcID] ~= nil then
             skyridingRaceTracker:ShowRaceTimeOverview(npcID)
