@@ -1,4 +1,7 @@
-**3.2.0 (@build-date@)**
+**3.2.1 (@build-date@)**
+- Removed: TOC version for patch 11.0.7 (Retail)
+
+**3.2.0 (2025-02-25)**
 - Added: ruRu localization (#1 - Thanks to Hollicsh)
 - Updated: Skyriding race times for the event 'Kalimdor Cup'
 - Minor code adjustments

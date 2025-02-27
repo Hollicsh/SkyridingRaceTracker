@@ -1,6 +1,6 @@
 # Skyriding Race Tracker
 
-This addon is compatible with all race types such as dragonriding, skyriding, skyrocketing and breakneck.
+This addon is compatible with all race types such as dragonriding, skyriding, skyrocketing and breakneck (D.R.I.V.E.).
 
 Skyriding Race Tracker is an addon with the following two key features:
 *   Race Tracker: During the skyriding race, an overlay is shown that allows you to track your current race time
