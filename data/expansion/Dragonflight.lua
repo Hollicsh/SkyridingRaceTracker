@@ -420,14 +420,14 @@ raceDataTable[210023] = {
         CHALLENGE_REVERSE = {77845, 2695, 000000, 97, 100}
     }
 }
--- Smoldering Sprint R2 (Qualmende Querele)
+-- Smoldering Sprint R2 (Qualmende Querele) - R-11.1.0
 raceDataTable[210310] = {
     100702, 2200, {
-        NORMAL            = {77983, 2677, 000000, 80, 85},
-        ADVANCED          = {77984, 2683, 000000, 73, 76},
-        REVERSE           = {77985, 2689, 000000, 73, 76}, -- xxx
-        CHALLENGE         = {77986, 2696, 000000, 79, 82},
-        CHALLENGE_REVERSE = {77987, 2697, 000000, 80, 83}
+        NORMAL            = {77983, 2677, 422015, 80, 85},
+        ADVANCED          = {77984, 2683, 422017, 73, 76},
+        REVERSE           = {77985, 2689, 422018, 73, 76},
+        CHALLENGE         = {77986, 2696, 422020, 79, 82},
+        CHALLENGE_REVERSE = {77987, 2697, 422021, 80, 83}
     }
 }
 -- Viridescent Venture R3 (Grünliche Gaudi)
@@ -440,14 +440,14 @@ raceDataTable[210412] = {
         CHALLENGE_REVERSE = {78000, 2699, 000000, 73, 76}
     }
 }
--- Shoreline Switchback R4 (Uferumkehr) - R-11.0.5
+-- Shoreline Switchback R4 (Uferumkehr) - R-11.1.0
 raceDataTable[210497] = {
     100704, 2200, {
-        NORMAL            = {78016, 2679, 000000, 73, 78},
-        ADVANCED          = {78017, 2685, 000000, 63, 66},
-        REVERSE           = {78018, 2691, 000000, 62, 65},
-        CHALLENGE         = {78019, 2700, 000000, 70, 73},
-        CHALLENGE_REVERSE = {78020, 2701, 000000, 70, 73}
+        NORMAL            = {78016, 2679, 422400, 73, 78},
+        ADVANCED          = {78017, 2685, 422401, 63, 66},
+        REVERSE           = {78018, 2691, 422402, 62, 65},
+        CHALLENGE         = {78019, 2700, 422403, 70, 73},
+        CHALLENGE_REVERSE = {78020, 2701, 422404, 70, 73}
     }
 }
 -- Canopy Concours R5 (Baumkronenbagatelle)

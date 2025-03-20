@@ -1,4 +1,7 @@
-**3.2.1 (@build-date@)**
+**3.2.2 (@build-date@)**
+- Updated: Skyriding race times for the area 'Emerald Dream'
+
+**3.2.1 (2025-02-27)**
 - Removed: TOC version for patch 11.0.7 (Retail)
 
 **3.2.0 (2025-02-25)**
