@@ -1,7 +1,7 @@
 **3.2.3 (@build-date@)**
 - Minor code adjustments
 
-**3.2.2 (@build-date@)**
+**3.2.2 (2025-03-21)**
 - Updated: Skyriding race times for the area 'Emerald Dream'
 
 **3.2.1 (2025-02-27)**
