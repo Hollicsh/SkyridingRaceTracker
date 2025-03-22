@@ -24,3 +24,7 @@ Further customisation options for the 'Race Tracker' are planned.
 ### Quick Start
 
 To open the addon option window, type `/srt` or `/SkyridingRaceTracker` into your chat and hit enter.
+
+### Translation support
+
+If you would like to help me with the translation, you can do so here: [Crowdin](https://crowdin.com/project/wow-addon-skyriding-race-track)
