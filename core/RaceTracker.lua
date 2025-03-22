@@ -199,7 +199,7 @@ function skyridingRaceTracker:StartRaceTracker(raceQuestID, raceSpellID, raceGol
                         raceTrackerFrame.info:SetText(L["personal-best-time"]:format(racePersonalTime))
                     else
                         raceTrackerFrame.timer:SetText(L["time"]:format(0))
-                        raceTrackerFrame.info:SetText(L["personal-best-time-faild"])
+                        raceTrackerFrame.info:SetText(L["personal-best-time-failed"])
                     end
                 end
             end

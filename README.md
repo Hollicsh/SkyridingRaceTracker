@@ -1,5 +1,7 @@
 # Skyriding Race Tracker
 
+[![Crowdin](https://badges.crowdin.net/wow-addon-skyriding-race-track/localized.svg)](https://crowdin.com/project/wow-addon-skyriding-race-track)
+
 This addon is compatible with all race types such as dragonriding, skyriding, skyrocketing and breakneck (D.R.I.V.E.).
 
 Skyriding Race Tracker is an addon with the following two key features:

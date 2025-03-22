@@ -26,7 +26,7 @@ L["race-storm-gryphon"] = "Sturmgreif"
 L["personal-best-time"] = "persönliche Bestzeit: %s Sek."
 L["personal-best-time-no-race"] = "kein Rennen bisher absolviert"
 L["personal-best-time-not-available"] = "persönliche Bestzeit nicht abrufbar"
-L["personal-best-time-faild"] = "neue persönliche Bestzeit verfehlt"
+L["personal-best-time-failed"] = "neue persönliche Bestzeit verfehlt"
 
 L["race-tracker"] = "Race-Tracker"
 L["race-tracker.name"] = "Race-Tracker aktivieren"
