@@ -1,7 +1,7 @@
 # Skyriding Race Tracker
 
-![GitHub Release](https://img.shields.io/github/v/release/diomsg-code/SkyridingRaceTracker)
-![GitHub Release Date](https://img.shields.io/github/release-date/diomsg-code/SkyridingRaceTracker)
+[![GitHub Release](https://img.shields.io/github/v/release/diomsg-code/SkyridingRaceTracker?logo=github)](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/diomsg-code/SkyridingRaceTracker?logo=github)](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
 [![Crowdin](https://badges.crowdin.net/wow-addon-skyriding-race-track/localized.svg)](https://crowdin.com/project/wow-addon-skyriding-race-track)
 
 This addon is compatible with all race types such as dragonriding, skyriding, skyrocketing and breakneck (D.R.I.V.E.).
