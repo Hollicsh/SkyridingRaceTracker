@@ -413,11 +413,11 @@ raceDataTable[202973] = {
 -- Ysera Invitational R1 (Ysera-Einladungsturnier)
 raceDataTable[210023] = {
     100701, 2200, {
-        NORMAL            = {77841, 2676, 000000, 98, 103},
-        ADVANCED          = {77842, 2682, 000000, 87, 90},
-        REVERSE           = {77843, 2688, 000000, 87, 90},
-        CHALLENGE         = {77844, 2694, 000000, 95, 98},
-        CHALLENGE_REVERSE = {77845, 2695, 000000, 97, 100}
+        NORMAL            = {77841, 2676, 421437, 98, 103},
+        ADVANCED          = {77842, 2682, 421438, 87, 90},
+        REVERSE           = {77843, 2688, 421439, 87, 90},
+        CHALLENGE         = {77844, 2694, 421451, 95, 98}, -- xxx
+        CHALLENGE_REVERSE = {77845, 2695, 421452, 97, 100} -- xxx
     }
 }
 -- Smoldering Sprint R2 (Qualmende Querele) - R-11.1.0
@@ -433,11 +433,11 @@ raceDataTable[210310] = {
 -- Viridescent Venture R3 (Grünliche Gaudi)
 raceDataTable[210412] = {
     100703, 2200, {
-        NORMAL            = {77996, 2678, 000000, 78, 83},
-        ADVANCED          = {77997, 2684, 000000, 64, 67},
-        REVERSE           = {77998, 2690, 000000, 64, 67},
-        CHALLENGE         = {77999, 2698, 000000, 73, 76},
-        CHALLENGE_REVERSE = {78000, 2699, 000000, 73, 76}
+        NORMAL            = {77996, 2678, 422174, 78, 83},
+        ADVANCED          = {77997, 2684, 422175, 64, 67},
+        REVERSE           = {77998, 2690, 422176, 64, 67},
+        CHALLENGE         = {77999, 2698, 422178, 73, 76},
+        CHALLENGE_REVERSE = {78000, 2699, 422179, 73, 76}
     }
 }
 -- Shoreline Switchback R4 (Uferumkehr) - R-11.1.0
@@ -453,20 +453,20 @@ raceDataTable[210497] = {
 -- Canopy Concours R5 (Baumkronenbagatelle)
 raceDataTable[210784] = {
     100705, 2200, {
-        NORMAL            = {78102, 2680, 000000, 105, 110},
-        ADVANCED          = {78103, 2686, 000000, 93, 96},
-        REVERSE           = {78104, 2692, 000000, 96, 99},
-        CHALLENGE         = {78105, 2702, 000000, 105, 108},
-        CHALLENGE_REVERSE = {78106, 2703, 000000, 105, 108}
+        NORMAL            = {78102, 2680, 423378, 105, 110}, -- xxx
+        ADVANCED          = {78103, 2686, 423380, 93, 96}, -- xxx
+        REVERSE           = {78104, 2692, 423381, 96, 99},
+        CHALLENGE         = {78105, 2702, 423382, 105, 108},
+        CHALLENGE_REVERSE = {78106, 2703, 423383, 105, 108}
     }
 }
 -- Emerald Amble R6 (Smaragdspaziergang)
 raceDataTable[210861] = {
     100706, 2200, {
-        NORMAL            = {78115, 2681, 000000, 84, 89},
-        ADVANCED          = {78116, 2687, 000000, 70, 73},
-        REVERSE           = {78117, 2693, 000000, 70, 73},
-        CHALLENGE         = {78118, 2704, 000000, 73, 76},
-        CHALLENGE_REVERSE = {78119, 2705, 000000, 73, 76}
+        NORMAL            = {78115, 2681, 423562, 84, 89},
+        ADVANCED          = {78116, 2687, 423568, 70, 73},
+        REVERSE           = {78117, 2693, 423577, 70, 73},
+        CHALLENGE         = {78118, 2704, 423579, 73, 76},
+        CHALLENGE_REVERSE = {78119, 2705, 423580, 73, 76}
     }
 }
