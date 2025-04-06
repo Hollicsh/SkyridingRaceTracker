@@ -1,4 +1,4 @@
-## Interface: 110100
+## Interface: 110100, 110105
 ## Title: Skyriding Race Tracker
 ## Author: diomsg (Diom-Antonidas EU)
 ## Version: @project-version@
