@@ -1,4 +1,7 @@
-**3.2.5 (@build-date@)**
+**3.2.6 (@build-date@)**
+- Updated: Skyriding race times for the area 'Zaralek Cavern'
+
+**3.2.5 (2025-04-06)**
 - Added: TOC version for patch 11.1.5 (Retail)
 
 **3.2.4 (2025-03-30)**

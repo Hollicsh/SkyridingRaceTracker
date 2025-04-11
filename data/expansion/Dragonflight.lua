@@ -378,34 +378,34 @@ raceDataTable[202749] = {
         CHALLENGE_REVERSE = {75977, 2491, 000000, 71, 74}
     }
 }
--- Shimmering Slalom R4 (Schimmerslalom)
+-- Shimmering Slalom R4 (Schimmerslalom) - R-11.1.0
 raceDataTable[202772] = {
     100604, 2133, {
-        NORMAL            = {74951, 2249, 000000, 75, 80},
-        ADVANCED          = {74954, 2255, 000000, 70, 75},
-        REVERSE           = {74956, 2261, 000000, 70, 75},
-        CHALLENGE         = {75978, 2492, 000000, 79, 82},
-        CHALLENGE_REVERSE = {75979, 2493, 000000, 75, 78}
+        NORMAL            = {74951, 2249, 403830, 75, 80},
+        ADVANCED          = {74954, 2255, 403884, 70, 75},
+        REVERSE           = {74956, 2261, 403898, 70, 75},
+        CHALLENGE         = {75978, 2492, 410859, 79, 82},
+        CHALLENGE_REVERSE = {75979, 2493, 410860, 75, 78}
     }
 }
--- Loamm Roamm R5 (Loamm-Jagd)
+-- Loamm Roamm R5 (Loamm-Jagd) - R-11.1.0
 raceDataTable[202795] = {
     100605, 2133, {
-        NORMAL            = {74972, 2250, 000000, 55, 60},
-        ADVANCED          = {74975, 2256, 000000, 50, 55},
-        REVERSE           = {74977, 2262, 000000, 48, 53},
-        CHALLENGE         = {75980, 2494, 000000, 53, 56},
-        CHALLENGE_REVERSE = {75981, 2495, 000000, 52, 55}
+        NORMAL            = {74972, 2250, 403934, 55, 60},
+        ADVANCED          = {74975, 2256, 403992, 50, 55},
+        REVERSE           = {74977, 2262, 404002, 48, 53},
+        CHALLENGE         = {75980, 2494, 410861, 53, 56},
+        CHALLENGE_REVERSE = {75981, 2495, 410862, 52, 55}
     }
 }
--- Sulfur Sprint R6 (Schwefelsprint)
+-- Sulfur Sprint R6 (Schwefelsprint) - R-11.1.0
 raceDataTable[202973] = {
     100606, 2133, {
-        NORMAL            = {75035, 2251, 000000, 64, 67},
-        ADVANCED          = {75042, 2257, 000000, 58, 63},
-        REVERSE           = {75043, 2263, 000000, 57, 62},
-        CHALLENGE         = {75982, 2496, 000000, 67, 70},
-        CHALLENGE_REVERSE = {75983, 2497, 000000, 65, 68}
+        NORMAL            = {75035, 2251, 404558, 64, 67},
+        ADVANCED          = {75042, 2257, 404640, 58, 63},
+        REVERSE           = {75043, 2263, 404644, 57, 62},
+        CHALLENGE         = {75982, 2496, 410863, 67, 70},
+        CHALLENGE_REVERSE = {75983, 2497, 410864, 65, 68}
     }
 }
 
