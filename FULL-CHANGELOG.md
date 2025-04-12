@@ -1,4 +1,9 @@
-**3.2.6 (@build-date@)**
+**3.3.0 (@build-date@)**
+- Added: The current race speed (gliding speed) can now be displayed during the race
+- Updated: Skyriding race times for the area 'Zaralek Cavern'
+- Minor code adjustments
+
+**3.2.6 (2025-04-11)**
 - Updated: Skyriding race times for the area 'Zaralek Cavern'
 
 **3.2.5 (2025-04-06)**

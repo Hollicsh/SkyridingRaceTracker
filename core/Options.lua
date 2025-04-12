@@ -46,6 +46,16 @@ function skyridingRaceTracker:LoadOptions()
     end
 
     do
+        local name = L["race-tracker-gliding-speed.name"]
+        local tooltip = L["race-tracker-gliding-speed.tooltip"]
+        local variable = "race-tracker-gliding-speed"
+        local defaultValue = false
+
+        local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
+        Settings.CreateCheckbox(category, setting, tooltip)
+    end
+
+    do
         local name = L["race-tracker-background.name"]
         local tooltip = L["race-tracker-background.tooltip"]
         local variable = "race-tracker-background"

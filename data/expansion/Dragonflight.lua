@@ -347,35 +347,35 @@ raceDataTable[200417] = {
 }
 
 -- Zaralek Cavern Z6 (Zaralekhöhle)
--- Crystal Circuit R1 (Kristallkreisel) - R-11.0.5
+-- Crystal Circuit R1 (Kristallkreisel) - R-11.1.0
 raceDataTable[202524] = {
     100601, 2133, {
-        NORMAL            = {74839, 2246, 000000, 63, 68},
-        ADVANCED          = {74842, 2252, 000000, 55, 60},
-        REVERSE           = {74882, 2258, 000000, 53, 58},
-        CHALLENGE         = {75972, 2486, 000000, 57, 60},
-        CHALLENGE_REVERSE = {75973, 2487, 000000, 58, 61},
-        STORM_GRYPHON     = {77793, 2669, 000000, 95, 100} -- !!!
+        NORMAL            = {74839, 2246, 403192, 63, 68},
+        ADVANCED          = {74842, 2252, 403205, 55, 60},
+        REVERSE           = {74882, 2258, 403502, 53, 58},
+        CHALLENGE         = {75972, 2486, 410853, 57, 60},
+        CHALLENGE_REVERSE = {75973, 2487, 410854, 58, 61},
+        STORM_GRYPHON     = {77793, 2669, 421060, 95, 100} -- !!!
     }
 }
--- Caldera Cruise R2 (Kalderarundflug)
+-- Caldera Cruise R2 (Kalderarundflug) - R-11.1.0
 raceDataTable[202676] = {
     100602, 2133, {
-        NORMAL            = {74889, 2247, 000000, 75, 80},
-        ADVANCED          = {74899, 2253, 000000, 68, 73},
-        REVERSE           = {74925, 2259, 000000, 68, 73},
-        CHALLENGE         = {75974, 2488, 000000, 72, 75},
-        CHALLENGE_REVERSE = {75975, 2489, 000000, 72, 75}
+        NORMAL            = {74889, 2247, 403533, 75, 80},
+        ADVANCED          = {74899, 2253, 403679, 68, 73},
+        REVERSE           = {74925, 2259, 403729, 68, 73},
+        CHALLENGE         = {75974, 2488, 410855, 72, 75},
+        CHALLENGE_REVERSE = {75975, 2489, 410856, 72, 75}
     }
 }
--- Brimstone Scramble R3 (Schwefelhast)
+-- Brimstone Scramble R3 (Schwefelhast) - R-11.1.0
 raceDataTable[202749] = {
     100603, 2133, {
-        NORMAL            = {74939, 2248, 000000, 69, 72},
-        ADVANCED          = {74943, 2254, 000000, 64, 69},
-        REVERSE           = {74944, 2260, 000000, 64, 69},
-        CHALLENGE         = {75976, 2490, 000000, 69, 72},
-        CHALLENGE_REVERSE = {75977, 2491, 000000, 71, 74}
+        NORMAL            = {74939, 2248, 403746, 69, 72},
+        ADVANCED          = {74943, 2254, 403784, 64, 69},
+        REVERSE           = {74944, 2260, 403795, 64, 69},
+        CHALLENGE         = {75976, 2490, 410857, 69, 72},
+        CHALLENGE_REVERSE = {75977, 2491, 410858, 71, 74}
     }
 }
 -- Shimmering Slalom R4 (Schimmerslalom) - R-11.1.0

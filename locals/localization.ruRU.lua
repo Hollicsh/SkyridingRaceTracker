@@ -10,6 +10,8 @@ L["silver-time"] = "|T616375:0|t Время на серебро: %s сек."
 L["bronze-time"] = "|T616372:0|t Время на бронзу"
 L["no-time"] = "нет времени на получение медали"
 
+L["gliding-speed"] = "Current Racing Speed: %s%%"
+
 L["seconds-long"] = "Секунды"
 L["seconds-short"] = "сек."
 
@@ -36,6 +38,8 @@ L["race-tracker-mode.tooltip"] = "Определяет, должно ли вре
 L["race-tracker-mode.value.0"] = "Таймер"
 L["race-tracker-mode.value.1"] = "Обратный отсчет - Время медалей"
 L["race-tracker-mode.value.2"] = "Обратный отсчет - Личный рекорд"
+L["race-tracker-gliding-speed.name"] = "Race Speed"
+L["race-tracker-gliding-speed.tooltip"] = "Defines whether the race speed should be displayed during the race. This display only works for dragon- and skyrider races."
 L["race-tracker-background.name"] = "Фон"
 L["race-tracker-background.tooltip"] = "Определяет, следует ли использовать фон для Race Tracker."
 L["race-tracker-background-type.name"] = "Тип фона"

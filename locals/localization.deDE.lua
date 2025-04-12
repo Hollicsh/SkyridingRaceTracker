@@ -10,6 +10,8 @@ L["silver-time"] = "|T616375:0|t Silberzeit: %s Sek."
 L["bronze-time"] = "|T616372:0|t Bronzezeit"
 L["no-time"] = "keine Medaillenzeit abrufbar"
 
+L["gliding-speed"] = "aktuelle Renngeschwindigkeit: %s%%"
+
 L["seconds-long"] = "Sekunden"
 L["seconds-short"] = "Sek."
 
@@ -36,6 +38,8 @@ L["race-tracker-mode.tooltip"] = "Legt fest, ob die Zeit beim Rennen als Timer o
 L["race-tracker-mode.value.0"] = "Timer"
 L["race-tracker-mode.value.1"] = "Countdown - Medaillenzeit"
 L["race-tracker-mode.value.2"] = "Countdown - persönliche Bestzeit"
+L["race-tracker-gliding-speed.name"] = "Renngeschwindigkeit"
+L["race-tracker-gliding-speed.tooltip"] = "Legt fest, ob die Renngeschwindigkeit während des Rennens angezeigt werden soll. Diese Anzeige funktioniert nur bei Drachen- und Himmelsreiterrennen."
 L["race-tracker-background.name"] = "Hintergrund"
 L["race-tracker-background.tooltip"] = "Legt fest, ob ein Hintergrund für den Race-Tracker verwendet werden soll."
 L["race-tracker-background-type.name"] = "Hintergrundvariante"
