@@ -1,4 +1,7 @@
-**3.3.0 (@build-date@)**
+**3.3.1 (@build-date@)**
+- Updated: ruRU localization (#2 - Thanks to Hollicsh)
+
+**3.3.0 (2025-04-13)**
 - Added: The current race speed (gliding speed) can now be displayed during the race
 - Updated: Skyriding race times for the area 'Zaralek Cavern'
 - Minor code adjustments
@@ -22,7 +25,7 @@
 - Removed: TOC version for patch 11.0.7 (Retail)
 
 **3.2.0 (2025-02-25)**
-- Added: ruRu localization (#1 - Thanks to Hollicsh)
+- Added: ruRU localization (#1 - Thanks to Hollicsh)
 - Updated: Skyriding race times for the event 'Kalimdor Cup'
 - Minor code adjustments
 

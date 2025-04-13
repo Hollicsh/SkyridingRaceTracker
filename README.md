@@ -2,7 +2,6 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/diomsg-code/SkyridingRaceTracker?logo=github&cacheSeconds=600)](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
 [![GitHub Release Date](https://img.shields.io/github/release-date/diomsg-code/SkyridingRaceTracker?logo=github&cacheSeconds=600)](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
-[![Crowdin](https://badges.crowdin.net/wow-addon-skyriding-race-track/localized.svg)](https://crowdin.com/project/wow-addon-skyriding-race-track)
 
 This addon is compatible with all race types such as dragonriding, skyriding, skyrocketing and breakneck (D.R.I.V.E.).
 
@@ -28,4 +27,4 @@ To open the addon option window, type `/srt` or `/SkyridingRaceTracker` into you
 
 ### Translation support
 
-If you would like to help me with the translation, you can do so here: [Crowdin](https://crowdin.com/project/wow-addon-skyriding-race-track)
+If you would like to help me with the translation, I would be very pleased.
