@@ -152,7 +152,7 @@ function skyridingRaceTracker:LoadOptions()
     do
         local name = L["debug.name"]
         local tooltip = L["debug.tooltip"]
-        local variable = "debug"
+        local variable = "QKywnBN7-debug"
         local defaultValue = false
 
         local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)

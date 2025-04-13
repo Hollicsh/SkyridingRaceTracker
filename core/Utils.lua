@@ -3,7 +3,7 @@ local _, skyridingRaceTracker = ...
 local L = skyridingRaceTracker.localization
 
 function skyridingRaceTracker:PrintDebug(msg)
-    if self.options["debug"] then
+    if self.options["QKywnBN7-debug"] then
         local notfound = true
 
         for i = 1, NUM_CHAT_WINDOWS do 
