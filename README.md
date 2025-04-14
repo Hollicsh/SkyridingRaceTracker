@@ -25,6 +25,6 @@ Further customisation options for the 'Race Tracker' are planned.
 
 To open the addon option window, type `/srt` or `/SkyridingRaceTracker` into your chat and hit enter.
 
-### Translation support
+### Translation Support
 
 If you would like to help me with the translation, I would be very pleased.
