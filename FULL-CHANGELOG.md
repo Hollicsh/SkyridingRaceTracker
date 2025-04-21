@@ -1,4 +1,7 @@
-**3.3.1 (@build-date@)**
+**3.3.2 (@build-date@)**
+- Fixed: Variable names conflict with other addons
+
+**3.3.1 (2025-04-17)**
 - Updated: ruRU localization (#2 - Thanks to Hollicsh)
 
 **3.3.0 (2025-04-13)**

@@ -23,7 +23,7 @@ function skyridingRaceTracker:LoadOptions()
         local variable = "race-tracker"
         local defaultValue = true
 
-        local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
+        local setting = Settings.RegisterAddOnSetting(category, addonName .. "_" .. variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
         Settings.CreateCheckbox(category, setting, tooltip)
     end
 
@@ -51,7 +51,7 @@ function skyridingRaceTracker:LoadOptions()
         local variable = "race-tracker-gliding-speed"
         local defaultValue = false
 
-        local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
+        local setting = Settings.RegisterAddOnSetting(category, addonName .. "_" .. variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
         Settings.CreateCheckbox(category, setting, tooltip)
     end
 
@@ -143,7 +143,7 @@ function skyridingRaceTracker:LoadOptions()
         local variable = "race-time-overview"
         local defaultValue = true
 
-        local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
+        local setting = Settings.RegisterAddOnSetting(category, addonName .. "_" .. variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
         Settings.CreateCheckbox(category, setting, tooltip)
     end
 
@@ -152,10 +152,10 @@ function skyridingRaceTracker:LoadOptions()
     do
         local name = L["debug.name"]
         local tooltip = L["debug.tooltip"]
-        local variable = "QKywnBN7-debug"
+        local variable = "debug"
         local defaultValue = false
 
-        local setting = Settings.RegisterAddOnSetting(category, variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
+        local setting = Settings.RegisterAddOnSetting(category, addonName .. "_" .. variable, variable, variableTable, Settings.VarType.Boolean, name, defaultValue)
         Settings.CreateCheckbox(category, setting, tooltip)
     end
 
