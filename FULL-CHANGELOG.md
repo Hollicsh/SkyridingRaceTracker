@@ -1,4 +1,7 @@
-**3.3.2 (@build-date@)**
+**3.3.3 (@build-date@)**
+- Removed: TOC version for patch 11.1.0 (Retail)
+
+**3.3.2 (2025-04-21)**
 - Fixed: Variable names conflict with other addons
 
 **3.3.1 (2025-04-17)**
