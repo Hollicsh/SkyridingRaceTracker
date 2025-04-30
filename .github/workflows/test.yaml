@@ -1,28 +1,78 @@
+name: Build & Tag Release
+
 on:
   workflow_dispatch:
     inputs:
       versionTag:
-        description: "Tag (z. B. v10.0.0)"
+        description: 'Release-Version (z. B. v1.0.0)'
         required: true
+      buildRetail:
+        description: 'Retail-Version bauen?'
+        required: false
+        default: 'true'
+        type: boolean
+      buildClassic:
+        description: 'Classic-Version bauen?'
+        required: false
+        default: 'false'
+        type: boolean
+      buildCata:
+        description: 'Cata-Version bauen?'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: write  # nötig für tag + release
 
 jobs:
-  create-release:
+  tag-and-release:
+    name: Tag and Create Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # nötig zum Taggen
+          fetch-depth: 0  # nötig für Tag-Erstellung
 
-      - name: Set Git tag
+      - name: Set up Git
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git tag ${{ github.event.inputs.versionTag }}
-          git push origin ${{ github.event.inputs.versionTag }}
 
-      - name: Create GitHub release
+      - name: Create and push tag
+        run: |
+          git tag ${{ github.event.inputs.versionTag }}
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} refs/tags/${{ github.event.inputs.versionTag }}
+
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.event.inputs.versionTag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Beispiel-Job für Retail-Build (Platzhalter)
+  build-retail:
+    if: github.event.inputs.buildRetail == 'true'
+    needs: tag-and-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Retail (Platzhalter)
+        run: echo "Baue Retail-Version..."
+
+  build-classic:
+    if: github.event.inputs.buildClassic == 'true'
+    needs: tag-and-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Classic (Platzhalter)
+        run: echo "Baue Classic-Version..."
+
+  build-cata:
+    if: github.event.inputs.buildCata == 'true'
+    needs: tag-and-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Cata (Platzhalter)
+        run: echo "Baue Cata-Version..."
