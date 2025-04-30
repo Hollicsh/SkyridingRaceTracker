@@ -26,12 +26,11 @@ permissions:
   contents: write  # nötig für tag + release
 
 jobs:
-  github-release:
+  tag-and-release:
+    name: Tag and Create Release
     runs-on: ubuntu-latest
-    env:
-      GITHUB_OAUTH: ${{ secrets.G_TOKEN }}  
     steps:
-      - name: Clone project
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -46,11 +45,9 @@ jobs:
           git tag ${{ github.event.inputs.versionTag }}
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} refs/tags/${{ github.event.inputs.versionTag }}
 
-      # Github
       - name: Package and release for Github
         uses: BigWigsMods/packager@master
 
-  # Beispiel-Job für Retail-Build (Platzhalter)
   build-retail:
     if: github.event.inputs.buildRetail == 'true'
     needs: tag-and-release
