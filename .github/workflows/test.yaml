@@ -26,14 +26,15 @@ permissions:
   contents: write  # nötig für tag + release
 
 jobs:
-  tag-and-release:
-    name: Tag and Create Release
+  github-release:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_OAUTH: ${{ secrets.G_TOKEN }}  
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Clone project
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # nötig für Tag-Erstellung
+          fetch-depth: 0
 
       - name: Set up Git
         run: |
@@ -45,12 +46,9 @@ jobs:
           git tag ${{ github.event.inputs.versionTag }}
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} refs/tags/${{ github.event.inputs.versionTag }}
 
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ github.event.inputs.versionTag }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Github
+      - name: Package and release for Github
+        uses: BigWigsMods/packager@master
 
   # Beispiel-Job für Retail-Build (Platzhalter)
   build-retail:
