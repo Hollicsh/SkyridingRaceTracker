@@ -45,7 +45,10 @@ jobs:
           git tag ${{ github.event.inputs.versionTag }}
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} refs/tags/${{ github.event.inputs.versionTag }}
 
-
+      - name: Package and release for Github
+        uses: BigWigsMods/packager@v2
+        env:
+          GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
 
   build-retail:
     if: github.event.inputs.buildRetail == 'true'
