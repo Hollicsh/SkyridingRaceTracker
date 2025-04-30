@@ -29,6 +29,8 @@ jobs:
   tag-and-release:
     name: Tag and Create Release
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -46,9 +48,7 @@ jobs:
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} refs/tags/${{ github.event.inputs.versionTag }}
 
       - name: Package and release for Github
-        uses: BigWigsMods/packager@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: BigWigsMods/packager@v2
 
   build-retail:
     if: github.event.inputs.buildRetail == 'true'
