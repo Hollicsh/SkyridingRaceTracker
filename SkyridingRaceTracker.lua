@@ -7,7 +7,7 @@ local Options = SRT.options
 local RaceTracker = SRT.raceTracker
 local RaceTimeOverview = SRT.raceTimeOverview
 
-local raceDataTable = SRT.raceDataTable
+local raceDataTable = SRT.RACE_DATA
 
 local raceQuestID = -1
 local raceSpellID = -1

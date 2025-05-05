@@ -4,8 +4,8 @@ local L = SRT.localization
 
 local RaceTimeOverview = {}
 
-local raceDataTable = SRT.raceDataTable
-local sortedRaceDataTable = SRT.sortedRaceDataTable
+local raceDataTable = SRT.RACE_DATA
+local sortedRaceDataTable = SRT.SORTED_RACE_DATA
 
 --------------
 --- Frames ---
