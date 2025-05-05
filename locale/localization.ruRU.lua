@@ -22,8 +22,10 @@ L["gliding-speed"] = "Текущая скорость гонки: %s%%"
 L["seconds-long"] = "Секунды"
 L["seconds-short"] = "сек."
 
-L["button-close"] = "Закрыть"
-L["button-zone-overview"] = "Обзор зоны"
+L["button.close"] = "Закрыть"
+L["button.zone-overview"] = "Обзор зоны"
+
+L["title.zone-overview"] = "Zone Overview"
 
 L["race-normal"] = "Обычный маршрут"
 L["race-advanced"] = "Продвинутый маршрут"

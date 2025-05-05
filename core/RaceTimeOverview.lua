@@ -1,123 +1,134 @@
-local _, skyridingRaceTracker = ...
+local _, SRT = ...
 
-local L = skyridingRaceTracker.localization
-local raceDataTable = skyridingRaceTracker.raceDataTable
-local sortedRaceDataTable = skyridingRaceTracker.sortedRaceDataTable
+local L = SRT.localization
 
-local difficultyOrder = skyridingRaceTracker.difficultyOrder
+local RaceTimeOverview = {}
+
+local raceDataTable = SRT.raceDataTable
+local sortedRaceDataTable = SRT.sortedRaceDataTable
+
+local difficultyOrder = SRT.difficultyOrder
 
 --------------
 --- Frames ---
 --------------
-
-local raceTimeOverviewFrame = CreateFrame("Frame", "RaceTimeOverview", GossipFrame, "ButtonFrameTemplate")
-raceTimeOverviewFrame:SetPoint("TOPLEFT", GossipFrame, "TOPRIGHT", 15, 0)
-raceTimeOverviewFrame:SetSize(325, 250)
-raceTimeOverviewFrame:SetTitle("Skyriding Race Tracker")
-
-raceTimeOverviewFrame:Hide()
-
-raceTimeOverviewFrame.portrait = raceTimeOverviewFrame:GetPortrait()
-raceTimeOverviewFrame.portrait:SetPoint('TOPLEFT', -5, 8)
-raceTimeOverviewFrame.portrait:SetTexture(skyridingRaceTracker.MEDIA_PATH .. "iconRound.blp")
-
-raceTimeOverviewFrame.name = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.name:ClearAllPoints()
-raceTimeOverviewFrame.name:SetPoint("TOP", 0, -40)
-
-raceTimeOverviewFrame.modeNormal = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.modeNormal:ClearAllPoints()
-raceTimeOverviewFrame.modeAdvanced = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.modeAdvanced:ClearAllPoints()
-raceTimeOverviewFrame.modeReverse = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.modeReverse:ClearAllPoints()
-raceTimeOverviewFrame.modeChallenge = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.modeChallenge:ClearAllPoints()
-raceTimeOverviewFrame.modeChallengeReverse = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.modeChallengeReverse:ClearAllPoints()
-raceTimeOverviewFrame.modeStormGryphon = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-raceTimeOverviewFrame.modeStormGryphon:ClearAllPoints()
-
-raceTimeOverviewFrame.bestTimeNormal = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.bestTimeNormal:ClearAllPoints()
-raceTimeOverviewFrame.bestTimeAdvanced = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.bestTimeAdvanced:ClearAllPoints()
-raceTimeOverviewFrame.bestTimeReverse = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.bestTimeReverse:ClearAllPoints()
-raceTimeOverviewFrame.bestTimeChallenge = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.bestTimeChallenge:ClearAllPoints()
-raceTimeOverviewFrame.bestTimeChallengeReverse = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.bestTimeChallengeReverse:ClearAllPoints()
-raceTimeOverviewFrame.bestTimeStormGryphon = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.bestTimeStormGryphon:ClearAllPoints()
-
-raceTimeOverviewFrame.goldSilverTimeNormal = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.goldSilverTimeNormal:ClearAllPoints()
-raceTimeOverviewFrame.goldSilverTimeAdvanced = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.goldSilverTimeAdvanced:ClearAllPoints()
-raceTimeOverviewFrame.goldSilverTimeReverse = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.goldSilverTimeReverse:ClearAllPoints()
-raceTimeOverviewFrame.goldSilverTimeChallenge = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.goldSilverTimeChallenge:ClearAllPoints()
-raceTimeOverviewFrame.goldSilverTimeChallengeReverse = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.goldSilverTimeChallengeReverse:ClearAllPoints()
-raceTimeOverviewFrame.goldSilverTimeStormGryphon = raceTimeOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-raceTimeOverviewFrame.goldSilverTimeStormGryphon:ClearAllPoints()
-
-raceTimeOverviewFrame.openButton = CreateFrame("Button", nil, raceTimeOverviewFrame, "UIPanelButtonTemplate")
-raceTimeOverviewFrame.openButton:SetPoint("BOTTOM", raceTimeOverviewFrame, "BOTTOMRIGHT", -70, 4)
-raceTimeOverviewFrame.openButton:SetSize(130, 21)
-raceTimeOverviewFrame.openButton:SetText(L["button-zone-overview"] )
-
-local zoneOverviewFrame = CreateFrame("Frame", "ZoneOverviewFrame", raceTimeOverviewFrame, "SimplePanelTemplate")
-zoneOverviewFrame:SetPoint("TOPLEFT", raceTimeOverviewFrame, "TOPRIGHT", 15, 1)
-zoneOverviewFrame:SetSize(325, 330)
-
-zoneOverviewFrame:Hide()
-
-zoneOverviewFrame.header = zoneOverviewFrame:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-zoneOverviewFrame.header:SetPoint("TOP", 0, -11)
-zoneOverviewFrame.header:SetText("???")
-
-zoneOverviewFrame.scrollFrame = CreateFrame("ScrollFrame", nil, zoneOverviewFrame, "UIPanelScrollFrameTemplate")
-zoneOverviewFrame.scrollFrame:SetPoint("TOPLEFT", 10, -30)
-zoneOverviewFrame.scrollFrame:SetPoint("BOTTOMRIGHT", -30, 29)
-zoneOverviewFrame.scrollFrame:EnableMouseWheel(true)
-zoneOverviewFrame.scrollFrame:SetScript("OnMouseWheel", function(self, delta)
-    local newValue = math.max(0, math.min(self:GetVerticalScroll() - delta * 20, self:GetVerticalScrollRange()))
-    self:SetVerticalScroll(newValue)
-end)
-
-zoneOverviewFrame.closeButton = CreateFrame("Button", nil, zoneOverviewFrame, "UIPanelButtonTemplate")
-zoneOverviewFrame.closeButton:SetPoint("BOTTOM", zoneOverviewFrame, "BOTTOMRIGHT", -55, 4)
-zoneOverviewFrame.closeButton:SetSize(100, 21)
-zoneOverviewFrame.closeButton:SetText(L["button-close"] )
-
-zoneOverviewFrame.closeButton:SetScript("OnClick", function()
-    zoneOverviewFrame:Hide()
-end)
-
-raceTimeOverviewFrame.openButton:SetScript("OnClick", function()
-    zoneOverviewFrame:Show()
-end)
+---
+local raceOverviewFrame
+local zoneOverviewFrame
+local globalOverviewFrame
 
 ----------------------
 --- Local funtions ---
 ----------------------
 
-local function ShowZoneRaceTimeOverview(zoneID)
-    zoneOverviewFrame.header:SetText(C_Map.GetMapInfo(zoneID).name)
+----------------------
+--- Frame Funtions ---
+----------------------
 
-    if zoneOverviewFrame.scrollFrame:GetScrollChild() ~= nil then
-        local oldContent = zoneOverviewFrame.scrollFrame:GetScrollChild()
-        oldContent:Hide()
+local function UpdateRaceOverview(npcID, scrollFrame)
+    if scrollFrame.rows then
+        for _, row in ipairs(scrollFrame.rows) do
+            for _, element in ipairs(row) do
+                element:Hide()
+                element:SetParent(nil)
+            end
+        end
     end
 
-    local content = CreateFrame("Frame", nil, zoneOverviewFrame.scrollFrame)
-    content:SetSize(270, 250)
-    zoneOverviewFrame.scrollFrame:SetScrollChild(content)
+    scrollFrame.rows = {}
 
-    local hight = -10
+    local offsetY = 0
+
+    local zoneID = raceDataTable[npcID][2]
+    local questID = raceDataTable[npcID][3].NORMAL[1]
+
+    local quest = scrollFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    quest:SetPoint("TOP", 0, 35)
+
+    QuestEventListener:AddCallback(questID, function()
+        local name = C_QuestLog.GetTitleForQuestID(questID)
+        quest:SetText(name)
+    end)
+
+    table.insert(scrollFrame.rows, {quest})
+
+    local difficulties = raceDataTable[npcID][3]
+
+    for _, modeKey in ipairs(difficultyOrder) do
+        if difficulties[modeKey] then
+            local lookupKey = "race-" .. modeKey:lower():gsub("_", "-")
+
+            local racePersonalTime = -1
+            local raceGoldTime = raceDataTable[npcID][3].NORMAL[4]
+            local raceSilverTime = raceDataTable[npcID][3].NORMAL[5]
+
+            if raceDataTable[npcID][3][modeKey][2] ~= 0 then
+                racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3][modeKey][2]).quantity / 1000
+            end
+
+            local mode = scrollFrame.scrollView:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+            mode:SetPoint("TOPLEFT", 0, offsetY)
+            mode:SetJustifyH("LEFT")
+            mode:SetText(L[lookupKey])
+
+            offsetY = offsetY - 20
+
+            local bestTime = scrollFrame.scrollView:CreateFontString(nil, "OVERLAY", "GameFontWhite")
+            bestTime:SetPoint("TOPLEFT", 0, offsetY)
+            bestTime:SetJustifyH("LEFT")
+
+            if racePersonalTime == -1 then
+                bestTime:SetText(L["personal-best-time-not-available"])
+            elseif racePersonalTime == 0 then
+                bestTime:SetText(L["personal-best-time-no-race"])
+            else
+                local time
+
+                if racePersonalTime <= raceGoldTime then
+                    time = "|T616373:0|t |c" .. SRT.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
+                elseif racePersonalTime <= raceSilverTime then
+                    time = "|T616375:0|t |c" .. SRT.COLOR_SILVER .. racePersonalTime .. "|r"
+                else
+                    time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE .. racePersonalTime .. "|r"
+                end
+
+                bestTime:SetText(L["personal-best-time"]:format(time))
+            end
+
+            offsetY = offsetY - 20
+
+            local goldSilverTime = scrollFrame.scrollView:CreateFontString(nil, "OVERLAY", "GameFontWhite")
+            goldSilverTime:SetPoint("TOPLEFT", 0, offsetY)
+            goldSilverTime:SetJustifyH("LEFT")
+            goldSilverTime:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
+
+            table.insert(scrollFrame.rows, {mode, bestTime, goldSilverTime})
+
+            offsetY = offsetY - 40
+        end
+    end
+
+    return zoneID
+end
+
+local function UpdateZoneOverview(zoneID, scrollFrame)
+    if scrollFrame.rows then
+        for _, row in ipairs(scrollFrame.rows) do
+            for _, element in ipairs(row) do
+                element:Hide()
+                element:SetParent(nil)
+            end
+        end
+    end
+
+    scrollFrame.rows = {}
+
+    local zone = scrollFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    zone:SetPoint("TOP", 0, 35)
+    zone:SetText(C_Map.GetMapInfo(zoneID).name)
+    table.insert(scrollFrame.rows, {zone})
+
+    local offsetY = 0
     local count = 1
 
     for _, raceData in ipairs(sortedRaceDataTable) do
@@ -125,10 +136,10 @@ local function ShowZoneRaceTimeOverview(zoneID)
             local modes = raceData.modes
 
             local questID = modes.NORMAL[1]
-            local header = content:CreateFontString(nil, "ARTWORK", "GameFontNormal")
-            header:SetPoint("TOPLEFT", 10, hight)
-            header:SetWidth(270)
+            local header = scrollFrame.scrollView:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+            header:SetPoint("TOPLEFT", 0, offsetY)
             header:SetJustifyH("LEFT")
+            table.insert(scrollFrame.rows, {header})
 
             QuestEventListener:AddCallback(questID, function()
                 local name = C_QuestLog.GetTitleForQuestID(questID)
@@ -136,7 +147,7 @@ local function ShowZoneRaceTimeOverview(zoneID)
                 count = count + 1
             end)
 
-            hight = hight - 20
+            offsetY = offsetY - 20
 
             for _, mode in ipairs(difficultyOrder) do
                 local data = modes[mode]
@@ -166,18 +177,18 @@ local function ShowZoneRaceTimeOverview(zoneID)
                         difficulty = L["race-storm-gryphon"]
                     end
 
-                    local text = content:CreateFontString(nil, "ARTWORK", "GameFontWhite")
-                    text:SetPoint("TOPLEFT", 10, hight)
-                    text:SetWidth(270)
+                    local text = scrollFrame.scrollView:CreateFontString(nil, "OVERLAY", "GameFontWhite")
+                    text:SetPoint("TOPLEFT", 0, offsetY)
                     text:SetJustifyH("LEFT")
+                    table.insert(scrollFrame.rows, {text})
 
                     if racePersonalTime > 0 then
                         if racePersonalTime <= raceGoldTime then
-                            time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
+                            time = "|T616373:0|t |c" .. SRT.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
                         elseif racePersonalTime <= raceSilverTime then
-                            time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
+                            time = "|T616375:0|t |c" .. SRT.COLOR_SILVER .. racePersonalTime .. "|r"
                         else
-                            time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
+                            time = "|T616372:0|t |c" .. SRT.COLOR_BRONZE .. racePersonalTime .. "|r"
                         end
 
                         text:SetText(difficulty .. ": " .. time .. " " .. L['seconds-short'])
@@ -185,330 +196,105 @@ local function ShowZoneRaceTimeOverview(zoneID)
                         text:SetText(difficulty .. ": " .. time)
                     end
 
-                    hight = hight - 15
+                    offsetY = offsetY - 16
                 end
             end
 
-            hight = hight - 15
+            offsetY = offsetY - 16
         end
     end
+end
 
-    content:SetSize(270, (hight * -1) - 10)
-    content:Show()
+local function InitializeFrames()
+    do
+        raceOverviewFrame = CreateFrame("Frame", "RaceTimeOverview", GossipFrame, "PortraitFrameTemplate")
+        raceOverviewFrame:SetPoint("TOPLEFT", GossipFrame, "TOPRIGHT", 15, 0)
+        raceOverviewFrame:SetSize(370, 450)
+        raceOverviewFrame:SetTitle(L["addon.name"])
+        raceOverviewFrame:Hide()
+
+        raceOverviewFrame.portrait = raceOverviewFrame:GetPortrait()
+        raceOverviewFrame.portrait:SetPoint('TOPLEFT', -5, 8)
+        raceOverviewFrame.portrait:SetTexture(SRT.MEDIA_PATH .. "iconRound.blp")
+
+        local background = CreateFrame("Frame", nil, raceOverviewFrame, "InsetFrameTemplate4")
+        background:SetSize(350, 350)
+        background:SetPoint("BOTTOM", raceOverviewFrame, "BOTTOM", 0, 37)
+        background.texture = background:CreateTexture(nil, "BACKGROUND")
+        background.texture:SetAllPoints(background)
+        background.texture:SetPoint("CENTER")
+        background.texture:SetAtlas("character-panel-background", true)
+
+        raceOverviewFrame.scrollFrame = CreateFrame("ScrollFrame", nil, raceOverviewFrame, "SRT_OverviewScrollFrameTemplate")
+        raceOverviewFrame.scrollFrame:SetPoint("TOPLEFT", background, "TOPLEFT", 15, -15)
+        raceOverviewFrame.scrollFrame:SetPoint("BOTTOMRIGHT", background, "BOTTOMRIGHT", -25, 15)
+
+        raceOverviewFrame.scrollFrame.scrollView = CreateFrame("Frame")
+        raceOverviewFrame.scrollFrame.scrollView:SetSize(1, 1)
+        raceOverviewFrame.scrollFrame:SetScrollChild(raceOverviewFrame.scrollFrame.scrollView)
+
+        raceOverviewFrame.openButton = CreateFrame("Button", nil, raceOverviewFrame, "UIPanelButtonTemplate")
+        raceOverviewFrame.openButton:SetPoint("TOPRIGHT", background, "BOTTOMRIGHT", -5, -5)
+        raceOverviewFrame.openButton:SetSize(130, 22)
+        raceOverviewFrame.openButton:SetText(L["button.zone-overview"] )
+
+        raceOverviewFrame.openButton:SetScript("OnClick", function()
+            zoneOverviewFrame:Show()
+        end)
+    end
+
+    do
+        zoneOverviewFrame = CreateFrame("Frame", nil, raceOverviewFrame, "DefaultPanelTemplate")
+        zoneOverviewFrame:SetPoint("TOPLEFT", raceOverviewFrame, "TOPRIGHT", 15, 0)
+        zoneOverviewFrame:SetSize(375, 450)
+        zoneOverviewFrame:SetTitle(L["title.zone-overview"])
+        zoneOverviewFrame:Hide()
+
+        local background = CreateFrame("Frame", nil, zoneOverviewFrame, "InsetFrameTemplate4")
+        background:SetSize(350, 350)
+        background:SetPoint("BOTTOM", zoneOverviewFrame, "BOTTOM", 3, 37)
+        background.texture = background:CreateTexture(nil, "BACKGROUND")
+        background.texture:SetAllPoints(background)
+        background.texture:SetPoint("CENTER")
+        background.texture:SetAtlas("character-panel-background", true)
+
+        zoneOverviewFrame.scrollFrame = CreateFrame("ScrollFrame", nil, zoneOverviewFrame, "SRT_OverviewScrollFrameTemplate")
+        zoneOverviewFrame.scrollFrame:SetPoint("TOPLEFT", background, "TOPLEFT", 15, -15)
+        zoneOverviewFrame.scrollFrame:SetPoint("BOTTOMRIGHT", background, "BOTTOMRIGHT", -25, 15)
+
+        zoneOverviewFrame.scrollFrame.scrollView = CreateFrame("Frame")
+        zoneOverviewFrame.scrollFrame.scrollView:SetSize(1, 1)
+        zoneOverviewFrame.scrollFrame:SetScrollChild(zoneOverviewFrame.scrollFrame.scrollView)
+
+        zoneOverviewFrame.closeButton = CreateFrame("Button", nil, zoneOverviewFrame, "UIPanelButtonTemplate")
+        zoneOverviewFrame.closeButton:SetPoint("TOPRIGHT", background, "BOTTOMRIGHT", -5, -5)
+        zoneOverviewFrame.closeButton:SetSize(100, 22)
+        zoneOverviewFrame.closeButton:SetText(L["button.close"] )
+
+        zoneOverviewFrame.closeButton:SetScript("OnClick", function()
+            zoneOverviewFrame:Hide()
+        end)
+    end
 end
 
 ---------------------
 --- Main funtions ---
 ---------------------
 
-function skyridingRaceTracker:ShowRaceTimeOverview(npcID)
-    local left = 20
-    local hight = -35
-    local count = 0
-
-    local zoneID = raceDataTable[npcID][2]
-    local questID = raceDataTable[npcID][3].NORMAL[1]
-
-    QuestEventListener:AddCallback(questID, function()
-        local name = C_QuestLog.GetTitleForQuestID(questID)
-        raceTimeOverviewFrame.name:SetText(name)
-    end)
-
-    if raceDataTable[npcID][3].NORMAL ~= nil then
-        count = count + 1
-
-        local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].NORMAL[4]
-        local raceSilverTime = raceDataTable[npcID][3].NORMAL[5]
-
-        if raceDataTable[npcID][3].NORMAL[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].NORMAL[2]).quantity / 1000
-        end
-
-        hight = hight - 40
-        raceTimeOverviewFrame.modeNormal:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.modeNormal:SetText(L["race-normal"])
-
-        hight = hight - 20
-        raceTimeOverviewFrame.bestTimeNormal:SetPoint("TOPLEFT", left, hight)
-
-        if racePersonalTime == -1 then
-            raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time-not-available"])
-        elseif racePersonalTime == 0 then
-            raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time-no-race"])
-        else
-            local time
-
-            if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
-            elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
-            else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
-            end
-
-            raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time"]:format(time))
-        end
-
-        hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeNormal:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.goldSilverTimeNormal:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
-    end
-
-    if raceDataTable[npcID][3].ADVANCED ~= nil then
-        count = count + 1
-
-        local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].ADVANCED[4]
-        local raceSilverTime = raceDataTable[npcID][3].ADVANCED[5]
-
-        if raceDataTable[npcID][3].ADVANCED[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].ADVANCED[2]).quantity / 1000
-        end
-
-        hight = hight - 40
-        raceTimeOverviewFrame.modeAdvanced:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.modeAdvanced:SetText(L["race-advanced"])
-
-        hight = hight - 20
-        raceTimeOverviewFrame.bestTimeAdvanced:SetPoint("TOPLEFT", left, hight)
-
-        if racePersonalTime == -1 then
-            raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time-not-available"])
-        elseif racePersonalTime == 0 then
-            raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time-no-race"])
-        else
-            local time
-
-            if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
-            elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
-            else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
-            end
-
-            raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time"]:format(time))
-        end
-
-        hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeAdvanced:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.goldSilverTimeAdvanced:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
-
-        raceTimeOverviewFrame.modeAdvanced:Show()
-        raceTimeOverviewFrame.bestTimeAdvanced:Show()
-        raceTimeOverviewFrame.goldSilverTimeAdvanced:Show()
-    else
-        raceTimeOverviewFrame.modeAdvanced:Hide()
-        raceTimeOverviewFrame.bestTimeAdvanced:Hide()
-        raceTimeOverviewFrame.goldSilverTimeAdvanced:Hide()
-    end
-
-    if raceDataTable[npcID][3].REVERSE ~= nil then
-        count = count + 1
-
-        local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].REVERSE[4]
-        local raceSilverTime = raceDataTable[npcID][3].REVERSE[5]
-
-        if raceDataTable[npcID][3].REVERSE[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].REVERSE[2]).quantity / 1000
-        end
-
-        hight = hight - 40
-        raceTimeOverviewFrame.modeReverse:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.modeReverse:SetText(L["race-reverse"])
-
-        hight = hight - 20
-        raceTimeOverviewFrame.bestTimeReverse:SetPoint("TOPLEFT", left, hight)
-
-        if racePersonalTime == -1 then
-            raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time-not-available"])
-        elseif racePersonalTime == 0 then
-            raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time-no-race"])
-        else
-            local time
-
-            if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
-            elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
-            else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
-            end
-
-            raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time"]:format(time))
-        end
-
-        hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeReverse:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.goldSilverTimeReverse:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
-
-        raceTimeOverviewFrame.modeReverse:Show()
-        raceTimeOverviewFrame.bestTimeReverse:Show()
-        raceTimeOverviewFrame.goldSilverTimeReverse:Show()
-    else
-        raceTimeOverviewFrame.modeReverse:Hide()
-        raceTimeOverviewFrame.bestTimeReverse:Hide()
-        raceTimeOverviewFrame.goldSilverTimeReverse:Hide()
-    end
-
-    if raceDataTable[npcID][3].CHALLENGE ~= nil then
-        count = count + 1
-
-        local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE[4]
-        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE[5]
-
-        if raceDataTable[npcID][3].CHALLENGE[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].CHALLENGE[2]).quantity / 1000
-        end
-
-        hight = hight - 40
-        raceTimeOverviewFrame.modeChallenge:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.modeChallenge:SetText(L["race-challenge"])
-
-        hight = hight - 20
-        raceTimeOverviewFrame.bestTimeChallenge:SetPoint("TOPLEFT", left, hight)
-
-        if racePersonalTime == -1 then
-            raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time-not-available"])
-        elseif racePersonalTime == 0 then
-            raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time-no-race"])
-        else
-            local time
-
-            if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
-            elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
-            else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
-            end
-
-            raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time"]:format(time))
-        end
-
-        hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeChallenge:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.goldSilverTimeChallenge:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
-
-        raceTimeOverviewFrame.modeChallenge:Show()
-        raceTimeOverviewFrame.bestTimeChallenge:Show()
-        raceTimeOverviewFrame.goldSilverTimeChallenge:Show()
-    else
-        raceTimeOverviewFrame.modeChallenge:Hide()
-        raceTimeOverviewFrame.bestTimeChallenge:Hide()
-        raceTimeOverviewFrame.goldSilverTimeChallenge:Hide()
-    end
-
-    if raceDataTable[npcID][3].CHALLENGE_REVERSE ~= nil then
-        count = count + 1
-
-        local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[4]
-        local raceSilverTime = raceDataTable[npcID][3].CHALLENGE_REVERSE[5]
-
-        if raceDataTable[npcID][3].CHALLENGE_REVERSE[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].CHALLENGE_REVERSE[2]).quantity / 1000
-        end
-
-        hight = hight - 40
-        raceTimeOverviewFrame.modeChallengeReverse:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.modeChallengeReverse:SetText(L["race-challenge-reverse"])
-
-        hight = hight - 20
-        raceTimeOverviewFrame.bestTimeChallengeReverse:SetPoint("TOPLEFT", left, hight)
-
-        if racePersonalTime == -1 then
-            raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time-not-available"])
-        elseif racePersonalTime == 0 then
-            raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time-no-race"])
-        else
-            local time
-
-            if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
-            elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
-            else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
-            end
-
-            raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time"]:format(time))
-        end
-
-        hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeChallengeReverse:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.goldSilverTimeChallengeReverse:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
-
-        raceTimeOverviewFrame.modeChallengeReverse:Show()
-        raceTimeOverviewFrame.bestTimeChallengeReverse:Show()
-        raceTimeOverviewFrame.goldSilverTimeChallengeReverse:Show()
-    else
-        raceTimeOverviewFrame.modeChallengeReverse:Hide()
-        raceTimeOverviewFrame.bestTimeChallengeReverse:Hide()
-        raceTimeOverviewFrame.goldSilverTimeChallengeReverse:Hide()
-    end
-
-    if raceDataTable[npcID][3].STORM_GRYPHON ~= nil then
-        count = count + 1
-
-		local racePersonalTime = -1
-        local raceGoldTime = raceDataTable[npcID][3].STORM_GRYPHON[4]
-        local raceSilverTime = raceDataTable[npcID][3].STORM_GRYPHON[5]
-
-        if raceDataTable[npcID][3].STORM_GRYPHON[2] ~= 0 then
-            racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3].STORM_GRYPHON[2]).quantity / 1000
-        end
-
-        hight = hight - 40
-        raceTimeOverviewFrame.modeStormGryphon:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.modeStormGryphon:SetText(L["race-storm-gryphon"])
-
-        hight = hight - 20
-        raceTimeOverviewFrame.bestTimeStormGryphon:SetPoint("TOPLEFT", left, hight)
-
-        if racePersonalTime == -1 then
-            raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time-not-available"])
-        elseif racePersonalTime == 0 then
-            raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time-no-race"])
-        else
-            local time
-
-            if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
-            elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
-            else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
-            end
-
-            raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time"]:format(time))
-        end
-
-        hight = hight - 20
-        raceTimeOverviewFrame.goldSilverTimeStormGryphon:SetPoint("TOPLEFT", left, hight)
-        raceTimeOverviewFrame.goldSilverTimeStormGryphon:SetText(L["gold-time"]:format(raceGoldTime) .. " - " .. L["silver-time"]:format(raceSilverTime))
-
-        raceTimeOverviewFrame.modeStormGryphon:Show()
-        raceTimeOverviewFrame.bestTimeStormGryphon:Show()
-        raceTimeOverviewFrame.goldSilverTimeStormGryphon:Show()
-    else
-        raceTimeOverviewFrame.modeStormGryphon:Hide()
-        raceTimeOverviewFrame.bestTimeStormGryphon:Hide()
-        raceTimeOverviewFrame.goldSilverTimeStormGryphon:Hide()
-    end
-
-    local frameHight = 330 + ((count - 3) * 80)
-
-    raceTimeOverviewFrame:SetSize(325, frameHight)
-    raceTimeOverviewFrame:Show()
-
-    ShowZoneRaceTimeOverview(zoneID)
+function RaceTimeOverview:Initialize()
+    InitializeFrames()
 end
 
-function skyridingRaceTracker:HideRaceTimeOverview()
+function RaceTimeOverview:ShowRaceOverview(npcID)
+    local zoneID = UpdateRaceOverview(npcID, raceOverviewFrame.scrollFrame)
+    UpdateZoneOverview(zoneID, zoneOverviewFrame.scrollFrame)
+
+    raceOverviewFrame:Show()
+end
+
+function RaceTimeOverview:HideRaceOverview()
     zoneOverviewFrame:Hide()
-	raceTimeOverviewFrame:Hide()
+	raceOverviewFrame:Hide()
 end
+
+SRT.raceTimeOverview = RaceTimeOverview

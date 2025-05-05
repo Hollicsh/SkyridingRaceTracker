@@ -4,6 +4,8 @@ local L = SRT.localization
 local Utils = SRT.utils
 local Dialog = SRT.dialog
 local Options = SRT.options
+local RaceTracker = SRT.raceTracker
+local RaceTimeOverview = SRT.raceTimeOverview
 
 local raceDataTable = SRT.raceDataTable
 
@@ -75,10 +77,10 @@ end
 function skyridingRaceTrackerFrame:ADDON_LOADED(_, addOnName)
     if addOnName == addonName then
         Utils:InitializeDatabase()
-
         Dialog:InitializeDialog()
-
         Options:Initialize()
+        RaceTracker:Initialize()
+        RaceTimeOverview:Initialize()
 
         Utils:PrintDebug("Addon fully loaded.")
     end
@@ -92,7 +94,7 @@ function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
     if result ~= nil then
         Utils:PrintDebug("Event 'QUEST_ACCEPTED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
 
-        if SRT.options["race-tracker"] then
+        if SRT.data.options["race-tracker"] then
             raceQuestID = result.questID
             raceSpellID = result.spellID
             raceGoldTime = result.goldTime
@@ -102,7 +104,7 @@ function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
                 racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(result.raceTime).quantity / 1000
             end
 
-            SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
+            RaceTracker:Start(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
         else
             Utils:PrintDebug("No race tracker requested.")
         end
@@ -117,27 +119,27 @@ function skyridingRaceTrackerFrame:QUEST_REMOVED(_, questID, wasReplayQuest)
         raceSilverTime = -1
         racePersonalTime = -1
 
-        SRT:StopRaceTracker()
+        RaceTracker:Stop()
 
         Utils:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
     end
 end
 
 GossipFrame:HookScript("OnShow",function()
-    if UnitExists("target") and SRT.options["race-time-overview"] then
+    if UnitExists("target") and SRT.data.options["race-time-overview"] then
 		local npcID = select(6, strsplit("-", tostring(UnitGUID("target"))))
         npcID = tonumber(npcID)
 
         --skyridingRaceTracker:PrintDebug("npcID: " .. npcID)
 
         if raceDataTable[npcID] ~= nil then
-            SRT:ShowRaceTimeOverview(npcID)
+            RaceTimeOverview:ShowRaceOverview(npcID)
         end
     end
 end)
 
 GossipFrame:HookScript("OnHide",function()
-    SRT:HideRaceTimeOverview()
+    RaceTimeOverview:HideRaceOverview()
 end)
 
 skyridingRaceTrackerFrame:RegisterEvent("ADDON_LOADED")

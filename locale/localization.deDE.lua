@@ -22,8 +22,10 @@ L["gliding-speed"] = "aktuelle Renngeschwindigkeit: %s%%"
 L["seconds-long"] = "Sekunden"
 L["seconds-short"] = "Sek."
 
-L["button-close"] = "Schließen"
-L["button-zone-overview"] = "Zonenübersicht"
+L["button.close"] = "Schließen"
+L["button.zone-overview"] = "Zonenübersicht"
+
+L["title.zone-overview"] = "Zonenübersicht"
 
 L["race-normal"] = "Normal"
 L["race-advanced"] = "Fortgeschritten"

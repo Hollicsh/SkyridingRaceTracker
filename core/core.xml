@@ -2,5 +2,6 @@
 ..\..\FrameXML\UI.xsd">
     <Script file="RaceTracker.lua" />
     <Script file="RaceTimeOverview.lua" />
+    <Include file="RaceTimeOverview.xml" />
     <Script file="Options.lua" />
 </Ui>
