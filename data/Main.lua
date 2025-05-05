@@ -22,21 +22,3 @@ SRT.COLOR_BRONZE = "ffCD7F32"
 SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
 
 SRT.DIFFICULTY_ORDER = {"NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"}
-
-local raceDataTable = SRT.raceDataTable
-
-SRT.sortedRaceDataTable = {}
-local sortedRaceDataTable = SRT.sortedRaceDataTable
-
------------------
---- Data Sort ---
------------------
-
-for raceID, dataWrapper in pairs(raceDataTable) do
-    local order, zoneID, modes = unpack(dataWrapper)
-    table.insert(sortedRaceDataTable, {raceID = raceID, order = order, zoneID = zoneID, modes = modes})
-end
-
-table.sort(sortedRaceDataTable, function(a, b)
-    return a.order < b.order
-end)

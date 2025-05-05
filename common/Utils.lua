@@ -56,12 +56,29 @@ function Utils:PrintMessage(msg)
 end
 
 function Utils:InitializeDatabase()
+    -- Options
     if (not SkyridingRaceTracker_Options_v2) then
         SkyridingRaceTracker_Options_v2 = {}
     end
 
     SRT.data = {}
     SRT.data.options = SkyridingRaceTracker_Options_v2
+
+    -- Race Data
+
+    SRT.SORTED_RACE_DATA = {}
+
+    local raceData = SRT.RACE_DATA
+    local sortedRaceData
+
+    for raceID, dataWrapper in pairs(raceData) do
+        local order, zoneID, modes = unpack(dataWrapper)
+        table.insert(sortedRaceData, {raceID = raceID, order = order, zoneID = zoneID, modes = modes})
+    end
+
+    table.sort(sortedRaceData, function(a, b) return a.order < b.order end)
+
+    SORTED_RACE_DATA = sortedRaceData
 end
 
 SRT.utils = Utils

@@ -27,4 +27,4 @@ To open the addon option window, type `/srt` or `/SkyridingRaceTracker` into you
 
 ### Translation Support
 
-If you would like to help me with the translation, I would be very pleased.
+If you would like to help me with the translation, you can do so here: [CurseForge](https://legacy.curseforge.com/wow/addons/skyriding-race-tracker/localization) - Many thanks!

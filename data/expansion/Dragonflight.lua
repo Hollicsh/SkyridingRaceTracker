@@ -1,10 +1,10 @@
-local _, skyridingRaceTracker = ...
+local _, SRT = ...
 
-if skyridingRaceTracker.raceDataTable == nil then
-    skyridingRaceTracker.raceDataTable = {}
+if SRT.RACE_DATA == nil then
+    SRT.RACE_DATA = {}
 end
 
-local raceDataTable = skyridingRaceTracker.raceDataTable
+local raceDataTable = SRT.RACE_DATA
 
 -- Dragonflight
 -- The Waking Shores Z1 (Die Küste des Erwachens)
