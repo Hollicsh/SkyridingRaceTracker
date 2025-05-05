@@ -7,8 +7,6 @@ local RaceTimeOverview = {}
 local raceDataTable = SRT.raceDataTable
 local sortedRaceDataTable = SRT.sortedRaceDataTable
 
-local difficultyOrder = SRT.difficultyOrder
-
 --------------
 --- Frames ---
 --------------
@@ -54,7 +52,7 @@ local function UpdateRaceOverview(npcID, scrollFrame)
 
     local difficulties = raceDataTable[npcID][3]
 
-    for _, modeKey in ipairs(difficultyOrder) do
+    for _, modeKey in ipairs(SRT.DIFFICULTY_ORDER) do
         if difficulties[modeKey] then
             local lookupKey = "race-" .. modeKey:lower():gsub("_", "-")
 
@@ -134,8 +132,8 @@ local function UpdateZoneOverview(zoneID, scrollFrame)
     for _, raceData in ipairs(sortedRaceDataTable) do
         if raceData.zoneID == zoneID then
             local modes = raceData.modes
-
             local questID = modes.NORMAL[1]
+
             local header = scrollFrame.scrollView:CreateFontString(nil, "OVERLAY", "GameFontNormal")
             header:SetPoint("TOPLEFT", 0, offsetY)
             header:SetJustifyH("LEFT")
@@ -149,7 +147,7 @@ local function UpdateZoneOverview(zoneID, scrollFrame)
 
             offsetY = offsetY - 20
 
-            for _, mode in ipairs(difficultyOrder) do
+            for _, mode in ipairs(SRT.DIFFICULTY_ORDER) do
                 local data = modes[mode]
 
                 if data then
@@ -209,7 +207,7 @@ local function InitializeFrames()
     do
         raceOverviewFrame = CreateFrame("Frame", "RaceTimeOverview", GossipFrame, "PortraitFrameTemplate")
         raceOverviewFrame:SetPoint("TOPLEFT", GossipFrame, "TOPRIGHT", 15, 0)
-        raceOverviewFrame:SetSize(370, 450)
+        raceOverviewFrame:SetSize(370, 430)
         raceOverviewFrame:SetTitle(L["addon.name"])
         raceOverviewFrame:Hide()
 
@@ -218,12 +216,12 @@ local function InitializeFrames()
         raceOverviewFrame.portrait:SetTexture(SRT.MEDIA_PATH .. "iconRound.blp")
 
         local background = CreateFrame("Frame", nil, raceOverviewFrame, "InsetFrameTemplate4")
-        background:SetSize(350, 350)
+        background:SetSize(350, 330)
         background:SetPoint("BOTTOM", raceOverviewFrame, "BOTTOM", 0, 37)
         background.texture = background:CreateTexture(nil, "BACKGROUND")
         background.texture:SetAllPoints(background)
         background.texture:SetPoint("CENTER")
-        background.texture:SetAtlas("character-panel-background", true)
+        background.texture:SetAtlas("character-panel-background", false)
 
         raceOverviewFrame.scrollFrame = CreateFrame("ScrollFrame", nil, raceOverviewFrame, "SRT_OverviewScrollFrameTemplate")
         raceOverviewFrame.scrollFrame:SetPoint("TOPLEFT", background, "TOPLEFT", 15, -15)
@@ -236,7 +234,7 @@ local function InitializeFrames()
         raceOverviewFrame.openButton = CreateFrame("Button", nil, raceOverviewFrame, "UIPanelButtonTemplate")
         raceOverviewFrame.openButton:SetPoint("TOPRIGHT", background, "BOTTOMRIGHT", -5, -5)
         raceOverviewFrame.openButton:SetSize(130, 22)
-        raceOverviewFrame.openButton:SetText(L["button.zone-overview"] )
+        raceOverviewFrame.openButton:SetText(L["button.zone-overview"])
 
         raceOverviewFrame.openButton:SetScript("OnClick", function()
             zoneOverviewFrame:Show()
@@ -246,17 +244,17 @@ local function InitializeFrames()
     do
         zoneOverviewFrame = CreateFrame("Frame", nil, raceOverviewFrame, "DefaultPanelTemplate")
         zoneOverviewFrame:SetPoint("TOPLEFT", raceOverviewFrame, "TOPRIGHT", 15, 0)
-        zoneOverviewFrame:SetSize(375, 450)
+        zoneOverviewFrame:SetSize(375, 430)
         zoneOverviewFrame:SetTitle(L["title.zone-overview"])
         zoneOverviewFrame:Hide()
 
         local background = CreateFrame("Frame", nil, zoneOverviewFrame, "InsetFrameTemplate4")
-        background:SetSize(350, 350)
+        background:SetSize(350, 330)
         background:SetPoint("BOTTOM", zoneOverviewFrame, "BOTTOM", 3, 37)
         background.texture = background:CreateTexture(nil, "BACKGROUND")
         background.texture:SetAllPoints(background)
         background.texture:SetPoint("CENTER")
-        background.texture:SetAtlas("character-panel-background", true)
+        background.texture:SetAtlas("character-panel-background", false)
 
         zoneOverviewFrame.scrollFrame = CreateFrame("ScrollFrame", nil, zoneOverviewFrame, "SRT_OverviewScrollFrameTemplate")
         zoneOverviewFrame.scrollFrame:SetPoint("TOPLEFT", background, "TOPLEFT", 15, -15)
@@ -269,7 +267,7 @@ local function InitializeFrames()
         zoneOverviewFrame.closeButton = CreateFrame("Button", nil, zoneOverviewFrame, "UIPanelButtonTemplate")
         zoneOverviewFrame.closeButton:SetPoint("TOPRIGHT", background, "BOTTOMRIGHT", -5, -5)
         zoneOverviewFrame.closeButton:SetSize(100, 22)
-        zoneOverviewFrame.closeButton:SetText(L["button.close"] )
+        zoneOverviewFrame.closeButton:SetText(L["button.close"])
 
         zoneOverviewFrame.closeButton:SetScript("OnClick", function()
             zoneOverviewFrame:Hide()

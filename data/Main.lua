@@ -21,7 +21,7 @@ SRT.COLOR_BRONZE = "ffCD7F32"
 
 SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
 
-SRT.difficultyOrder = {"NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"}
+SRT.DIFFICULTY_ORDER = {"NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"}
 
 local raceDataTable = SRT.raceDataTable
 
