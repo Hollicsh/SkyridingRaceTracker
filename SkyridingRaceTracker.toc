@@ -7,6 +7,7 @@
 ## X-BuildDate: @build-date@
 ## X-E-Mail: feedback@wow-addon.dev
 ## X-Github: https://github.com/diomsg-code/SkyridingRaceTracker
+## X-Curseforge: https://www.curseforge.com/wow/addons/skyriding-race-tracker
 ## Notes: A World of Warcraft addon to display the current race time during a skyriding race.
 ## Notes-deDE: Ein World of Warcraft Addon zur Anzeige der aktuellen Rennzeit während eines Himmelsreiterrennen.
 ## Notes-ruRU: Отображает текущее время гонки во время гонок на Драконах
@@ -15,8 +16,5 @@
 ## AllowLoadGameType: mainline
 ## SavedVariables: SkyridingRaceTracker_Options_v2
 
-locals.xml
-data.xml
-core.xml
-
+SkyridingRaceTracker.xml
 SkyridingRaceTracker.lua

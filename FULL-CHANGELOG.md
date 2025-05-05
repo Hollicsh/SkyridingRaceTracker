@@ -1,4 +1,4 @@
-**3.3.3 (@build-date@)**
+**3.3.3 (2025-04-23)**
 - Removed: TOC version for patch 11.1.0 (Retail)
 
 **3.3.2 (2025-04-21)**

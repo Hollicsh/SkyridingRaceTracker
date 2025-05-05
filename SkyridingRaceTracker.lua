@@ -1,7 +1,7 @@
-local addonName, skyridingRaceTracker = ...
+local addonName, SRT = ...
 
-local L = skyridingRaceTracker.localization
-local raceDataTable = skyridingRaceTracker.raceDataTable
+local L = SRT.localization
+local raceDataTable = SRT.raceDataTable
 
 local raceQuestID = -1
 local raceSpellID = -1
@@ -50,7 +50,7 @@ local function SlashCommand(msg, editbox)
     if not msg or msg:trim() == "" then
         Settings.OpenToCategory("Skyriding Race Tracker")
 	else
-        skyridingRaceTracker:PrintDebug("No arguments will be accepted.")
+        SRT:PrintDebug("No arguments will be accepted.")
 	end
 end
 
@@ -70,8 +70,8 @@ end
 
 function skyridingRaceTrackerFrame:ADDON_LOADED(_, addOnName)
     if addOnName == addonName then
-        skyridingRaceTracker:LoadOptions()
-        skyridingRaceTracker:PrintDebug("Addon fully loaded.")
+        SRT:LoadOptions()
+        SRT:PrintDebug("Addon fully loaded.")
     end
 end
 
@@ -81,9 +81,9 @@ function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
     --SRT:PrintDebug("questID: " .. questID)
 
     if result ~= nil then
-        skyridingRaceTracker:PrintDebug("Event 'QUEST_ACCEPTED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
+        SRT:PrintDebug("Event 'QUEST_ACCEPTED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
 
-        if skyridingRaceTracker.options["race-tracker"] then
+        if SRT.options["race-tracker"] then
             raceQuestID = result.questID
             raceSpellID = result.spellID
             raceGoldTime = result.goldTime
@@ -93,9 +93,9 @@ function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
                 racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(result.raceTime).quantity / 1000
             end
 
-            skyridingRaceTracker:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
+            SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
         else
-            skyridingRaceTracker:PrintDebug("No race tracker requested.")
+            SRT:PrintDebug("No race tracker requested.")
         end
     end
 end
@@ -108,27 +108,27 @@ function skyridingRaceTrackerFrame:QUEST_REMOVED(_, questID, wasReplayQuest)
         raceSilverTime = -1
         racePersonalTime = -1
 
-        skyridingRaceTracker:StopRaceTracker()
+        SRT:StopRaceTracker()
 
-        skyridingRaceTracker:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
+        SRT:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
     end
 end
 
 GossipFrame:HookScript("OnShow",function()
-    if UnitExists("target") and skyridingRaceTracker.options["race-time-overview"] then
+    if UnitExists("target") and SRT.options["race-time-overview"] then
 		local npcID = select(6, strsplit("-", tostring(UnitGUID("target"))))
         npcID = tonumber(npcID)
 
         --skyridingRaceTracker:PrintDebug("npcID: " .. npcID)
 
         if raceDataTable[npcID] ~= nil then
-            skyridingRaceTracker:ShowRaceTimeOverview(npcID)
+            SRT:ShowRaceTimeOverview(npcID)
         end
     end
 end)
 
 GossipFrame:HookScript("OnHide",function()
-    skyridingRaceTracker:HideRaceTimeOverview()
+    SRT:HideRaceTimeOverview()
 end)
 
 skyridingRaceTrackerFrame:RegisterEvent("ADDON_LOADED")

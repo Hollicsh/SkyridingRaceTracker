@@ -1,5 +1,7 @@
 ## Skyriding Race Tracker
-### [3.3.3](https://github.com/diomsg-code/SkyridingRaceTracker/tree/3.3.3) (@build-date@)
-[Full Changelog](https://github.com/diomsg-code/SkyridingRaceTracker/compare/3.3.2...3.3.3) - [Previous Releases](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
+### [@project-version@](https://github.com/diomsg-code/SkyridingRaceTracker/tree/@project-version@) (@build-date@)
+[Full Changelog](https://github.com/diomsg-code/SkyridingRaceTracker/compare/@old-project-version@...@project-version@) - [Previous Releases](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
 
-- Removed: TOC version for patch 11.1.0 (Retail)
+- Added: New subpage in the options menu with information about the addon
+- Changed: The version number scheme has been changed
+- Refactoring of the addon structure and source code
