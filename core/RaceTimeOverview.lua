@@ -173,11 +173,11 @@ local function ShowZoneRaceTimeOverview(zoneID)
 
                     if racePersonalTime > 0 then
                         if racePersonalTime <= raceGoldTime then
-                            time = "|T616373:0|t |c" .. skyridingRaceTracker.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                            time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
                         elseif racePersonalTime <= raceSilverTime then
-                            time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                            time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
                         else
-                            time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                            time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
                         end
 
                         text:SetText(difficulty .. ": " .. time .. " " .. L['seconds-short'])
@@ -240,11 +240,11 @@ function skyridingRaceTracker:ShowRaceTimeOverview(npcID)
             local time
 
             if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
             elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
             else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
             end
 
             raceTimeOverviewFrame.bestTimeNormal:SetText(L["personal-best-time"]:format(time))
@@ -281,11 +281,11 @@ function skyridingRaceTracker:ShowRaceTimeOverview(npcID)
             local time
 
             if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
             elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
             else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
             end
 
             raceTimeOverviewFrame.bestTimeAdvanced:SetText(L["personal-best-time"]:format(time))
@@ -330,11 +330,11 @@ function skyridingRaceTracker:ShowRaceTimeOverview(npcID)
             local time
 
             if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
             elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
             else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
             end
 
             raceTimeOverviewFrame.bestTimeReverse:SetText(L["personal-best-time"]:format(time))
@@ -379,11 +379,11 @@ function skyridingRaceTracker:ShowRaceTimeOverview(npcID)
             local time
 
             if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
             elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
             else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
             end
 
             raceTimeOverviewFrame.bestTimeChallenge:SetText(L["personal-best-time"]:format(time))
@@ -428,11 +428,11 @@ function skyridingRaceTracker:ShowRaceTimeOverview(npcID)
             local time
 
             if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
             elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
             else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
             end
 
             raceTimeOverviewFrame.bestTimeChallengeReverse:SetText(L["personal-best-time"]:format(time))
@@ -477,11 +477,11 @@ function skyridingRaceTracker:ShowRaceTimeOverview(npcID)
             local time
 
             if racePersonalTime <= raceGoldTime then
-                time = "|T616373:0|t |c" .. skyridingRaceTracker.COLOR_GOLD_FONT .. racePersonalTime .. "|r"
+                time = "|T616373:0|t |c" .. skyridingRaceTracker.GOLD_FONT_COLOR .. racePersonalTime .. "|r"
             elseif racePersonalTime <= raceSilverTime then
-                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER_FONT .. racePersonalTime .. "|r"
+                time = "|T616375:0|t |c" .. skyridingRaceTracker.COLOR_SILVER .. racePersonalTime .. "|r"
             else
-                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE_FONT .. racePersonalTime .. "|r"
+                time = "|T616372:0|t |c" .. skyridingRaceTracker.COLOR_BRONZE .. racePersonalTime .. "|r"
             end
 
             raceTimeOverviewFrame.bestTimeStormGryphon:SetText(L["personal-best-time"]:format(time))

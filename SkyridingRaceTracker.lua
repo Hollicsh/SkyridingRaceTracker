@@ -1,6 +1,10 @@
 local addonName, SRT = ...
 
 local L = SRT.localization
+local Utils = SRT.utils
+local Dialog = SRT.dialog
+local Options = SRT.options
+
 local raceDataTable = SRT.raceDataTable
 
 local raceQuestID = -1
@@ -50,7 +54,7 @@ local function SlashCommand(msg, editbox)
     if not msg or msg:trim() == "" then
         Settings.OpenToCategory("Skyriding Race Tracker")
 	else
-        SRT:PrintDebug("No arguments will be accepted.")
+        Utils:PrintDebug("No arguments will be accepted.")
 	end
 end
 
@@ -70,18 +74,23 @@ end
 
 function skyridingRaceTrackerFrame:ADDON_LOADED(_, addOnName)
     if addOnName == addonName then
-        SRT:LoadOptions()
-        SRT:PrintDebug("Addon fully loaded.")
+        Utils:InitializeDatabase()
+
+        Dialog:InitializeDialog()
+
+        Options:Initialize()
+
+        Utils:PrintDebug("Addon fully loaded.")
     end
 end
 
 function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
     local result = GetRaceData(questID)
 
-    --SRT:PrintDebug("questID: " .. questID)
+    --Utils:PrintDebug("questID: " .. questID)
 
     if result ~= nil then
-        SRT:PrintDebug("Event 'QUEST_ACCEPTED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
+        Utils:PrintDebug("Event 'QUEST_ACCEPTED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
 
         if SRT.options["race-tracker"] then
             raceQuestID = result.questID
@@ -95,7 +104,7 @@ function skyridingRaceTrackerFrame:QUEST_ACCEPTED(_, questID)
 
             SRT:StartRaceTracker(raceQuestID, raceSpellID, raceGoldTime, raceSilverTime, racePersonalTime)
         else
-            SRT:PrintDebug("No race tracker requested.")
+            Utils:PrintDebug("No race tracker requested.")
         end
     end
 end
@@ -110,7 +119,7 @@ function skyridingRaceTrackerFrame:QUEST_REMOVED(_, questID, wasReplayQuest)
 
         SRT:StopRaceTracker()
 
-        SRT:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
+        Utils:PrintDebug("Event 'QUEST_REMOVED' fired. Payload: " .. C_QuestLog.GetTitleForQuestID(questID) .. " (" .. questID ..")")
     end
 end
 

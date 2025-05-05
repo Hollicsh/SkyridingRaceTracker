@@ -1,17 +1,32 @@
-local addonName, skyridingRaceTracker = ...
+local addonName, SRT = ...
 
-skyridingRaceTracker.COLOR_GOLD_FONT = "ffF2E699"
-skyridingRaceTracker.COLOR_SILVER_FONT = "ffC0C0C0"
-skyridingRaceTracker.COLOR_BRONZE_FONT = "ffCD7F32"
-skyridingRaceTracker.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
+SRT.ADDON_AUTHOR = C_AddOns.GetAddOnMetadata(addonName, "Author")
+SRT.ADDON_VERSION = C_AddOns.GetAddOnMetadata(addonName, "Version")
+SRT.ADDON_BUILD_DATE = C_AddOns.GetAddOnMetadata(addonName, "X-BuildDate")
 
-skyridingRaceTracker.addonVersion = C_AddOns.GetAddOnMetadata(addonName, "Version")
-skyridingRaceTracker.difficultyOrder = {"NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"}
+SRT.GAME_VERSION = GetBuildInfo()
+SRT.GAME_FLAVOR = C_AddOns.GetAddOnMetadata(addonName, "X-Flavor")
 
-local raceDataTable = skyridingRaceTracker.raceDataTable
+SRT.LINK_GITHUB = C_AddOns.GetAddOnMetadata(addonName, "X-Github")
+SRT.LINK_CURSEFORGE = C_AddOns.GetAddOnMetadata(addonName, "X-Curseforge")
 
-skyridingRaceTracker.sortedRaceDataTable = {}
-local sortedRaceDataTable = skyridingRaceTracker.sortedRaceDataTable
+SRT.NORMAL_FONT_COLOR = "ffFFD200"      -- #1
+SRT.WHITE_FONT_COLOR = "ffFFFFFF"       -- #2
+SRT.ORANGE_FONT_COLOR = "ffFF8040"      -- 13
+SRT.GOLD_FONT_COLOR = "ffF2E699"        -- #22
+SRT.LINK_FONT_COLOR = "ff66BBFF"        -- #36
+
+SRT.COLOR_SILVER = "ffC0C0C0"
+SRT.COLOR_BRONZE = "ffCD7F32"
+
+SRT.MEDIA_PATH = "Interface\\AddOns\\" .. addonName .. "\\media\\"
+
+SRT.difficultyOrder = {"NORMAL", "ADVANCED", "REVERSE", "CHALLENGE", "CHALLENGE_REVERSE", "STORM_GRYPHON"}
+
+local raceDataTable = SRT.raceDataTable
+
+SRT.sortedRaceDataTable = {}
+local sortedRaceDataTable = SRT.sortedRaceDataTable
 
 -----------------
 --- Data Sort ---
