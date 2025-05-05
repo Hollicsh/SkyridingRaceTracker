@@ -237,7 +237,11 @@ local function InitializeFrames()
         raceOverviewFrame.openButton:SetText(L["button.zone-overview"])
 
         raceOverviewFrame.openButton:SetScript("OnClick", function()
-            zoneOverviewFrame:Show()
+            if zoneOverviewFrame:IsShown() then
+                zoneOverviewFrame:Hide()
+            else
+                zoneOverviewFrame:Show()
+            end
         end)
     end
 
