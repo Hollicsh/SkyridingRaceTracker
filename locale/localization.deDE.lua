@@ -42,7 +42,7 @@ L["personal-best-time-failed"] = "neue persönliche Bestzeit verfehlt"
 -- Options
 
 L["info.description"] = "Beschreibung"
-L["info.description.text"] = "Der Skyriding Race Tracker ist ein Addon, das die aktuelle Rennzeit während eines Himmelsreiterrennen anzeigt (Race Tracker) und einen Überblick über alle Rennzeiten bietet (Race Time Overview).\n\nDieses Addon ist mit allen Renntypen wie Drachen-, Himmelsreiter-, Raketen- und Halsbrecherrennen (F.A.H.R.E.N.) kompatibel.\n\nSolltest Du einen Fehler finden oder Fragen zum Addon haben, so kannst Du über Github oder Curseforge Kontakt aufnehmen. Über diese beiden Plattformen kannst Du mir auch bei der Übersetzung helfen. Vielen Dank."
+L["info.description.text"] = "Der Skyriding Race Tracker ist ein Addon, das die aktuelle Rennzeit während eines Himmelsreiterrennen anzeigt und einen Überblick über alle Rennzeiten bietet.\n\nDieses Addon ist mit allen Renntypen wie Drachen-, Himmelsreiter-, Raketen- und Halsbrecherrennen (F.A.H.R.E.N.) kompatibel.\n\nSolltest Du einen Fehler finden oder Fragen zum Addon haben, so kannst Du über Github oder Curseforge Kontakt aufnehmen. Über diese beiden Plattformen kannst Du mir auch bei der Übersetzung helfen. Vielen Dank."
 
 L["info.help"] = "Hilfe"
 L["info.help.text"] = "Bei Problemen nach einem Update oder wenn Du es möchtest, kannst Du hier die Einstellungen zurücksetzen."
