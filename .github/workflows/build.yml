@@ -144,7 +144,7 @@ jobs:
 
       - name: Replace @old-project-version@ in CHANGELOG.md
         run: |
-          last_release_tag=$(git tag --sort=-creatordate | grep '^v[0-9]\+$' | head -n 1 || echo "v0")
+          last_release_tag=${{ steps.get-last-release-tag.outputs.tag }}
           sed -i "s/@old-project-version@/$last_release_tag/g" CHANGELOG.md
 
       - name: Create and push tag
