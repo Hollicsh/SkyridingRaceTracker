@@ -2,4 +2,5 @@
 ### [@project-version@](https://github.com/diomsg-code/SkyridingRaceTracker/tree/@project-version@) (@build-date@)
 [Full Changelog](https://github.com/diomsg-code/SkyridingRaceTracker/compare/@old-project-version@...@project-version@) - [Previous Releases](https://github.com/diomsg-code/SkyridingRaceTracker/releases)
 
+- Updated: Skyriding race times for the expansion 'Dragonflight'
 - Updated: ruRU localization (#3 - Thanks to Hollicsh)
