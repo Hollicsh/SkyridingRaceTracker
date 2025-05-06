@@ -1,3 +1,9 @@
+**v34 (2025-05-06)**
+- Added: New subpage in the options menu with information about the addon
+- Changed: The design of the overview window has been adapted to the new WoW interface since patch 11.0
+- Changed: The version number scheme has been changed
+- Refactoring of the addon structure and source code
+
 **3.3.3 (2025-04-23)**
 - Removed: TOC version for patch 11.1.0 (Retail)
 
