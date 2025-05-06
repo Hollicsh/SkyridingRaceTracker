@@ -90,7 +90,7 @@ L["options.other"] = "Другие параметры"
 L["options.debug-mode.name"] = "Режим отладки"
 L["options.debug-mode.tooltip"] = "Если режим отладки включен, то отображается дополнительная информацию в чате."
 
--- Чат
+-- Chat
 
 L["chat.reset-options.success"] = "Параметры успешно сброшены."
 
