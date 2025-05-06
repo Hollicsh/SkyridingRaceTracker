@@ -16,8 +16,8 @@ on:
         description: 'Optional: neuer Tag'
         required: false
       oldVersionTag:
-          description: 'Optional: alter Tag'
-          required: false
+        description: 'Optional: alter Tag'
+        required: false
       buildRetail:
         description: 'Retail-Version'
         required: false
@@ -51,7 +51,7 @@ jobs:
         id: get-last-release-tag
         run: |
           input="${{ github.event.inputs.oldVersionTag }}"
-          
+
           if [[ -n "$input" ]]; then
             echo "tag=$input" >> $GITHUB_OUTPUT
             exit 0
