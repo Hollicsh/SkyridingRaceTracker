@@ -7,7 +7,7 @@ local L = SRT.localization
 -- Generel
 
 L["addon.name"] = "Skyriding Race Tracker"
-L["addon.version"] = "Version"
+L["addon.version"] = "Версия"
 
 -- Addon specific
 
@@ -25,7 +25,7 @@ L["seconds-short"] = "сек."
 L["button.close"] = "Закрыть"
 L["button.zone-overview"] = "Обзор зоны"
 
-L["title.zone-overview"] = "Zone Overview"
+L["title.zone-overview"] = "Обзор зоны"
 
 L["race-normal"] = "Обычный маршрут"
 L["race-advanced"] = "Продвинутый маршрут"
@@ -41,23 +41,23 @@ L["personal-best-time-failed"] = "новый личный рекорд неуд�
 
 -- Options
 
-L["info.description"] = "Description"
-L["info.description.text"] = "The Skyriding Race Tracker is an addon to display the current race time during a skyriding race and provide an overview of all race times.\n\nThis addon is compatible with all race types such as dragonriding, skyriding, skyrocketing and breakneck (D.R.I.V.E.).\n\nIf you find a bug or have questions about the addon, you can contact me via Github or Curseforge. You can also help me with the translation via these two platforms. Thank you."
+L["info.description"] = "Описание"
+L["info.description.text"] = "Skyriding Race Tracker — дополнение, которое отображает текущее время гонки во время гонок на Драконах и предоставляющее обзор времени всех гонок.\n\nЭто дополнение совместимо со всеми типами гонок, такими как езда на драконе, скайрайдинг, скайрокет и головокружительная гонка (D.R.I.V.E.).\n\nЕсли Вы нашли ошибку или у Вас есть вопросы по дополнению, Вы можете связаться со мной через Github или Curseforge. Вы также можете помочь мне с переводом через эти две платформы. Спасибо."
 
-L["info.help"] = "Help"
-L["info.help.text"] = "In case of problems after an update or if you want to, you can reset the options here."
-L["info.help.reset-button.name"] = "Reset Options"
-L["info.help.reset-button.desc"] = "Resets the options to the default values. This applies to all characters."
+L["info.help"] = "Помощь"
+L["info.help.text"] = "В случае возникновения проблем после обновления, Вы можете сбросить настройки здесь."
+L["info.help.reset-button.name"] = "Сбросить параметры"
+L["info.help.reset-button.desc"] = "Сбрасывает параметры на значения по умолчанию. Это относится ко всем персонажам."
 L["info.help.github-button.name"] = "Github"
-L["info.help.github-button.desc"] = "Opens a popup window with a link to Github."
+L["info.help.github-button.desc"] = "Открывает всплывающее окно со ссылкой на Github."
 L["info.help.curseforge-button.name"] = "Curseforge"
-L["info.help.curseforge-button.desc"] = "Opens a popup window with a link to Curseforge."
+L["info.help.curseforge-button.desc"] = "Открывает всплывающее окно со ссылкой на Curseforge."
 
-L["info.about"] = "About"
-L["info.about.text"] = "|cffF2E699Game version:|r %s\n|cffF2E699Addon version:|r %s\n\n|cffF2E699Author:|r %s"
+L["info.about"] = "Об аддоне"
+L["info.about.text"] = "|cffF2E699Версия игры:|r %s\n|cffF2E699Версия дополнения:|r %s\n\n|cffF2E699Автор:|r %s"
 
-L["options"] = "Options"
-L["options.general"] = "General Options"
+L["options"] = "Параметры"
+L["options.general"] = "Общие параметры"
 
 L["options.race-tracker"] = "Race Tracker"
 L["options.race-tracker.name"] = "Включить Race Tracker"
@@ -72,7 +72,7 @@ L["options.race-tracker-gliding-speed.tooltip"] = "Определяет, дол�
 L["options.race-tracker-background.name"] = "Фон"
 L["options.race-tracker-background.tooltip"] = "Определяет, следует ли использовать фон для Race Tracker."
 L["options.race-tracker-background-type.name"] = "Тип фона"
-L["options.race-tracker-background-type.tooltip"] = "Определяет, какой тип фона будет использоваться для Reace Tracker."
+L["options.race-tracker-background-type.tooltip"] = "Определяет, какой тип фона будет использоваться для Race Tracker."
 L["options.race-tracker-background-type.value.0"] = "Тип фона 1"
 L["options.race-tracker-background-type.value.1"] = "Тип фона 2"
 L["options.race-tracker-horizontal-shift.name"] = "Горизонтальное смещение"
@@ -86,15 +86,15 @@ L["options.race-time-overview"] = "Обзор времени гонки"
 L["options.race-time-overview.name"] = "Включить обзор времени гонки"
 L["options.race-time-overview.tooltip"] = "Активирует или деактивирует обзор времени гонки рядом с окном квеста."
 
-L["options.other"] = "Other Options"
-L["options.debug-mode.name"] = "Debug Mode"
-L["options.debug-mode.tooltip"] = "Enabling the debug mode displays additional information in the chat."
+L["options.other"] = "Другие параметры"
+L["options.debug-mode.name"] = "Режим отладки"
+L["options.debug-mode.tooltip"] = "Если режим отладки включен, то отображается дополнительная информацию в чате."
 
--- Chat
+-- Чат
 
-L["chat.reset-options.success"] = "Options successfully reseted."
+L["chat.reset-options.success"] = "Параметры успешно сброшены."
 
 -- Dialog
 
-L["dialog.copy-address.text"] = "To copy the link press CTRL + C."
-L["dialog.reset-options.text"] = "Do you really want to reset the options?"
+L["dialog.copy-address.text"] = "Чтобы скопировать ссылку, нажмите CTRL + C."
+L["dialog.reset-options.text"] = "Вы действительно хотите сбросить настройки?"
