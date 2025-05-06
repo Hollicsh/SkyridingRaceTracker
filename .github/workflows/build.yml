@@ -56,7 +56,7 @@ jobs:
             echo "tag=$input" >> $GITHUB_OUTPUT
             exit 0
           fi
-
+          echo $input
           git fetch --tags
           last_release_tag=$(git tag --sort=-creatordate | grep '^v[0-9]\+$' | head -n 1 || echo "v0")
           echo "tag=$last_release_tag" >> $GITHUB_OUTPUT
