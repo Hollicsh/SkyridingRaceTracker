@@ -12,9 +12,12 @@ on:
         options:
           - Release
           - Alpha
-      versionTag:
-        description: 'Optional: manueller Tag'
+      newVersionTag:
+        description: 'Optional: neuer Tag'
         required: false
+      oldVersionTag:
+          description: 'Optional: alter Tag'
+          required: false
       buildRetail:
         description: 'Retail-Version'
         required: false
@@ -47,6 +50,13 @@ jobs:
       - name: Get last release tag
         id: get-last-release-tag
         run: |
+          input="${{ github.event.inputs.oldVersionTag }}"
+          
+          if [[ -n "$input" ]]; then
+            echo "tag=$input" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
           git fetch --tags
           last_release_tag=$(git tag --sort=-creatordate | grep '^v[0-9]\+$' | head -n 1 || echo "v0")
           echo "tag=$last_release_tag" >> $GITHUB_OUTPUT
@@ -61,7 +71,7 @@ jobs:
       - name: Set new tag
         id: set-new-tag
         run: |
-          input="${{ github.event.inputs.versionTag }}"
+          input="${{ github.event.inputs.newVersionTag }}"
           type="${{ github.event.inputs.releaseType }}"
           last_tag="${{ steps.get-last-tag.outputs.tag }}"
 
