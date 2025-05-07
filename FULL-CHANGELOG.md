@@ -1,3 +1,7 @@
+**v35 (2025-05-07)**
+- Updated: Skyriding race times for the expansion 'Dragonflight'
+- Updated: ruRU localization (#3 - Thanks to Hollicsh)
+
 **v34 (2025-05-06)**
 - Added: New subpage in the options menu with information about the addon
 - Changed: The design of the overview window has been adapted to the new WoW interface since patch 11.0
