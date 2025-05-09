@@ -57,8 +57,8 @@ local function UpdateRaceOverview(npcID, scrollFrame)
             local lookupKey = "race-" .. modeKey:lower():gsub("_", "-")
 
             local racePersonalTime = -1
-            local raceGoldTime = raceDataTable[npcID][3].NORMAL[4]
-            local raceSilverTime = raceDataTable[npcID][3].NORMAL[5]
+            local raceGoldTime = raceDataTable[npcID][3][modeKey][4]
+            local raceSilverTime = raceDataTable[npcID][3][modeKey][5]
 
             if raceDataTable[npcID][3][modeKey][2] ~= 0 then
                 racePersonalTime = C_CurrencyInfo.GetCurrencyInfo(raceDataTable[npcID][3][modeKey][2]).quantity / 1000
