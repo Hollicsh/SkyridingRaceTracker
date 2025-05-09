@@ -1,3 +1,6 @@
+**v36 (2025-05-09)**
+- Fixed: The wrong gold and silver times were displayed in the race overview
+
 **v35 (2025-05-07)**
 - Updated: Skyriding race times for the expansion 'Dragonflight'
 - Updated: ruRU localization (#3 - Thanks to Hollicsh)
