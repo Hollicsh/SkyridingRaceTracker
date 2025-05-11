@@ -1,6 +1,3 @@
-**v37 (2025-05-11)**
-- Minor code adjustments
-
 **v36 (2025-05-09)**
 - Fixed: The wrong gold and silver times were displayed in the race overview
 
