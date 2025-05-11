@@ -1,7 +1,9 @@
 package-as: SkyridingRaceTracker
 
 ignore:
+  - script
   - README.md
+  - pkgmeta.retail.yaml
 
 manual-changelog:
   filename: CHANGELOG.md
