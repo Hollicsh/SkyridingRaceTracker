@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+import argparse
+import os
 import subprocess
 import sys
-import os
 
 def run_git(args, check=True):
     print(f"🧠 git {' '.join(args)}")
@@ -21,22 +22,22 @@ def create_and_push_annotated_tag(tag, message, token, repo, name, email):
     run_git(["push", remote_url, f"refs/tags/{tag}"])
 
 def main():
-    if len(sys.argv) != 5:
-        print("⚠️ Verwendung: tag_push.py <tag> <release-type>")
-        sys.exit(99)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--tag", required=True)
+    parser.add_argument("--name", required=True)
+    parser.add_argument("--email", required=True)
+    parser.add_argument("--changelog", default="CHANGELOG.md")
+    parser.add_argument("--full", default="FULL-CHANGELOG.md")
+    args = parser.parse_args()
 
-    tag = sys.argv[1]
-    message = sys.argv[2]
     token = os.getenv("GITHUB_TOKEN")
     repo = os.getenv("GITHUB_REPOSITORY")
-    name = sys.argv[3]
-    email = sys.argv[4]
     
     if not token or not repo:
         print("⚠️ GITHUB_TOKEN oder GITHUB_REPOSITORY fehlen.")
         sys.exit(99)
 
-    create_and_push_annotated_tag(tag, message, token, repo, name, email)
+    create_and_push_annotated_tag(args.tag, args.message, token, repo, args.name, args.email)
 
 if __name__ == "__main__":
     main()

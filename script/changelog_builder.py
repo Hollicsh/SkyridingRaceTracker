@@ -56,10 +56,10 @@ def git_commit_and_push(version: str, file_path: str, name, email):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--version", required=True)
-    parser.add_argument("--changelog", default="CHANGELOG.md")
-    parser.add_argument("--full", default="FULL-CHANGELOG.md")
     parser.add_argument("--name", required=True)
     parser.add_argument("--email", required=True)
+    parser.add_argument("--changelog", default="CHANGELOG.md")
+    parser.add_argument("--full", default="FULL-CHANGELOG.md")
     args = parser.parse_args()
 
     print(f"🔧 Baue FULL-CHANGELOG.md für Version: {args.version}")
