@@ -24,10 +24,9 @@ def create_and_push_annotated_tag(tag, message, token, repo, name, email):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--tag", required=True)
+    parser.add_argument("--message", required=True)
     parser.add_argument("--name", required=True)
     parser.add_argument("--email", required=True)
-    parser.add_argument("--changelog", default="CHANGELOG.md")
-    parser.add_argument("--full", default="FULL-CHANGELOG.md")
     args = parser.parse_args()
 
     token = os.getenv("GITHUB_TOKEN")
