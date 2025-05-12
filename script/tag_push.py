@@ -36,7 +36,7 @@ def main():
         print("⚠️ GITHUB_TOKEN oder GITHUB_REPOSITORY fehlen.")
         sys.exit(99)
 
-    create_and_push_annotated_tag(tag, message, token, repo, name, emai)
+    create_and_push_annotated_tag(tag, message, token, repo, name, email)
 
 if __name__ == "__main__":
     main()
