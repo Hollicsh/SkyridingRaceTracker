@@ -44,6 +44,17 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          git_user_signingkey: true
+          git_commit_gpgsign: true
+
+      - name: List keys
+        run: gpg -K
+
       - name: Specify old Git tags and define a new Git tag
         id: tag
         run: |
@@ -75,8 +86,8 @@ jobs:
       CF_PROJECT_ID: ${{ vars.CF_PROJECT_ID }}
       WAGO_PROJECT_ID: ${{ vars.WAGO_PROJECT_ID }}
       GITHUB_OAUTH: ${{ secrets.G_TOKEN }}
-      CF_API_KEY: ${{ secrets.CF_API_TOKEN }}
-      WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
+      CF_API_KEY2: ${{ secrets.CF_API_TOKEN }}
+      WAGO_API_TOKEN2: ${{ secrets.WAGO_API_TOKEN }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
