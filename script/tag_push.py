@@ -13,8 +13,8 @@ def create_and_push_annotated_tag(tag, message, token, repo):
         print(f"⚠️ Tag '{tag}' existiert bereits.")
         sys.exit(99)
 
-    run_git(["config", "user.name", "GitHub Actions"])
-    run_git(["config", "user.email", "actions@github.com"])
+    run_git(["config", "user.name", name])
+    run_git(["config", "user.email", email])
     run_git(["tag", "-a", tag, "-m", message])
 
     remote_url = f"https://x-access-token:{token}@github.com/{repo}.git"
@@ -29,7 +29,9 @@ def main():
     message = sys.argv[2]
     token = os.getenv("GITHUB_TOKEN")
     repo = os.getenv("GITHUB_REPOSITORY")
-
+    name = sys.argv[3]
+    email = sys.argv[4]
+    
     if not token or not repo:
         print("⚠️ GITHUB_TOKEN oder GITHUB_REPOSITORY fehlen.")
         sys.exit(99)
