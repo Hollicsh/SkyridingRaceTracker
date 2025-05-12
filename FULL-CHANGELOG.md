@@ -1,3 +1,6 @@
+**v38-alpha.6 (2025-05-12)**
+- Minor code adjustments
+
 **v37 (2025-05-11)**
 - Minor code adjustments
 
