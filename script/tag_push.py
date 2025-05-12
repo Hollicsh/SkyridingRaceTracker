@@ -7,7 +7,7 @@ def run_git(args, check=True):
     print(f"🧠 git {' '.join(args)}")
     subprocess.run(["git"] + args, check=check)
 
-def create_and_push_annotated_tag(tag, message, token, repo):
+def create_and_push_annotated_tag(tag, message, token, repo, name, email):
     result = subprocess.run(["git", "tag", "-l", tag], capture_output=True, text=True)
     if tag in result.stdout.split():
         print(f"⚠️ Tag '{tag}' existiert bereits.")
@@ -36,7 +36,7 @@ def main():
         print("⚠️ GITHUB_TOKEN oder GITHUB_REPOSITORY fehlen.")
         sys.exit(99)
 
-    create_and_push_annotated_tag(tag, message, token, repo)
+    create_and_push_annotated_tag(tag, message, token, repo, name, emai)
 
 if __name__ == "__main__":
     main()
