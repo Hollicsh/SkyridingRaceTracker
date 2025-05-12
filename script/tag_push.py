@@ -21,7 +21,7 @@ def create_and_push_annotated_tag(tag, message, token, repo):
     run_git(["push", remote_url, f"refs/tags/{tag}"])
 
 def main():
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 5:
         print("⚠️ Verwendung: tag_push.py <tag> <release-type>")
         sys.exit(99)
 
